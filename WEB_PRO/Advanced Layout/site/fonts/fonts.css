@@ -1,0 +1,26 @@
+@font-face {
+  font-family: BulbasaurSP;
+  src: 
+    local(BulbasaurSP),
+    url(BulbasaurSP.otf), format(otf);
+  font-weight: 400;
+
+  /* block - будет скрывать текст, пока шрифт не прогрузится */
+  /* swap - загрузит на запасном шрифте, пока не загрузится основной */
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: Catacombs;
+  src: 
+    local(Catacombs),
+    url(Catacombs.ttf), format(ttf);
+  font-weight: 700;
+
+  /* block - будет скрывать текст, пока шрифт не прогрузится */
+  /* swap - загрузит на запасном шрифте, пока не загрузится основной */
+  font-display: swap; 
+}
+
+/* Бывают вариативные шрифты,которые могут иметь любой font-weight */
+/* font-variation-settings */

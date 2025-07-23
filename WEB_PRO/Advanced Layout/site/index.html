@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- описание, если много страниц, описание для конкретной страницы,
+  краткое и ёмкое, должно отображать смысл страницы -->
+  <meta name="description" content="Описание страницы сайта">
+
+  <!-- иконка, можно и в svg, но не все браузеры поддерживают 
+    svg можно поменять цвет для темной темы -->
+  <link rel="icon" href="./images/icon.png" sizes="any">
+  
+  <!-- иконка для приложения сайта на айфоне -->
+  <link rel="apple-touch-icon" href="./images/icon.png">
+
+  <!-- теги для карточки в мессенджерах при отправке ссылки на сайт -->
+  <meta property="og:title" content="Заголовок">
+  <meta property="og:url" content="https://ссылканасайт.com">
+  <meta property="og:image" content="./images/icon.png">
+  <meta property="twitter:card" content="summary">
+  <!-- есть также больше тегов, для большого описания и маленькой картинки
+  или маленького описания и большой картинки, карточки для приложения и т.д.-->
+
+  <title>Advanced html, css</title>
+
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header-title">ПРАКТИЧЕСКОЕ ПРИМЕНЕНИЕ ЗНАНИЙ ИЗ КУРСА</h1>
+  </header>
+  <main>
+    <div class="container">
+      <div class="column lesson2">
+        <h2>Оформление адресов и цитат</h2>
+        <address>Свяжитесь с нами: best-air@gmail.com</address>
+        <p>Как говорил известный учёный: <q>Лучше 2, чем ни одного</q>.</p>
+        <blockquote cite="https://example.com">
+          <p>"Большая цитата какого-то известного человека."</p>
+          <p>"Этим человеком был... никто иной как."</p>
+          <cite>Автор цитат - Лунграм Солнцеликий</cite>
+        </blockquote>
+      </div>
+      <div class="column lesson3">
+
+        <h2>Таблицы</h2>
+
+        <table class="table">
+
+          <caption>Сотрудники ООО "Вот он лес"</caption>
+
+          <!-- Заголовочная часть -->
+          <thead>
+            <tr>
+              <th>Имя</th>
+              <th>Фамилия</th>
+              <th>Возраст</th>
+              <th>Должность</th>
+            </tr>
+          </thead>
+          <!-- тело таблицы -->
+          <tbody>
+            <tr>
+              <td>Иван</td>
+              <td>Иванов</td>
+              <td>18</td>
+              <td>Креативщик</td>
+            </tr>
+            <tr>
+              <td colspan="2">Древесный</td>
+              <td>99</td>
+              <td rowspan="2">Мудрец</td>
+            </tr>
+            <tr>
+              <td>Берёзовый</td>
+              <td>Россия</td>
+              <td>22</td>
+            </tr>
+          </tbody>
+          <!-- подвал таблицы -->
+          <tfoot>
+            <tr>
+              <td colspan="4">Всего сотрудников: 3</td>
+            </tr>
+          </tfoot>
+          
+        </table>
+
+      </div>
+      <div class="column lesson4">
+        <h2>Новые логические свойства</h2>
+        <p class="arabian">نوع من النص</p>
+        <p class="vietnam">một số loại văn bản</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column lesson8">
+        <h2>overflow</h2>
+        <div class="objects-wrapper">
+          <div class="text-container overflow-visible"><h3>visible</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+          <div class="text-container overflow-hide"><h3>hide</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+          <div class="text-container overflow-scroll"><h3>scroll</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+          <div class="text-container overflow-auto"><h3>auto</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+          <div class="text-container overflow-clip"><h3>clip</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+          <div class="text-container overflow-x"><h3>-x scroll</h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga aliquid obcaecati asperiores aliquam doloribus illum dolores maiores? Nemo tempora laudantium cum iusto praesentium corporis, minus recusandae! Eaque libero numquam blanditiis?</div>
+        </div>
+      </div>
+      <div class="column lesson8-2">
+        <h2>white-space</h2>
+        <div class="objects-wrapper">
+          <div class="text-container white-space-normal"><h3>normal</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in facere nemo qui, tempora ipsa? Nostrum nulla, cupiditate blanditiis deleniti dignissimos voluptatem quos repellat cumque fugit aperiam suscipit animi dolorem?</div>
+          <div class="text-container white-space-nowrap"><h3>nowrap</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis in facere nemo qui, tempora ipsa? Nostrum nulla, cupiditate blanditiis deleniti dignissimos voluptatem quos repellat cumque fugit aperiam suscipit animi dolorem?</div>
+          <div class="text-container white-space-pre"><h3>pre</h3>Lorem ipsum dolor sit amet     
+    consectetur   adipisicing elit. Nobis in facere nemo qui, tempora ipsa? Nostrum nulla, 
+  cupiditate blanditiis deleniti dignissimos voluptatem quos repellat cumque fugit aperiam suscipit 
+    animi         dolorem?</div>
+          <div class="text-container white-space-pre-wrap"><h3>pre-wrap</h3>Lorem             ipsum dolor sit amet consectetur adipisicing elit. Nobis in
+    facere nemo qui, tempora ipsa? Nostrum nulla, cupiditate blanditiis deleniti dignissimos voluptatem quos repellat cumque fugit aperiam suscipit animi dolorem?</div>
+          <div class="text-container white-space-pre-line"><h3>pre-line</h3>Lorem              ipsum
+              dolor sit amet
+              consectetur adipisicing elit. Nobis in facere nemo qui, tempora ipsa? Nostrum nulla, cupiditate blanditiis deleniti dignissimos voluptatem quos repellat cumque fugit aperiam suscipit animi dolorem?</div>
+        </div>
+      </div>
+      <div class="column lesson8-3">
+        <h2>text-overflow</h2>
+        <div class="objects-wrapper">
+          <div class="text-container text-overflow-ellipsis"><h3>ellipsis</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa incidunt veniam inventore in iure magnam quibusdam laborum optio, rem ducimus? Libero nam, facere nesciunt cupiditate in aliquam fugiat earum recusandae.</div>
+          <div class="text-container text-overflow-clip"><h3>clip</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa incidunt veniam inventore in iure magnam quibusdam laborum optio, rem ducimus? Libero nam, facere nesciunt cupiditate in aliquam fugiat earum recusandae.</div>
+          <div class="text-container text-overflow-break-word"><h3>break-word</h3>НеРаботаетaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column lesson9">
+        <h2>dialog</h2>
+        <div class="objects-wrapper">
+          <button type="button" id="openButton" class="view-profile-button">View profile</button>
+        </div>
+      </div>
+      <div class="column lesson10">
+        <h2>shadows</h2>
+        <div class="objects-wrapper">
+          <div class="box-item"></div>
+          <div class="example-text">Lorem ipsum dolor sit amet.</div>
+        </div>
+      </div>
+      <div class="column lesson11">
+        <h2>details</h2>
+        <div class="objects-wrapper">
+          <details>
+            <summary><img style="width: 20px;" src="/images/arrow.png" alt=">" aria-hidden="true">Click to see the list</summary>
+            <ol>
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>lols</li>
+              <li>kakas</li>
+              <li><a href="https://music.youtube.com/playlist?list=OLAK5uy_nYgJ15EvtkZYB4dHnptZh3V_a1PN-H6nY">last one</a></li>
+            </ol>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column">
+        <h2>text-stroke</h2>
+        <div class="objects-wrapper">
+          <div class="text-container text-stroke">Some text here.</div>
+          <div class="text-container background-clip"><p>Some text here.</p></div>
+        </div>
+      </div>
+      <div class="column">
+        <h2></h2>
+        <div class="objects-wrapper"></div>
+      </div>
+      <div class="column">
+        <h2></h2>
+        <div class="objects-wrapper"></div>
+      </div>
+    </div>
+  </main>
+
+
+  <dialog id="profileDialog">
+    <div class="dialog-wrapper">
+      <button type="button" id="closeButton" class="dialog_button-close">X</button>
+      <img class="dialog_profile-img" src="/images/icon.png" alt="site-logo">
+      <h2 class="dialog_person-name">Fatboy Slim</h2>
+      <p class="dialog_profession">Administrator</p>
+      <div class="dialog_description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptates minima maxime ea blanditiis asperiores voluptatum quis sequi nemo commodi, laboriosam in sint repellendus eligendi incidunt perspiciatis suscipit, dolorem aut. Consectetur, quia? Repellat ratione cum obcaecati doloremque explicabo ea eaque.
+      </div>
+      <div class="dialog_buttons_wrapper">
+        <button id="dialog_likebutton" type="button" class="button button-like">like</button>
+        <button id="dialog_dislikebutton" type="button" class="button button-dislike">dislike</button>
+      </div>
+    </div>
+  </dialog>
+  <script>
+    openButton.addEventListener('click', ()=> {
+      profileDialog.showModal();
+      profileDialog.class
+    })
+    closeButton.addEventListener('click', ()=> {
+      profileDialog.close()
+    })
+    dialog_likebutton.addEventListener('click', ()=> {
+      profileDialog.close()
+    })
+    dialog_dislikebutton.addEventListener('click', ()=> {
+      profileDialog.close()
+    })
+  </script>
+</body>
+
+</html>

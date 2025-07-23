@@ -1,0 +1,406 @@
+
+
+/*-----------------ОБЩИЕ СТИЛИ-----------------------*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 200px;
+  background-color: #bbbbbb;
+
+  width: 100%;
+}
+
+.header-title {
+  padding:  20px;
+
+  font-size: 36px;
+  color: #555555;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  margin: 0 auto;
+  height: min-content;
+  padding-bottom: 20px;
+}
+
+h2{
+  margin: 5px 0 10px 0px;
+  padding-left: 5px;
+  border-bottom: 1px #999999 solid;
+  width: 100%;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+
+  padding-bottom: 20px;
+  width:33%;
+  min-height: 100px;
+  background-color: #cccccc;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.text-container{
+  margin: 10px 5px 0 5px;
+
+  height: 170px;
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+
+/*-----------------УРОК 2-----------------------*/
+
+.lesson2 > * + *{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+/*-----------------УРОК 3-----------------------*/
+
+table{
+  /* collapse - границы вокруг ячеек объединены (separate - разделены) */
+  border-collapse: collapse;
+  justify-self: center;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lesson2 caption{
+  caption-side: bottom;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+th, td{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th{
+  text-align: right;
+}
+
+tfoot td{
+  text-align: right;
+}
+
+
+/*-----------------УРОК 4-----------------------*/
+/*
+идея в том, что на некоторых языках
+люди пишут справа налево или сверху вниз
+и если мы напишем свойство border-left, то
+граница появится не слева, а справа или снизу
+*/
+
+.lesson4 p{
+  width: 100%;
+  border-inline-start: 2px solid black;
+  padding-inline-start: 4px;
+  background-color: #eee;
+}
+
+.lesson4 > * + *{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+
+/*-----------------УРОК 8-----------------------*/
+
+.lesson8-2 .text-container{
+  max-width: 100px;
+  flex-grow: 1;
+  flex-basis: 0%;
+}
+
+.objects-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.text-container h3{
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+
+/* OVERFLOWINGS */
+
+.overflow-visible{
+  overflow: visible;
+}
+
+.overflow-hide{
+  overflow: hidden;
+}
+
+.overflow-scroll{
+  overflow: scroll;
+}
+
+.overflow-auto{
+  overflow: auto;
+}
+
+/* запрещает блоку становиться сколящимся */
+.overflow-clip{
+  overflow: clip;
+}
+
+/* также можно использовать и overflow-y */
+.overflow-x{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+/* WHITESPACING */
+
+.white-space-normal{
+  white-space: normal;
+}
+
+.white-space-nowrap{
+  white-space: nowrap;
+}
+
+/* сохраняются все разрывы и пробелы как в исходном коде */
+.white-space-pre{
+  white-space: pre;
+}
+
+/* сохраняются все разрывы и пробелы как в исходном коде */
+/* плюс сам добавит переносов строк */
+.white-space-pre-wrap{
+  white-space: pre-wrap;
+}
+
+/* пробелы сводятся к единичным, но разрывы сохраняются */
+.white-space-pre-line{
+  white-space: pre-line;
+}
+
+
+/* TEXT-OVERFLOW */
+
+.lesson8-3 .text-container{
+  width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-overflow-ellipsis{
+  text-overflow: ellipsis;
+}
+
+.text-overflow-clip{
+  text-overflow: clip;
+}
+
+.text-overflow-break-word{
+  word-wrap: break-word;
+  /* white-space: normal; */
+}
+
+
+/*-----------------УРОК 9-----------------------*/
+
+/* .lesson9{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.lesson9 .objects-wrapper{
+  align-items: center;
+}
+
+.view-profile-button{
+  padding: 10px;
+  height: min-content;
+}
+
+#profileDialog{
+  width: 700px;
+  height: min-content;
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translate(-50%);
+}
+
+.dialog-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+#profileDialog::backdrop{
+  background: rgba(255, 0, 0, 0.1);
+}
+
+.dialog_button-close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+}
+
+.dialog_profile-img{
+  margin-top: 10px;
+  width: 30%;
+  border: 4px #555555 solid;
+}
+
+.dialog_person-name{
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.dialog_profession{
+  color: #333333;
+}
+
+.dialog_description{
+  margin: 10px 10px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+
+}
+
+.dialog_buttons_wrapper{
+  margin: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button{
+  padding: 5px 10px;
+  border: none;
+  background-color: gray;
+  height: 30px;
+  color: white;
+  border-radius: 8px;
+}
+
+.button:hover{
+  filter:brightness(1.2);
+  cursor: pointer;
+}
+
+.button:active{
+  filter:brightness(0.9);
+}
+
+.button-like{
+  background-color: rgb(50, 180, 50);
+}
+
+.button-dislike{
+  background-color: lightcoral;
+}
+
+
+
+/*-----------------УРОК 10-----------------------*/
+
+.lesson10{
+  display: flex;
+}
+
+.box-item{
+  margin: 20px;
+
+  height: 100px;
+  width: 100px;
+  background-color: rgb(100, 100, 255);
+
+  /* x y размытие распространение цвет */
+  box-shadow: 10px 10px 10px 10px rgba(255, 10, 10, 0.5), 10px 10px 10px 20px rgba(10, 255, 10, 0.5);
+}
+
+.example-text{
+  font-family: Catacombs;
+  margin: 20px 0 0 40px;
+  font-size: 20px;
+  text-shadow: 5px 5px 2px rgba(255, 10, 10, 1);
+}
+
+
+/*-----------------УРОК 11-----------------------*/
+
+summary{
+  list-style: none;
+  background-color: #999999;
+  padding: 5px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  /* чтобы нельзя было выделить текст */
+  user-select: none;
+}
+
+details img{
+  transition: transform 0.2s;
+}
+
+details[open] img{
+  transform: rotate(90deg);
+}
+
+
+/*-----------------УРОК 12-----------------------*/
+
+
+
+.text-stroke{
+  font-size: 40px;
+  color: white;
+  -webkit-text-stroke: 1px #000;
+}
+
+.background-clip p{
+  height: 100px;
+  width: 200px;
+  font-weight: bold;
+
+  font-size: 30px;
+  background-image: url(./images/text-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  background-clip: text;
+  color: transparent;
+}
+
+
