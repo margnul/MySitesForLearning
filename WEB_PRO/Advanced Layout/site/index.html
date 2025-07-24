@@ -165,20 +165,141 @@
       </div>
     </div>
     <div class="container">
-      <div class="column">
+      <div class="column lesson12">
         <h2>text-stroke</h2>
         <div class="objects-wrapper">
           <div class="text-container text-stroke">Some text here.</div>
           <div class="text-container background-clip"><p>Some text here.</p></div>
         </div>
       </div>
-      <div class="column">
-        <h2></h2>
-        <div class="objects-wrapper"></div>
+      <div class="column lesson16">
+        <h2>filters</h2>
+        <div class="objects-wrapper">
+          <div class="box-item"><h3>nothing</h3></div>
+          <div class="box-item brightness"><h3>brightness</h3></div>
+          <div class="box-item contrast"><h3>contrast</h3></div>
+          <div class="box-item blur"><h3>blur</h3></div>
+          <div class="box-item grayscale"><h3>grayscale</h3></div>
+          <div class="box-item drop-shadow"><h3>drop-shadow</h3></div>
+        </div>
       </div>
-      <div class="column">
-        <h2></h2>
-        <div class="objects-wrapper"></div>
+      <div class="column lesson16-2">
+        <h2>mix-blend-mode</h2>
+        <div class="objects-wrapper">
+          <div class="box-item"><h3>nothing</h3></div>
+          <div class="box-item multiply"><h3>multiply</h3></div>
+          <div class="box-item screen"><h3>screen</h3></div>
+          <div class="box-item color-dodge"><h3>color-dodge</h3></div>
+          <div class="box-item color"><h3>color</h3></div>
+        </div>
+        <div class="box-item difference box-item-special1">
+            <button type="button" class="button-with-animation1">click on me please</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="column lesson18">
+        <h2>gradients</h2>
+        <div class="objects-wrapper">
+          <div class="box-item radial-gradient"></div>
+          <div class="box-item ellipse-gradient"></div>
+          <div class="box-item conic-gradient"></div>
+          <div class="box-item repeating-gradient-linear"></div>
+          <div class="box-item repeating-gradient-radial"></div>
+        </div>
+      </div>
+      <div class="column lesson20">
+        <h2>forms</h2>
+
+        <form action="https://ссылканасайт.com" method="post">
+
+          <fieldset>
+            <legend>Contacts</legend>
+            <div class="input-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" placeholder="Your name" required>
+            </div>
+            <div class="input-group">
+              <label for="number">Fav number</label>
+              <input type="number" id="number" placeholder="Your number" required>
+            </div>
+            <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" placeholder="Your password" required>
+            </div>
+            <div class="input-group">
+              <label for="date">Date of Bith</label>
+              <input type="date" id="date" required>
+            </div>
+            <div class="input-group">
+              <label for="range">Happyness</label>
+              <input type="range" id="range" min="0" max="100" step="1">
+            </div>
+            <div class="input-group">
+              <label for="country">Choose country</label>
+              <select name="country" id="country">
+                <optgroup label="A-countries">
+                  <option value="America">America</option>
+                  <option value="Atlantida">Atlantida</option>
+                </optgroup>
+                <optgroup label="B-countries">
+                  <option value="Belgium">Belgium</option>
+                  <option value="Bolgaria">Bolgaria</option>
+                  <option value="Belarus">Belarus</option>
+                </optgroup>
+              </select>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Schoose smth</legend>
+              <label>
+                <input class="hidden" type="radio" name="difficulty" value="easy" checked>
+                <span></span>
+                easy
+              </label>
+              <label>
+                <input class="hidden" type="radio" name="difficulty" value="difficult">
+                <span></span>
+                difficult
+              </label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Schoose smth2</legend>
+              <label>
+                <input class="hidden square" type="checkbox" name="smth2" value="option1" checked>
+                <span></span>
+                option1
+              </label>
+              <label>
+                <input class="hidden square" type="checkbox" name="smth2" value="option2">
+                <span></span>
+                option2
+              </label>
+          </fieldset>
+
+          <fieldset>
+            <div class="input-group">
+              <label for="message">Your message</label>
+              <textarea id="message" rows="4" cols="40" placeholder="Type your message here"></textarea>
+            </div>
+            <div class="input-group">
+              <input type="reset" name="reset" id="reset" value="reser">
+              <input type="file" name="file" id="file">
+            </div>
+
+          </fieldset>
+
+          <button type="submit">Send information</button>
+        </form>
+
+      </div>
+      <div class="column lesson21">
+        <h2>yes</h2>
+        <div class="objects-wrapper">
+          <p class="bigbolt background-clip">BIGBOLT</p>
+        </div>
       </div>
     </div>
   </main>
