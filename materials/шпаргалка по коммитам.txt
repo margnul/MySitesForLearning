@@ -1,0 +1,6 @@
+init — используется для начала проекта или задачи. Примеры: init: start youtube-task, init: start mentor-dashboard task.
+feat — реализованная новая функциональность из технического задания. Примеры: feat: add basic page layout, feat: implement search box.
+fix — исправление ошибки в ранее реализованной функциональности. Примеры: fix: implement correct loading data from youtube, fix: change layout for video items to fix bugs.
+docs — используется при работе с документацией или README проекта. Примеры: docs: update readme with additional information, docs: update description of run() method.
+style — используется при изменениях стиля и оформления кода. Примеры: style: remove trailing white spaces, style: add missing semi-colons.
+chore — используется, когда не меняются исходные файлы и файлы тестов. Примеры: chore: add .editorconfig file for uniform code formatting, chore: rename environment variable file to .env.example.

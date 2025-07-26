@@ -1,0 +1,781 @@
+
+
+/*-----------------ОБЩИЕ СТИЛИ-----------------------*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 200px;
+  background-color: #bbbbbb;
+
+  width: 100%;
+}
+
+.header-title {
+  padding:  20px;
+
+  font-size: 36px;
+  color: #555555;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 99%;
+  margin: 0 auto;
+  height: min-content;
+  padding-bottom: 20px;
+}
+
+h2{
+  margin: 5px 0 10px 0px;
+  padding-left: 5px;
+  border-bottom: 1px #999999 solid;
+  width: 100%;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+
+  padding-bottom: 20px;
+  width:33%;
+  min-height: 100px;
+  background-color: #cccccc;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+.text-container{
+  margin: 10px 5px 0 5px;
+
+  height: 170px;
+  background-color: lightgreen;
+  padding: 5px;
+}
+
+.box-item{
+  margin: 5px;
+
+  height: 100px;
+  width: 100px;
+
+  background-color: darkgray;
+}
+
+
+/*-----------------УРОК 2-----------------------*/
+
+.lesson2 > * + *{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+/*-----------------УРОК 3-----------------------*/
+
+table{
+  /* collapse - границы вокруг ячеек объединены (separate - разделены) */
+  border-collapse: collapse;
+  justify-self: center;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.lesson2 caption{
+  caption-side: bottom;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+th, td{
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th{
+  text-align: right;
+}
+
+tfoot td{
+  text-align: right;
+}
+
+
+/*-----------------УРОК 4-----------------------*/
+/*
+идея в том, что на некоторых языках
+люди пишут справа налево или сверху вниз
+и если мы напишем свойство border-left, то
+граница появится не слева, а справа или снизу
+*/
+
+.lesson4 p{
+  width: 100%;
+  border-inline-start: 2px solid black;
+  padding-inline-start: 4px;
+  background-color: #eee;
+}
+
+.lesson4 > * + *{
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+
+
+/*-----------------УРОК 8-----------------------*/
+
+.lesson8-2 .text-container{
+  max-width: 100px;
+  flex-grow: 1;
+  flex-basis: 0%;
+}
+
+.objects-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+}
+
+.text-container h3{
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+
+/* OVERFLOWINGS */
+
+.overflow-visible{
+  overflow: visible;
+}
+
+.overflow-hide{
+  overflow: hidden;
+}
+
+.overflow-scroll{
+  overflow: scroll;
+}
+
+.overflow-auto{
+  overflow: auto;
+}
+
+/* запрещает блоку становиться сколящимся */
+.overflow-clip{
+  overflow: clip;
+}
+
+/* также можно использовать и overflow-y */
+.overflow-x{
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+
+/* WHITESPACING */
+
+.white-space-normal{
+  white-space: normal;
+}
+
+.white-space-nowrap{
+  white-space: nowrap;
+}
+
+/* сохраняются все разрывы и пробелы как в исходном коде */
+.white-space-pre{
+  white-space: pre;
+}
+
+/* сохраняются все разрывы и пробелы как в исходном коде */
+/* плюс сам добавит переносов строк */
+.white-space-pre-wrap{
+  white-space: pre-wrap;
+}
+
+/* пробелы сводятся к единичным, но разрывы сохраняются */
+.white-space-pre-line{
+  white-space: pre-line;
+}
+
+
+/* TEXT-OVERFLOW */
+
+.lesson8-3 .text-container{
+  width: 30%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.text-overflow-ellipsis{
+  text-overflow: ellipsis;
+}
+
+.text-overflow-clip{
+  text-overflow: clip;
+}
+
+.text-overflow-break-word{
+  word-wrap: break-word;
+  /* white-space: normal; */
+}
+
+
+/*-----------------УРОК 9-----------------------*/
+
+/* .lesson9{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.lesson9 .objects-wrapper{
+  align-items: center;
+}
+
+.view-profile-button{
+  padding: 10px;
+  height: min-content;
+}
+
+#profileDialog{
+  width: 700px;
+  height: min-content;
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translate(-50%);
+}
+
+.dialog-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  z-index: 2;
+  overflow: visible;
+}
+
+#profileDialog::backdrop{
+  background: rgba(255, 0, 0, 0.1);
+}
+
+
+.dialog_button-close{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 20px;
+  width: 20px;
+  margin: 10px;
+}
+
+.dialog_profile-img{
+  margin-top: 10px;
+  width: 30%;
+  border: 4px #555555 solid;
+}
+
+.dialog_person-name{
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.dialog_profession{
+  color: #333333;
+}
+
+.dialog_description{
+  margin: 10px 10px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+
+}
+
+.dialog_buttons_wrapper{
+  margin: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button{
+  padding: 5px 10px;
+  border: none;
+  background-color: gray;
+  height: 30px;
+  color: white;
+  border-radius: 8px;
+}
+
+.button:hover{
+  filter:brightness(1.2);
+  cursor: pointer;
+}
+
+.button:active{
+  filter:brightness(0.9);
+}
+
+.button-like{
+  background-color: rgb(50, 180, 50);
+}
+
+.button-dislike{
+  background-color: lightcoral;
+}
+
+
+
+/*-----------------УРОК 10-----------------------*/
+
+.lesson10{
+  display: flex;
+}
+
+.lesson10 .box-item{
+  background-color: rgb(100, 100, 255);
+
+  /* x y размытие распространение цвет */
+  box-shadow: 10px 10px 10px 10px rgba(255, 10, 10, 0.5), 10px 10px 10px 20px rgba(10, 255, 10, 0.5);
+}
+
+.example-text{
+  font-family: Catacombs;
+  margin: 20px 0 0 40px;
+  font-size: 20px;
+  text-shadow: 5px 5px 2px rgba(255, 10, 10, 1);
+}
+
+
+/*-----------------УРОК 11-----------------------*/
+
+summary{
+  list-style: none;
+  background-color: #999999;
+  padding: 5px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  /* чтобы нельзя было выделить текст */
+  user-select: none;
+}
+
+details img{
+  transition: transform 0.2s;
+}
+
+details[open] img{
+  transform: rotate(90deg);
+}
+
+
+/*-----------------УРОК 12-----------------------*/
+
+.text-stroke{
+  font-size: 40px;
+  color: white;
+  -webkit-text-stroke: 1px #000;
+}
+
+.background-clip p{
+  height: 100px;
+  width: 200px;
+  font-weight: bold;
+
+  font-size: 30px;
+  background-image: url(./images/text-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  background-clip: text;
+  color: transparent;
+}
+
+
+/*-----------------УРОК 16-----------------------*/
+
+.lesson16 .box-item{
+  background-color: gold;
+}
+
+.brightness{
+  filter: brightness(1.3);
+}
+
+.contrast{
+  filter: contrast(0.7);
+}
+
+.blur{
+  filter: blur(1.5px);
+}
+
+.grayscale{
+  filter: grayscale(0.5);
+}
+
+.drop-shadow{
+  filter: drop-shadow(5px 5px 5px #a30);
+}
+
+/* invert sturate sepia hue-rotate drop-shadow opacity url */
+
+
+.lesson16-2 .box-item{
+  background-color: brown;
+}
+
+.multiply{
+  mix-blend-mode: multiply;
+}
+
+.screen{
+  mix-blend-mode:screen;
+}
+
+.color-dodge{
+  mix-blend-mode:color-dodge;
+}
+
+.difference{
+  mix-blend-mode:difference;
+}
+
+.color{
+  mix-blend-mode:color;
+}
+
+.lesson16-2 .box-item-special1{
+  background-color: #fff;
+  width: 50%;
+}
+
+.button-with-animation1{
+  background-color: #000;
+  color: #fff;
+  mix-blend-mode: difference;
+  font-size: 25px;
+  font-weight: bold;
+  display: inline-block;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: color 2s ease-in-out;
+}
+
+.button-with-animation1::before{
+  content: '';
+  position: absolute;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #fff;
+
+  transition:
+    left 2s ease-in-out,
+    color 2s ease-in-out
+    ;
+}
+
+.button-with-animation1:hover::before{
+  left: 0;
+}
+
+.button-with-animation1:hover{
+  color: #000;
+}
+
+
+/*-----------------УРОК 16-----------------------*/
+
+.radial-gradient{
+  background-image: radial-gradient(at 20px 20px, #ff0, #f00);
+}
+
+.ellipse-gradient{
+  background-image: radial-gradient(25px 100px, #00f, #f0f);
+}
+
+.conic-gradient{
+  background-image: conic-gradient(from 90deg, red, yellow 25%, green 50%, blue 75%, red 100%);
+  border-radius: 50%;
+}
+
+.repeating-gradient-linear{
+  background-image: repeating-linear-gradient(-45deg, red, blue 20px, green 40px, red 60px);
+  background-size: 300% 300%;
+  animation: 5s anim1 infinite alternate ease-in-out;
+}
+
+@keyframes anim1 {
+  0%{
+    background-position: 0% 0%;
+  }
+  100%{
+    background-size: 100% 100%;
+  }
+}
+
+.repeating-gradient-radial{
+  background-image: repeating-radial-gradient(circle, red, blue 10px, green 20px, red 30px);
+}
+
+
+
+/*-----------------УРОК 20-----------------------*/
+
+form{
+  padding: 5px;
+  background-color: rgb(150, 100, 250);
+  border: #999999 solid 2px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+
+fieldset{
+  border-radius: 10px;
+  border-color: #fff;
+}
+
+label{
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color:#fff;
+  font-size: 16px;
+  font-family: sans-serif;
+  align-items: center;
+}
+
+.input-group{
+  margin: 10px;
+}
+
+#country{
+  background-color: rgb(120, 80, 200);
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px;
+  border-radius: 8px;
+  width: calc(100% + 2px);
+}
+
+#country:focus{
+  outline: none;
+}
+
+input{
+  padding: 8px;
+  border: 1px solid white;
+  background-color: transparent;
+  border-radius: 6px;
+  width: calc(100% - 16px);
+  color: #fff;
+}
+
+input::placeholder{
+  color: #fff;
+}
+
+input:focus{
+  padding: 8px;
+  color: #fff;
+  outline: none;
+}
+
+input:active{
+  padding: 8px;
+  color: #fff;
+}
+
+input[type="range"]{
+  appearance: none;
+  height: 10px;
+  background: linear-gradient(90deg, rgb(120, 80, 200), rgb(180, 120, 255));
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: rgb(100, 0, 255);
+}
+
+.hidden{
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  /* clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap; */
+}
+
+label span{
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  border: 2px solid #333333;
+  /* background: rgb(100, 0, 255); */
+  background-color: transparent;
+}
+
+input[type="radio"] + span{
+  border-radius: 50%;
+}
+
+input[type="checkbox"] + span{
+  border-radius: 25%;
+}
+
+input[type="radio"] + span, input[type="checkbox"] + span{
+  margin-left: 10px;
+}
+
+input[type="checkbox"]:checked + span{
+  background: url(/images/text-background.png);
+  background-position: center;
+}
+
+input[type="radio"]:checked + span{
+  background: rgb(100, 0, 255);
+}
+
+form legend{
+  margin-left: 5px;
+  color: yellow;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+textarea{
+  border: 1px solid #333;
+}
+
+textarea:focus{
+  outline: none;
+}
+
+textarea:hover{
+  outline: none;
+  border: 1px solid #333;
+}
+
+#reset{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#file{
+  width: calc(100% - 18px);
+}
+
+button[type="submit"]{
+  background: linear-gradient(90deg, rgb(120, 80, 200) 0%, rgb(180, 120, 255) 50%, rgb(120, 80, 200) 100%);
+  background-size: 200%;
+  background-repeat: repeat-x;
+  font-size: 25px;
+  margin: 10px 0;
+  width: 100%;
+  height: 60px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  animation: anim3 2s infinite linear;
+}
+
+button[type="submit"]:hover{
+  filter: brightness(1.1);
+  
+  animation: anim3 1s infinite linear;
+}
+
+@keyframes anim3 {
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 200%;
+  }
+}
+
+button[type="submit"]:active{
+  filter: brightness(0.8);
+}
+
+
+
+
+.bigbolt{
+  background: linear-gradient(90deg, rgb(120, 20, 200) 0%, rgb(16, 120, 255) 50%, rgb(120, 20, 200) 100%);
+  background-size: 200%;
+  background-clip: text;
+  color: transparent;
+
+  font-size: 70px;
+  font-family: BulbasaurSP;
+  /* text-shadow: 1px 1px 1px #333; */
+
+  animation: anim4 1.5s infinite linear,
+              anim5 1.5s infinite linear,
+              anim6 1.5s infinite;
+
+  padding: 0 10px;
+}
+
+@keyframes anim5 {
+  0%{
+    transform: skew(0deg, 0deg) scale(1);
+  }
+  25%{
+    transform: skew(20deg, 20deg) scale(1.2);
+  }
+  50%{
+    transform: skew(0deg, 0deg) scale(1);
+  }
+  75%{
+    transform: skew(-20deg, -20deg) scale(1.2);
+  }
+  100%{
+    transform: skew(0deg, 0deg) scale(1);
+  }
+}
+
+@keyframes anim4 {
+  0%{
+    background-position: 0%;
+    transform: scale(1);
+  }
+  100%{
+    background-position: 200%;
+    transform: scale(1.2);
+  }
+}
