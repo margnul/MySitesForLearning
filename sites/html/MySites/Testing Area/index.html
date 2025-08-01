@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testing Area</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="header container">
+    <h1 class="header__title">Lorem, ipsum dolor.</h1>
+  </header>
+
+  <main class="main">
+    <section class="section container">
+      <div class="section__title">
+        <h2>Just testing scss</h2>
+      </div>
+      <div class="section__body section__body--flex">
+        <div class="text-block">
+          <h3 class="text-block__title">Text title 1</h3>
+          <p class="text-block__paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur dolore delectus sapiente veritatis explicabo sunt, inventore nisi culpa tempora. Voluptate, quis amet asperiores itaque aspernatur harum. Vitae eum maxime voluptate voluptatibus labore sint, illo accusamus libero iure sequi totam excepturi praesentium odit facere veritatis necessitatibus molestiae hic magnam soluta tempore reprehenderit? Eos error animi inventore dicta atque placeat est assumenda!</p>
+          <button class="button text-block__button">read more</button>
+        </div>
+        <div class="text-block">
+          <h3 class="text-block__title">Text title 2</h3>
+          <p class="text-block__paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, possimus quasi quam ad autem dolor dignissimos. Voluptates nemo dolorum adipisci consequatur est in sequi odit pariatur voluptatum tenetur doloremque quasi excepturi quae atque, ab quos, aspernatur veritatis illum quis enim! Nam earum quam cumque perferendis, non, ut molestiae aspernatur consequuntur omnis repellat, quos repudiandae libero pariatur harum. Ea, delectus non perferendis sapiente eligendi molestias harum! Culpa nobis dolorem reprehenderit quibusdam.</p>
+          <button class="button text-block__button">read more</button>
+        </div>
+        <div class="text-block">
+          <h3 class="text-block__title">Text title 3</h3>
+          <p class="text-block__paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum facere aliquid repellat officiis quo quisquam recusandae quas sint fugiat corporis praesentium quia eaque vero, velit doloribus numquam eveniet quae illo neque sapiente voluptatem aut assumenda. Rerum cupiditate aut recusandae a?</p>
+          <button class="button text-block__button">read more</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="buttons" class="section container">
+      <div class="section__title">
+        <h2>Beautiful buttons</h2>
+      </div>
+      <div class="section__body section__body--flex" >
+
+        <div class="block-with-button block-with-button--flex-element">
+          <button type="button" class="block-with-button__button button button--levitate">
+            <div class="button--levitate__animation-block">
+              Click here
+            </div>
+          </button>
+        </div>
+        <div class="block-with-button block-with-button--flex-element">
+          <button type="button" class="block-with-button__button button button--shine">
+            Click here
+          </button>
+        </div>
+        <div class="block-with-button block-with-button--flex-element">
+          <button type="button" class="block-with-button__button button button--bend">
+            <p class="button--bend__text">Click here</p>
+            <div class="button--bend__images-wrapper">
+              <div class="button--bend__image-wrapper button--bend__image-wrapper--left">
+                <svg class="button--bend__arrows" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <div class="button--bend__image-wrapper">
+                <svg class="button--bend__arrows" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+              <div class="button--bend__image-wrapper button--bend__image-wrapper--right">
+                <svg class="button--bend__arrows" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#FFFFFF"/>
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div class="block-with-button block-with-button--flex-element">
+          <button type="button" class="block-with-button__button button button--outside">
+            <div class="button--outside__wrapper">
+              Click here
+            </div>
+          </button>
+        </div>
+        <div class="block-with-button block-with-button--flex-element">
+          <button type="button" class="block-with-button__button button button--coffee">
+            <div class="button--coffee__img-wrapper">
+              <img src="./images/cup.png" alt="">
+            </div>
+            <div class="button--coffee__coffee"></div>
+            <div class="button--coffee__table"></div>
+            <div class="button--coffee__text">coffee</div>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

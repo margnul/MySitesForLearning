@@ -1,0 +1,79 @@
+.about-me-cover {
+  margin-top: 230px;
+
+		&__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items:start;
+
+      flex-wrap: wrap;
+
+      height: 506px;
+
+      position: relative;
+      overflow: visible;
+
+      @include glow-l-t(-150px, -50px, 6s, 3s);
+		}
+
+		&__heading {
+      margin-top: 60px;
+      margin-bottom: 26px;
+      width: 516px;
+      font-weight: bold;
+		}
+
+		&__desc {
+      margin-bottom: 76px;
+      width: 625px;
+
+      line-height: 1.5;
+      letter-spacing: 1.2px;
+      color: #A8A8A8;
+		}
+
+    button{
+      padding: 20px 50px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    &__portrait{
+      width: 454px;
+      height: 506px;
+      object-fit: cover;
+      object-position: 0 -20px;
+      align-self: flex-end;
+      border-radius: 30px;
+      display: block;
+    }
+
+    &__portrait-wrapper{
+      position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          right: 0px;
+          top: -15px;
+          width: 100px;
+          height: 34px;
+          background-image: url("./images/decotation-ellipse.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          z-index: 1;
+        }
+        &::before{
+          content: "";
+          position: absolute;
+          left: -40px;
+          bottom: 48px;
+          height: 178px;
+          width: 55px;
+          background-image: url("./images/decotation-ellipse-vertical.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          z-index: 1;
+        }
+      }
+}

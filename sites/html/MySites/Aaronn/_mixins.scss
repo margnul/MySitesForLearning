@@ -1,0 +1,131 @@
+@mixin button-border-radius($height){
+  border-radius: $height/2;
+}
+
+@mixin glow-l-t($left:0px, $top:0px, $duration:6s, $delay:3s){
+  &::after{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      left: $left;
+      top: $top;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glow-l-b($left:0px, $bottom:0px, $duration:6s, $delay:3s){
+  &::after{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      left: $left;
+      bottom: $bottom;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glow-r-t($right:0px, $top:0px, $duration:6s, $delay:3s){
+  &::after{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      right: $right;
+      top: $top;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glow-r-b($right:0px, $bottom:0px, $duration:6s, $delay:3s){
+  &::after{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      right: $right;
+      bottom: $bottom;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glowb-l-t($left:0px, $top:0px, $duration:6s, $delay:3s){
+  &::before{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      left: $left;
+      top: $top;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glowb-l-b($left:0px, $bottom:0px, $duration:6s, $delay:3s){
+  &::before{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      left: $left;
+      bottom: $bottom;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glowb-r-t($right:0px, $top:0px, $duration:6s, $delay:3s){
+  &::before{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      right: $right;
+      top: $top;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}
+
+@mixin glowb-r-b($right:0px, $bottom:0px, $duration:6s, $delay:3s){
+  &::before{
+      position: absolute;
+      content: "";
+      width: 517px;
+      height: 369px;
+      background-image: url("./images/cover-background.png");
+      background-size:cover;
+      right: $right;
+      bottom: $bottom;
+      //transform: translate(-50%, -35%);
+      z-index: -1;
+      animation: shine $duration infinite $delay; 
+    }
+}

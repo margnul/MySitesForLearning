@@ -1,0 +1,29 @@
+.cover {
+  margin-top: 190px;
+
+	&__heading {
+    margin-bottom: 93px;
+
+    width: 890px;
+    text-align: center;
+	}
+
+  &__container {
+    @include glow-r-t(250px, -150px, 8s, 0s);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    
+    position: relative;
+    overflow: visible;
+  }
+  
+  &__button{
+    padding: 25px 33px 25px 40px;
+    width: 242px;
+
+    text-transform: uppercase;
+  }
+}

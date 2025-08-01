@@ -1,0 +1,36 @@
+
+.header {
+  padding-top: 33px;
+
+  width: 100%;
+  height: 80px;
+
+	&__button{
+
+	}
+
+	&-menu {
+		height: 100%;
+		width: min-content;
+
+		margin-left: auto;
+		margin-right: 55px;
+
+		ul{
+			gap: 45px;
+		}
+	}
+}
+
+.header-container {
+  height: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.header-logo {
+
+}
+

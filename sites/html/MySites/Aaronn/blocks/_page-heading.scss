@@ -1,0 +1,33 @@
+.page-heading {
+  margin-top: 138px;
+  //padding-bottom: 90px;
+  height: min-content;
+
+  &__container{
+    padding-bottom: 90px;
+    position: relative;
+
+    @include glow-l-t(-150px, -150px, 5s, 0s);
+    
+    &::before{
+      content: "";
+      width: calc(100% - 2*var(--global-horisontal-padding));
+      height: 1px;
+      background-color: #FFFFFF;
+      bottom: 0px;
+      left: var(--global-horisontal-padding);
+      position: absolute;
+    }
+  }
+  
+		&__title {
+      width: 424px;
+      margin-bottom: 10px;
+		}
+
+		&__subtitle {
+      width: 300px;
+      color: #949494;
+      //margin-bottom: 90px;
+		}
+}

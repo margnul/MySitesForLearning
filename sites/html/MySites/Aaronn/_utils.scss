@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+
+  padding: 0 min(10.4vw, 150px);
+  margin: 0 auto;
+}
+
+@keyframes shine {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: .5;
+  }
+  100%{
+    opacity: 1;
+  }
+}

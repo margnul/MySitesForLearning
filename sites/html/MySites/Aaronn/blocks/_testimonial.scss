@@ -1,0 +1,43 @@
+.testimonial {
+    margin-top: 166px;
+    margin-bottom: 120px;
+    height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    
+
+		&__container {
+      position: relative;
+
+      @include glow-l-t(-250px, -50px, 4s, 2s);
+		}
+
+		&__heading {
+      margin-top: 90px;
+      font-weight: bold;
+		}
+
+    &__desc {
+      margin-top: 44px;
+      width: 880px;
+      color: #949494;
+    }
+
+    &__author {
+      margin-top: 40px;
+
+      font: {
+        size:24px;
+        family: "Syne", sans-serif;
+        weight: bold;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      right: 150px;
+      top: 60px;
+		}
+}
+
