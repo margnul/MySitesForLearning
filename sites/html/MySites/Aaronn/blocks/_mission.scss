@@ -1,0 +1,78 @@
+.mission {
+   margin-top: 90px;
+
+		&__container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: start;
+         align-items: start;
+         row-gap: 100px;
+         column-gap: 28px;
+		}
+
+		&__heading {
+      font-size: 80px;
+      width: 535px;
+      height: 340px;
+      margin-left: 25px;
+      //margin-right: 35px;
+		}
+
+		&__paragraph {
+      color: #949494;
+      width: 500px;
+      height: 280px;
+      margin-top: 20px;
+
+      font: {
+         size:21px;
+        //family: 'Open Sans';
+         weight: 500;
+      }
+      line-height: 1.39;
+      letter-spacing: -0.66px;
+		}
+
+		&__img-wrapper {
+         width: 360px;
+
+         &:first-of-type {
+            //margin-right: 28px;
+         }
+
+         position: relative;
+         &::before{
+            content: "";
+            position: absolute;
+            left: -30px;
+            top: 0px;
+            height: 178px;
+            width: 55px;
+            background-image: url("./images/decotation-ellipse-vertical.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 1;
+         }
+
+         &--wide {
+            width: 750px;
+            height: 515px;
+            &::before{
+               left: auto;
+               top: auto;
+               right: 0px;
+               bottom: -30px;
+               width: 178px;
+               height: 55px;
+               background-image: url("./images/decotation-ellipse.png");
+            }
+			}
+		}
+
+		&__img {
+         width: 100%;
+         height: 100%;
+         border-radius: 16px;
+         object-fit: cover;
+		}
+}

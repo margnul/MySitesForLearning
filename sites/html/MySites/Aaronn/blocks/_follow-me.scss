@@ -1,0 +1,33 @@
+.follow-me {
+  margin-top: 140px;
+  margin-bottom: 230px;
+
+		&__container {
+      font: {
+        weight: bold;
+        size:48px;
+      }
+		}
+
+		&__heading {
+      margin-bottom: 50px;
+		}
+
+		&__wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+
+		}
+
+		&__item {
+      font: {
+        family: "Inter", sans-serif;
+        size:32px;
+      }
+      letter-spacing: 4px;
+      color:#949494;
+		}
+}
+

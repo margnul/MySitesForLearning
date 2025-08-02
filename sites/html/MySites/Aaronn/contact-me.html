@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <!-- max-width 1440px -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My works</title>
+  <title>Contact me</title>
   <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
@@ -37,66 +37,46 @@
 
   <section class="page-heading">
     <div class="container page-heading__container">
-      <h1 class="page-heading__title">My works</h1>
-      <p class="page-heading__subtitle p--large">Showcase About Works</p>
+      <h1 class="page-heading__title">Contact Me</h1>
+      <p class="page-heading__subtitle p--large">For Any Project Knock Us</p>
     </div>
   </section>
 
-  <section class="works">
-    <div class="container works__container">
+  <section class="contact-form">
+    <div class="container contact-form__container">
+      <h2 class="contact-form__heading">Get in Touch With Us</h2>
+      
+      <form class="contact-form__form" action="" method="get">
+        <div class="contact-form__form-row">
+          <label class="contact-form__form-label" for="name">name</label>
+          <input class="contact-form__form-input" type="text" id="name" required />
+        </div>
+        <div class="contact-form__form-row">
+          <label class="contact-form__form-label" for="subject">subject</label>
+          <input class="contact-form__form-input" type="text" id="subject" required />
+        </div>
+        <div class="contact-form__form-row">
+          <label class="contact-form__form-label" for="message">message</label>
+          <input class="contact-form__form-input" type="text" id="message" required />
+        </div>
+        <div class="contact-form__form-row">
+          <input class="contact-form__send-button common-button common-button--orange" type="submit" value="send"/>
+        </div>
+      </form>
 
-      <div class="works__item">
-        <img class="works__image" src="./images/work-image1.jpg" alt="">
-        <p class="works__desc">blue</p>
-        <h4 class="works__title">Orvillebury</h4>
+    </div>
+  </section>
+
+  <section class="contacts-with-image">
+    <div class="container contacts-with-image__container">
+      <div class="contacts-with-image__img-wrapper">
+        <img class="contacts-with-image__img" src="./images/laptop-img.jpg" alt="">
       </div>
-
-      <div class="works__item">
-        <img class="works__image" src="./images/work-image2.jpg" alt="">
-        <p class="works__desc">green</p>
-        <h4 class="works__title">West Lavada</h4>
-      </div>
-
-      <div class="works__item">
-        <img class="works__image" src="./images/work-image3.jpg" alt="">
-        <p class="works__desc">aqua</p>
-        <h4 class="works__title">Rempelshire</h4>
-      </div>
-
-      <div class="works__item works__item--wide">
-        <img class="works__image" src="./images/work-image4.jpg" alt="">
-        <p class="works__desc">lime</p>
-        <h4 class="works__title">Delfinaland</h4>
-      </div>
-
-      <div class="works__item works__item--wide">
-        <img class="works__image" src="./images/work-image5.jpg" alt="">
-        <p class="works__desc">fuchsia</p>
-        <h4 class="works__title">Buckridgeburgh</h4>
-      </div>
-
-      <div class="works__item">
-        <img class="works__image" src="./images/work-image6.jpg" alt="">
-        <p class="works__desc">black</p>
-        <h4 class="works__title">Pfefferstad</h4>
-      </div>
-
-      <div class="works__item">
-        <img class="works__image works__image--top" src="./images/work-image7.jpg" alt="">
-        <p class="works__desc">purple</p>
-        <h4 class="works__title">South Adrienne</h4>
-      </div>
-
-      <div class="works__item">
-        <img class="works__image" src="./images/work-image8.jpg" alt="">
-        <p class="works__desc">maroon</p>
-        <h4 class="works__title">Lake Trevor</h4>
-      </div>
-
-      <div class="works__button-wrapper">
-        <button class="common-button works__button common-button--orange-border">Load more works</button>
-      </div>
-
+      <ul class="contacts-with-image__contacts-wrapper">
+        <li class="contacts-with-image__contact"><a href="#!">Street Avenue 21, CA</a></li>
+        <li class="contacts-with-image__contact"><a href="#!">+9 0283353</a></li>
+        <li class="contacts-with-image__contact contacts-with-image__contact--email"><a href="mailto:info@aaronn.com">info@aaronn.com</a></li>
+      </ul>
     </div>
   </section>
 
