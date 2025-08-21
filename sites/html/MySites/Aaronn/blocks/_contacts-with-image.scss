@@ -1,12 +1,12 @@
 .contacts-with-image {
 
 		&__container {
-      margin-bottom: 170px;
+      margin-bottom: adapter(170px) ;
 		}
 
 		&__img-wrapper {
       width: 100%;
-      margin-bottom: 100px;
+      margin-bottom: adapter(100px);
 		}
 
 		&__img {
@@ -17,23 +17,26 @@
 
 		&__contacts-wrapper {
       margin: 0 auto;
-      width: 870px;
+      max-width: 870px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
+      
+         a{
+         opacity: 1;
+         text-transform: capitalize;
+
+         font: {
+            weight: bold;
+            //size: 24px;
+            size: clamp(1.375rem, 1.0909090909090908rem + 0.45454545454545453vw, 1.5rem);
+            family: "Syne", sans-serif;
+         }
+         }
 		}
 
 		&__contact {
 
-      a{
-        opacity: 1;
-        text-transform: capitalize;
-
-        font: {
-          weight: bold;
-          size: 24px;
-          family: "Syne", sans-serif;
-        }
-      }
 
       &--email a{
         text-decoration: underline;
@@ -41,4 +44,15 @@
     }
     
     
+}
+
+@media(max-width: 900px){
+   .contacts-with-image{
+      &__contacts-wrapper{
+         flex-direction: column;
+         align-items: center;
+         gap: adapter(50px);
+      }
+   }
+
 }

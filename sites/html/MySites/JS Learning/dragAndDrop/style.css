@@ -1,0 +1,60 @@
+.cube{
+  width: 100%;
+  height: 100%;
+}
+
+.cube-red{
+  background-color: red;
+}
+
+.cube-blue{
+  background-color: blue;
+}
+
+.cube-green{
+  background-color: green;
+}
+
+.draggable{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1;
+  cursor: grab;
+  transition-property: scale, opacity;
+  transition-duration: 0.2s;
+  touch-action: none;
+
+  border: 1px solid black;
+}
+
+.draggable.is-dragging{
+  cursor: grabbing;
+  opacity: 1.5;
+  scale: 0.95;
+}
+
+.red{
+  left: 300px;
+  top: 50px;
+}
+
+.green{
+  left: 50px;
+  top: 140px;
+}
+
+.blue{
+  left: 70px;
+  top: 20px;
+}
+
+.trash-can{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
+  z-index: 0;
+  border: 4px solid black;
+}

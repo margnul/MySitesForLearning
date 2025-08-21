@@ -1,10 +1,11 @@
 .projests-highlight {
-	margin-top: 290px;
+	margin-top: adapter(290px);
 
 		&__container {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			column-gap: 2vw;
 
 			position: relative;
 			@include glow-r-t(250px, -150px, 5s, 1s);
@@ -17,8 +18,8 @@
 		}
 
 		&__button-wrapper{
-			margin-top: 56px;
-			margin-bottom: 80px;
+			margin-top: adapter(56px);
+			margin-bottom: adapter(80px);
 			width: 100%;
 			
 		}
@@ -26,23 +27,29 @@
 		&__button{
 			text-transform: uppercase;
 			letter-spacing: 1.63px;
-			width: 242px;
+			max-width: 242px;
+			//width: 48vw;
 			margin: 0 auto;
 			padding: 24px 33px 24px 45px;
 		}
 }
 
 .highlight-item {
-	margin-bottom: 90px;
-	width: 560px;
-	height: 768px;	
+	margin-bottom: adapter(90px);
+	margin-right: auto;
+	margin-left: auto;
+
+	max-width: 560px;
+	min-width: 250px;
+	width: 48%;
+	height: max-content;	
 
 		&__img{
 			width: 100%;
 		}	
 
 		&__heading {
-			margin: 32px 0;
+			margin: adapter(32px) 0;
 			font: {
 				size: 24px;
 				family: "Syne", sans-serif;
@@ -68,4 +75,15 @@
 		&__row-value {
 			font-size: 14px;
 		}
+}
+
+
+@media(max-width: 1000px){
+	.projests-highlight {
+			&__button{
+				padding: 17px 20px 17px 20px;
+				width: 201px;
+				height: min-content;
+			}
+	}
 }

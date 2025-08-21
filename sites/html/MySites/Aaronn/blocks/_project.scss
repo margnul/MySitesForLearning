@@ -1,0 +1,64 @@
+.project {
+  margin-top: 120px;
+
+		&__container {
+		}
+
+		&__cover-img {
+      width: 100%;
+      border-radius: 16px;
+		}
+
+		&__gallery-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+		}
+
+		&__img {
+      width: 49%;
+      border-radius: 16px;
+      object-fit: cover;
+		}
+
+		&__nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+		}
+
+		&__project-link {
+      opacity: 1;
+		}
+
+		&__arrow {
+      margin: 0 20px;
+      
+      &--left {
+        transform: translateY(50%);
+      }
+
+      &--right {
+        transform: translateY(-35%);
+      }
+		}
+}
+
+.textarea {
+  margin: 70px auto 80px auto;
+  width: 750px;
+  height: 230px;
+
+		&__heading {
+      margin-bottom: 30px;
+      font: {
+        weight: bold;
+        size: 32px;
+      }
+		}
+
+		&__paragraph {
+      color: #9CA7B8;
+      line-height:170%;
+		}
+}

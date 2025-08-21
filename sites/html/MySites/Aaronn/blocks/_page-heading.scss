@@ -1,12 +1,13 @@
 .page-heading {
-  margin-top: 138px;
+  margin-top: adapter(138px);
   //padding-bottom: 90px;
   height: min-content;
 
   &__container{
-    padding-bottom: 90px;
+    padding-bottom: adapter(90px);
     position: relative;
 
+    //overflow: hidden;
     @include glow-l-t--big(-500px, -250px, 5s, 0s);
     
     &::before{
@@ -21,7 +22,8 @@
   }
   
 		&__title {
-      width: 424px;
+      max-width: 424px;
+      width: 100%;
       margin-bottom: 10px;
 		}
 

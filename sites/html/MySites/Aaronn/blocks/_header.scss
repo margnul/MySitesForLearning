@@ -1,15 +1,26 @@
-
 .header {
   padding-top: 33px;
 
   width: 100%;
   height: 80px;
 
+	&__container {
+		height: 100%;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: end;
+	}
+
+	&__logo {
+
+	}
+
 	&__button{
 
 	}
 
-	&-menu {
+	&__menu {
 		height: 100%;
 		width: min-content;
 
@@ -22,15 +33,37 @@
 	}
 }
 
-.header-container {
-  height: 100%;
 
-	display: flex;
-	justify-content: space-between;
-	align-items: end;
+@media (max-width: 800px) {
+	.header {
+		height: 127px;
+
+		&__container {
+			flex-wrap: wrap;
+		}
+
+		&__logo {
+			align-self: flex-start;
+			order: 1;
+		}
+
+		&__button{
+			align-self: flex-start;
+			order: 2;
+			height: 31px;
+			width: 97px;
+			padding: 8px 18px;
+			font-size: 12px;
+		}
+
+		&__menu {
+			width: 100%;
+			margin: 0;
+			order: 3;
+			height: 47px;
+			ul{
+
+			}
+		}
+	}
 }
-
-.header-logo {
-
-}
-

@@ -1,55 +1,57 @@
 .about-me-cover {
-  margin-top: 230px;
+  margin-top: adapter(230px);
 
 		&__container {
       display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items:start;
+      justify-content: space-between;
 
-      flex-wrap: wrap;
+      max-height: 506px;
+      height: max-content;
 
-      height: 506px;
+      &--desktop {
+        display: flex;
+      }
 
-      position: relative;
-      overflow: visible;
-
-      @include glow-l-t(-150px, -50px, 6s, 3s);
+      &--mobile{
+        display: none;
+      }
 		}
 
+    &__text-block{
+      width: 55%;
+      height: min-content;
+    }
+
 		&__heading {
-      margin-top: 60px;
-      margin-bottom: 26px;
-      width: 516px;
+      margin-top: adapter(60px);
+      margin-bottom: adapter(26px);
+      max-width: 516px;
+      width: 100%;
       font-weight: bold;
 		}
 
 		&__desc {
-      margin-bottom: 76px;
-      width: 625px;
+      margin-bottom: adapter(76px);
+      max-width: 625px;
+      width: 100%;
 
       line-height: 1.5;
       letter-spacing: 1.2px;
       color: #A8A8A8;
 		}
 
-    button{
+    &__button{
       padding: 20px 50px;
       font-weight: 600;
       font-size: 16px;
-    }
-
-    &__portrait{
-      width: 454px;
-      height: 506px;
-      object-fit: cover;
-      object-position: 0 -20px;
-      align-self: flex-end;
-      border-radius: 30px;
-      display: block;
+      text-transform: capitalize;
     }
 
     &__portrait-wrapper{
+      max-width: 454px;
+      width: 40%;
+      //height: 506px;
+      aspect-ratio: 454/506;
       position: relative;
         &::after{
           content: "";
@@ -76,4 +78,76 @@
           z-index: 1;
         }
       }
+
+    &__portrait{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 -20px;
+      align-self: flex-end;
+      border-radius: 30px;
+      display: block;
+    }
+}
+
+@media(max-width: 900px){
+  .about-me-cover {
+
+		&__container {
+      max-height: none;
+
+
+      &--desktop {
+        display: none;
+      }
+
+      &--mobile{
+        display: flex;
+        flex-direction: column;
+      }
+		}
+
+    &__text-block{
+
+    }
+
+		&__heading {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: none;
+      text-align: center;
+		}
+
+		&__desc {
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: adapter(76px);
+		}
+
+    &__button{
+      padding: 17px 20px 17px 20px;
+      width: 225px;
+      height: min-content;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &__portrait-wrapper{
+      width: 100%;
+      margin: 0 auto;
+      //max-width: 600px;
+
+        &::after{
+
+        }
+        &::before{
+
+        }
+      }
+
+    &__portrait{
+
+    }
+}
+
 }

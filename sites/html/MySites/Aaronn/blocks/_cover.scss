@@ -1,10 +1,11 @@
 .cover {
-  margin-top: 190px;
+  margin-top: adapter(190px);
 
 	&__heading {
-    margin-bottom: 93px;
+    margin-bottom: adapter(93px);
 
-    width: 890px;
+    max-width: 890px;
+    width: 100%;
     text-align: center;
 	}
 
@@ -25,5 +26,17 @@
     width: 242px;
 
     text-transform: uppercase;
+  }
+}
+
+@media(max-width:1000px){
+  .cover {
+    &__button{
+      padding: 17px 20px 17px 20px;
+      width: 181px;
+      height: min-content;
+
+      text-transform: uppercase;
+    }
   }
 }

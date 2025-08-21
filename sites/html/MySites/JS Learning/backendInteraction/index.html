@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Client-server interaction</h1>
+
+    <form class="create-post-form">
+      <h2>Create post</h2>
+      <p>
+        <label for="new-post-title">Title: </label>
+        <input name="title" id="new-post-title">
+      </p>
+      <p>
+        <label for="new-post-id">ID: </label>
+        <input name="id" id="new-post-id" type="number">
+      </p>
+      <button type="submit">
+        Send post
+      </button>
+    </form>
+
+    <form class="load-post-form">
+      <h2>Search article by ID</h2>
+      <p>
+        <label for="post-id">Article ID:</label>
+        <input type="number" name="post-id" id="post-id">
+      </p>
+      <button type="submit">
+        Load information from server
+      </button>
+    </form>
+
+    <form class="search-post-form">
+      <h2>Search posts</h2>
+      <p>
+        <label for="post-views">Article views:</label>
+        <input type="number" name="post-views" id="post-views">
+      </p>
+      <button type="submit">
+        Search posts server
+      </button>
+    </form>
+
+    <div class="result"></div>
+  </main>
+</body>
+</html>

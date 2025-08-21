@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.hide{
+  display: none !important;
+}
+
 @keyframes shine {
   0%{
     opacity: 1;
@@ -16,4 +20,9 @@
   100%{
     opacity: 1;
   }
+}
+
+// #{calc($value / 1440px * 100)}vw;
+@function adapter($value){
+  @return #{calc($value / 1440px * 140)}vw;
 }

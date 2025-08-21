@@ -10,18 +10,25 @@ h1, h2, h3{
 }
 h1{
   font-weight: bold;
-  font-size: 72px;
+  //font-size: 72px;
+  //font-size: clamp(1.22rem, 2.3vw + 1rem, 1.756rem);
+  font-size: clamp(3rem, 2.5rem + 2.2222222222222223vw, 4.5rem);;
 }
 h2{
-  font-size: 64px;
+  //font-size: 64px;
+  //font-size: clamp(1.229rem, 1.65vw + 1rem, 1.829rem);
+  font-size: clamp(2.625rem, 2.1666666666666665rem + 2.037037037037037vw, 4rem);
 }
 h3{
-  font-size: 56px;
+  //font-size: 56px;
+  //font-size: clamp(1.276rem, 1.85vw + 1rem, 1.931rem);
+  font-size: clamp(2.375rem, 2rem + 1.6666666666666667vw, 3.5rem);
 }
 
 h4{
   font-family: "Rubik", sans-serif;
-  font-size: 24px;
+  //font-size: 24px;
+  font-size: clamp(1rem, 0.8333333333333333rem + 0.7407407407407408vw, 1.5rem);
 }
 
 p{
@@ -34,7 +41,9 @@ p{
 
 a{
   font-family: "Rubik", sans-serif;
-  font-size: 14px;
+  //font-size: 14px;
+  font-size: clamp(0.75rem, 0.4285714285714286rem + 1.4285714285714286vw, 0.875rem);
+
   color: #FFFFFF;
   opacity: .5;
   text-decoration: none;
@@ -43,6 +52,11 @@ a{
 
 body{
   background-color: var(--secondary-color1);
+  overflow-x: hidden;
+}
+
+html{
+  overflow-x: hidden;
 }
 
 .common-button {

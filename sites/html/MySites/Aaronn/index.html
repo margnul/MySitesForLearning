@@ -10,8 +10,8 @@
 <body>
 
   <header class="header">
-    <div class="container header-container">
-      <div class="logo header-logo">
+    <div class="container header__container">
+      <div class="logo header__logo">
         <svg width="125" height="28" viewBox="0 0 125 28" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="71" cy="14" r="9" stroke="white" stroke-opacity="0.15" stroke-width="10"/>
           <circle opacity="0.6" cx="71" cy="14" r="8" stroke="white" stroke-width="2"/>
@@ -22,7 +22,7 @@
           <path d="M125 3V25H122.308L109.789 7.72656H109.565V25H106.783V3H109.475L122.039 20.3164H122.263V3H125Z" fill="white"/>
         </svg>
       </div>
-      <nav class="menu header-menu">
+      <nav class="menu header__menu">
         <ul class="menu__list">
           <li class="menu__item menu__item--small"><a class="menu__link" href="./index.html">Home</a></li>
           <li class="menu__item menu__item--small"><a class="menu__link" href="./about-me.html">About me</a></li>
@@ -46,13 +46,23 @@
   </section>
 
   <section class="about-me-cover">
-    <div class="container about-me-cover__container">
-      <h3 class="about-me-cover__heading">Let’s get know about me closer</h3>
-      <p class="about-me-cover__desc p--large">Aaronn is a New York-based visual designer focusing on branding and visual identity. Her portfolio showcases her wide range of work, spanning books, posters and web design.</p>
-      <button class="common-button common-button--orange">Discover More About Me</button>
+    <div class="container about-me-cover__container about-me-cover__container--desktop">
+      <div class="about-me-cover__text-block">
+        <h3 class="about-me-cover__heading">Let’s get know about me closer</h3>
+        <p class="about-me-cover__desc p--large">Aaronn is a New York-based visual designer focusing on branding and visual identity. Her portfolio showcases her wide range of work, spanning books, posters and web design.</p>
+        <a href="./about-me.html" class="about-me-cover__button common-button common-button--orange">Discover More About Me</a>
+      </div>
       <div class="about-me-cover__portrait-wrapper">
         <img class="about-me-cover__portrait" src="./images/man1_portrait.png" alt="">
       </div>
+    </div>
+    <div class="container about-me-cover__container about-me-cover__container--mobile">
+      <h3 class="about-me-cover__heading">Let’s get know about me closer</h3>
+      <div class="about-me-cover__portrait-wrapper">
+        <img class="about-me-cover__portrait" src="./images/man1_portrait.png" alt="">
+      </div>
+      <p class="about-me-cover__desc p--large">Aaronn is a New York-based visual designer focusing on branding and visual identity. Her portfolio showcases her wide range of work, spanning books, posters and web design.</p>
+      <a href="./about-me.html" class="about-me-cover__button common-button common-button--orange">Discover More About Me</a>
     </div>
   </section>
   

@@ -1,6 +1,6 @@
 .follow-me {
-  margin-top: 140px;
-  margin-bottom: 230px;
+  margin-top: adapter(140px);
+  margin-bottom: adapter(230px);
 
 		&__container {
       font: {
@@ -22,12 +22,27 @@
 		}
 
 		&__item {
-      font: {
-        family: "Inter", sans-serif;
-        size:32px;
-      }
-      letter-spacing: 4px;
-      color:#949494;
+         font: {
+            family: "Inter", sans-serif;
+            //size:32px;
+            size: clamp(1.125rem, 0.17391304347826098rem + 2.0289855072463765vw, 2rem);
+         }
+         letter-spacing: 4px;
+         color:#949494;
 		}
 }
 
+@media(max-width: 700px){
+   .follow-me {
+
+      &__wrapper{
+         flex-direction: column;
+         gap: 20px;
+         align-items: center;
+      }
+
+      &__item{
+         font-size:32px;
+      }
+   }
+}

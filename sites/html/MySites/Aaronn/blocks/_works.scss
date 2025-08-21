@@ -1,13 +1,13 @@
 .works {
-  margin-top: 100px;
-  margin-bottom: 180px;
+  margin-top: adapter(100px);
+  margin-bottom: adapter(180px);
 
 		&__container {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: start;
-      row-gap: 60px;
+      row-gap: adapter(60px);
 		}
 
     &__image{
@@ -54,7 +54,7 @@
 		}
 
 		&__button {
-      margin-top: 60px;
+      margin-top: adapter(60px);
       padding: 22px 35px;
       color: var(--brand-color);
 
@@ -64,4 +64,27 @@
         family: "Inter", sans-serif;
       }
 		}
+}
+
+
+@media(max-width: 1000px){
+  .works {
+    &__item {
+        width: 49%;
+
+        &--wide {
+        }
+      }
+    }
+}
+
+@media(max-width: 700px){
+  .works {
+    &__item {
+        width: 99%;
+
+        &--wide {
+        }
+      }
+    }
 }
