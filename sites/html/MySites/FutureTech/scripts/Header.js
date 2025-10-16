@@ -11,7 +11,7 @@ class Header {
   }
 
   constructor(){
-    this.rootElement = document.querySelector(this.selectors.root);
+    this.rootElement = document.querySelector(this.selectors.root)
     this.overlayElement = this.rootElement.querySelector(this.selectors.overlay)
     this.burgerButtonElement = this.rootElement.querySelector(this.selectors.burgerButton)
 
