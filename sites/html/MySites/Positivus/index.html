@@ -462,13 +462,13 @@
           <form class="contact-us-form" action="https://formspree.io/f/xrbyjpab" method="POST">
 
             <fieldset class="message-type-fieldset">
-              <label class="radio-button radio-button-active">
-                <input class="hidden" type="radio" name="message-type" value="Say Hi" checked>
+              <label class="radio-button radio-button-active" for="say-hi">
+                <input class="hidden" id="say-hi" type="radio" name="message-type" value="Say Hi" checked>
                 <span></span>
                 Say Hi
               </label>
-              <label class="radio-button">
-                <input class="hidden" type="radio" name="message-type" value="Get a Quote" checked>
+              <label class="radio-button" for="get-quote">
+                <input class="hidden" id="get-quote" type="radio" name="message-type" value="Get a Quote" >
                 <span></span>
                 Get a Quote
               </label>
@@ -477,15 +477,15 @@
             <fieldset class="main-fieldset">
               <div class="input-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="name" name="name" placeholder="Name">
               </div>
               <div class="input-group">
                 <label for="email">Email*</label>
-                <input type="email" id="email" placeholder="Email" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
               </div>
               <div class="input-group">
                 <label for="message">Message*</label>
-                <textarea id="message" placeholder="Message"></textarea>
+                <textarea id="message" name="message" placeholder="Message"></textarea>
               </div>
             </fieldset>
 
