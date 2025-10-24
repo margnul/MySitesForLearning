@@ -1,11 +1,11 @@
 .follow-me {
-  margin-top: adapter(140px);
-  margin-bottom: adapter(230px);
+   margin-top: adapter(140px);
+   margin-bottom: adapter(230px);
 
 		&__container {
       font: {
-        weight: bold;
-        size:48px;
+         weight: bold;
+         size:48px;
       }
 		}
 
@@ -29,6 +29,13 @@
          }
          letter-spacing: 4px;
          color:#949494;
+
+         transition-duration: 0.3s;
+
+         &:hover{
+            color: #949494;
+            color: var(--brand-color);
+         }
 		}
 }
 

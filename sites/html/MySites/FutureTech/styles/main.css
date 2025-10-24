@@ -342,7 +342,7 @@ svg * {
   translate: 0% -50%;
   content: "";
   right: 0;
-  background: url("../../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
+  background: url("../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
   border-radius: 50%;
 }
 
@@ -1058,17 +1058,6 @@ button[aria-label]::before {
   .advantage-card__link {
     row-gap: 0.125rem;
   }
-}
-.advantage-card__link::after {
-  width: var(--circle-size);
-  height: var(--circle-size);
-  position: absolute;
-  top: 50%;
-  translate: 0% -50%;
-  content: "";
-  right: 0;
-  background: url("../../icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
-  border-radius: 50%;
 }
 .advantage-card__details {
   font-size: clamp(0.875rem, 0.7794117647rem + 0.3921568627vw, 1.25rem);
