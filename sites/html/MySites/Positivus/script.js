@@ -191,3 +191,14 @@ testimonialsBlocks.forEach(item => item.addEventListener('touchend', recalculate
 window.addEventListener('resize', getCarouselPositions);
 
 
+///////////////////////////////////////////////////////
+
+const radioButtonLabels = document.querySelectorAll(".radio-button")
+const radioButtons = document.querySelectorAll(".radio-button input")
+
+radioButtonLabels.forEach(item => item.addEventListener('change', () => {
+  radioButtonLabels.forEach(label => label.classList.remove("radio-button-active"))
+  const radioButton = item.querySelector("input")
+  item.classList.toggle("radio-button-active", radioButton.checked)
+})
+)

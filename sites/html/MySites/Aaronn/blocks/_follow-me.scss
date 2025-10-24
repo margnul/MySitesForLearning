@@ -42,6 +42,10 @@
 @media(max-width: 700px){
    .follow-me {
 
+      &__heading{
+         text-align: center;
+      }
+
       &__wrapper{
          flex-direction: column;
          gap: 20px;

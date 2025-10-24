@@ -69,8 +69,15 @@
         }
 
         /* выбираем элементы второй колонке*/
-        &:nth-child(3n - 1) {
+        // &:nth-child(3n - 1) {
+        //   @include full-vw-centered-line(bottom);
+        // }
+
+        &:nth-child(n) {
           @include full-vw-centered-line(bottom);
+          &::before{
+            width: 32vw;
+          }
         }
       }
     }

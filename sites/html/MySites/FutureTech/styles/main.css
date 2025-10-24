@@ -1756,10 +1756,10 @@ button[aria-label]::before {
     height: 100%;
     background-color: var(--color-dark-15);
   }
-  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1) {
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(n) {
     position: relative;
   }
-  .bordered-grid--3-cols .bordered-grid__item:nth-child(3n-1)::before {
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(n)::before {
     content: "";
     position: absolute;
     left: 50%;
@@ -1769,6 +1769,9 @@ button[aria-label]::before {
     width: 100vw;
     height: 0.0625rem;
     background-color: var(--color-dark-15);
+  }
+  .bordered-grid--3-cols .bordered-grid__item:nth-child(n)::before {
+    width: 32vw;
   }
 }
 @media (width <= 63.99875rem) {
