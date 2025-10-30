@@ -1,0 +1,31 @@
+<div class="cart__product">
+  <div class="cart__product-wrapper">
+
+    <div class="cart__product-image-wrapper">
+      <a href="./product.html?id={id}">
+        <img src="./images/products/product{id}.jpg" alt="" class="cart__product-image" loading="eager">
+      </a>
+    </div>
+
+    <div class="cart__product-title">
+      <p class="cart__product-brand">{brand}</p>
+      <p class="cart__product-name">{name}</p>
+    </div>
+
+    <p class="cart__product-price">{price}</p>
+
+    <div class="cart__product-delete-button-wrapper">
+      <button class="cart__product-delete-button button" type="button" data-js-cart-delete-button>Удалить</button>
+    </div>
+
+    <div class="cart__product-delete-confirmation" data-js-cart-product-delete-confirmation>
+      <p>Вы точно хотите удалить товар?</p>
+      <div class="cart__product-delete-confirmation-buttons-wrapper">
+        <button class="cart__product-delete-button-confirm button" type="button"
+          data-js-cart-product-delete-confirmation-confirm>Удалить</button>
+        <button class="cart__product-delete-button-cancel button" type="button"
+          data-js-cart-product-delete-confirmation-cancel>Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>

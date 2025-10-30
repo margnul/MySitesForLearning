@@ -1,0 +1,41 @@
+
+{
+  "products": [
+  {
+    "id": 1,
+    "brand": "MERCURY",
+    "name": "Miss Russia",
+    "materials": "Кулон, белое золото, бриллианты",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum harum nesciunt excepturi earum, deserunt exercitationem praesentium! Explicabo temporibus maxime dolores impedit quam illum, iusto labore atque veritatis, corrupti accusamus.",
+    "price": "871 000 руб.",
+    "image": "./images/products/product1.jpg"
+  },
+  {
+    "id": 2,
+    "brand": "CHOPARD",
+    "name": "Happy Diamonds",
+    "materials": "Кулон, белое золото, бриллианты",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum laudantium enim ab doloremque voluptas qui neque animi optio aspernatur sit, unde eligendi velit, quasi possimus tenetur libero nostrum dignissimos nihil.",
+    "price": "Цена по запросу",
+    "image": "./images/products/product2.jpg"
+  },
+  {
+    "id": 3,
+    "brand": "GRAFF",
+    "name": "Tribal",
+    "materials": "Кулон, белое золото, бриллианты",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vel vitae totam eum inventore. Aspernatur laboriosam autem est excepturi optio fugiat nisi aperiam repellendus, magnam quaerat, eius temporibus corrupti?",
+    "price": "Цена по запросу",
+    "image": "./images/products/product3.jpg"
+  },
+  {
+    "id": 4,
+    "brand": "GARRARD",
+    "name": "Wings",
+    "materials": "Кулон, белое золото, бриллианты",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore nisi, velit cupiditate voluptatum illum culpa praesentium sunt error quas tempora officiis. Nulla nobis totam eos repellendus repudiandae temporibus qui iusto animi.",
+    "price": "Цена по запросу",
+    "image": "./images/products/product4.jpg"
+  }
+]
+}

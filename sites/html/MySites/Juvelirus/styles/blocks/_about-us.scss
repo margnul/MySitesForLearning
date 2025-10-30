@@ -1,0 +1,53 @@
+@use '../helpers/' as *;
+
+.about-us{
+  &__wrapper{
+    padding-top: rem(40);
+  }
+
+  &__image{
+    width: 100%;
+
+    &-wrapper{
+      display: flex;
+      padding-top: rem(8);
+      justify-content: center;
+      align-items: start;
+
+      @include tablet{
+        margin-bottom: rem(10);
+      }
+    }
+  }
+
+  &__card{
+    padding: rem(20);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: rem(20);
+
+    @include tablet-above{
+      &:nth-child(even){
+        :first-child{
+          order: 1;
+        }
+      }
+    }
+    
+
+    @include tablet{
+      grid-template-columns: none;
+    }
+  }
+
+  &__return-link{
+    &-wrapper{
+      padding-block: rem(20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    display: block;
+    text-align: center;
+  }
+}

@@ -1,0 +1,115 @@
+@use '../helpers/' as *;
+
+.cart{
+
+  &__product{
+    margin-inline: rem(20);
+    padding-block: rem(40);
+  
+    &:not(:last-child){
+      border-bottom: var(--border);
+    }
+
+    &-image-wrapper{
+      display: block;
+      @include square(20vw);
+      min-width: 100px;
+      min-height: 100px;
+      max-width: 300px;
+      max-height: 300px;
+    }
+
+    &-delete-button-wrapper{
+      @include mobile{
+        grid-column-start: 3;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 2;
+      }
+      
+      @include mobile-s{
+        grid-column-start: auto;
+        grid-column-end: auto;
+        grid-row-start: auto;
+        grid-row-end: auto;
+      }
+    }
+
+    &-wrapper{
+      --cart-product-columns: 4;
+
+      padding: rem(10);
+      display: grid;
+      grid-template-columns: repeat(var(--cart-product-columns), auto);
+      row-gap: rem(10);
+      column-gap: rem(10);
+      width: 100%;
+      align-items: center;
+      justify-items: center;
+      position: relative;
+
+      @include mobile {
+        --cart-product-columns: 3;
+      }
+
+      @include mobile-s {
+        --cart-product-columns: 2;
+      }
+    }
+
+    &-delete-confirmation{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--color-gray-70);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition-duration: .5s;
+
+      &.is-active{
+        width: 100%;
+      }
+
+      & p{
+        text-wrap: nowrap;
+      }
+
+      &-buttons-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: rem(30);
+      }
+    }
+  }
+
+  &__confirm{
+
+    &-section{
+      width: 100%;
+      height: auto;
+      padding: rem(40);
+      display: flex;
+      justify-content: end;
+
+      & button{
+        padding: rem(10);
+      }
+    }
+  }
+
+  &__message-empty{
+    display: flex;
+    flex-direction: row;
+    column-gap: rem(40);
+    align-items: center;
+    justify-content: center;
+    margin-inline: rem(20);
+    padding-top: rem(60);
+    padding-bottom: rem(40);
+  }
+}

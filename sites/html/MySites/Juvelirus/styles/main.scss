@@ -1,0 +1,17 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use './blocks/header';
+@use './blocks/section';
+@use './blocks/product-card';
+@use './blocks/footer';
+
+@use './blocks/cart';
+@use './blocks/order';
+@use './blocks/button';
+@use './blocks/about-us';
+@use './blocks/product';
+@use './blocks/modal';
