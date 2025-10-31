@@ -97,10 +97,9 @@ class Cart {
 
   async addElementsToCart() {
     const productIDs = this.getDataForCart()
-    console.log(productIDs)
     this.cartWrapperElement.innerHTML = ""
 
-    if (productIDs == false) {
+    if (productIDs == false || productIDs == null) {
 
       const response = await fetch('./emplty-cart-message.html')
       const responseText = await response.text()
