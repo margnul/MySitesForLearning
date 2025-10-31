@@ -26,6 +26,7 @@ class Product{
 
     this.productId = window.location.search
       .replace('?', '').split('=')[1]
+    
     this.productId === undefined ? this.productId = 1 : null
     
     this.replaceText()
@@ -49,10 +50,13 @@ class Product{
   }
 
   addToCartButtonClicked() {
-    const browserCartData = JSON.parse(localStorage.getItem('cart'));
+    let browserCartData = JSON.parse(localStorage.getItem('cart'));
+    if (browserCartData === null) {
+      browserCartData = []
+    }
     browserCartData.push(this.productId)
     localStorage.setItem('cart', JSON.stringify(browserCartData));
-    console.log(browserCartData)
+    //console.log(browserCartData)
     this.addToCartButtonElement.classList.add(this.stateClasses.isActive)
     this.addToCartButtonElement.innerHTML = "Добавлено"
   }

@@ -97,6 +97,7 @@ class Cart {
 
   async addElementsToCart() {
     const productIDs = this.getDataForCart()
+    console.log(productIDs)
     this.cartWrapperElement.innerHTML = ""
 
     if (productIDs == false) {
