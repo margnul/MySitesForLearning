@@ -9,6 +9,7 @@ class Product{
     productPrice: '[data-js-product-price]',
     productImage: '[data-js-product-image]',
     addToCartButton: '[data-js-product-add-to-cart]',
+    pageTitle: '[data-js-title-element]',
   }
 
   stateClasses = { 
@@ -23,6 +24,7 @@ class Product{
     this.productPriceElement = document.querySelector(this.selectors.productPrice)
     this.productImageElements = document.querySelectorAll(this.selectors.productImage)
     this.addToCartButtonElement = document.querySelector(this.selectors.addToCartButton)
+    this.pageTitleElement = document.querySelector(this.selectors.pageTitle)
 
     this.productId = window.location.search
       .replace('?', '').split('=')[1]
@@ -43,6 +45,7 @@ class Product{
     this.productImageElements.forEach((productImageElement) => {
       productImageElement.setAttribute('src', image)
     })
+    this.pageTitleElement.innerHTML = brand + " - " + name
   }
 
   bindEvents() {

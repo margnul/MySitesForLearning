@@ -721,19 +721,35 @@ button[aria-label]::before {
   display: flex;
   justify-content: end;
 }
-.cart__confirm-section button {
+.cart__confirm-section .cart__confirm-button {
   padding: 0.625rem;
+}
+.cart__confirm-section .cart__confirm-button:not(.is-active) {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
 }
 .cart__message-empty {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   -moz-column-gap: 2.5rem;
        column-gap: 2.5rem;
+  row-gap: 1.25rem;
   align-items: center;
   justify-content: center;
   margin-inline: 1.25rem;
   padding-top: 3.75rem;
   padding-bottom: 2.5rem;
+}
+.cart__message-empty p {
+  font-weight: 300;
 }
 
 .order-screen {
@@ -858,7 +874,7 @@ button[aria-label]::before {
   row-gap: clamp(1.875rem, 1.0784313725rem + 3.2679738562vw, 5rem);
   -moz-column-gap: clamp(1.875rem, 1.0784313725rem + 3.2679738562vw, 5rem);
        column-gap: clamp(1.875rem, 1.0784313725rem + 3.2679738562vw, 5rem);
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-template-rows: repeat(3, auto);
   grid-template-areas: "img img title details" "img img desc desc" "img img - buy";
 }
@@ -934,7 +950,7 @@ button[aria-label]::before {
 }
 .product__buy-button {
   width: 20vw;
-  max-width: 500px;
+  max-width: min(500px, 100%);
 }
 .product__buy-button.is-active {
   color: var(--color-accent);

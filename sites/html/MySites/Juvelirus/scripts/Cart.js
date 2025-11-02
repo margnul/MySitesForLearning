@@ -101,12 +101,14 @@ class Cart {
 
     if (productIDs == false || productIDs == null) {
 
+      this.orderButtonElement.classList.remove(this.stateClasses.isActive)
       const response = await fetch('./emplty-cart-message.html')
       const responseText = await response.text()
       this.cartWrapperElement.insertAdjacentHTML('beforeend', responseText)
 
     } else {
 
+      this.orderButtonElement.classList.add(this.stateClasses.isActive)
       for (const productID of productIDs) {
         const cartItemHTML = await this.generateItem(productsData.products[productID-1])
 

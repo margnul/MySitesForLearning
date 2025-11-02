@@ -15,7 +15,7 @@
     display: grid;
     row-gap: fluid(80, 30);
     column-gap: fluid(80, 30);
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: repeat(3, auto);
     grid-template-areas: 
     "img img title details"
@@ -109,7 +109,7 @@
 
   &__buy-button{
     width: 20vw;
-    max-width: 500px;
+    max-width: min(500px, 100%);
 
     &.is-active{
       color:var(--color-accent);

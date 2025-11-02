@@ -96,20 +96,30 @@
       display: flex;
       justify-content: end;
 
-      & button{
+      .cart__confirm-button{
         padding: rem(10);
+
+        &:not(.is-active){
+          @include visually-hidden
+        }
       }
     }
   }
 
   &__message-empty{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     column-gap: rem(40);
+    row-gap: rem(20);
     align-items: center;
     justify-content: center;
     margin-inline: rem(20);
     padding-top: rem(60);
     padding-bottom: rem(40);
+
+    & p{
+      font-weight: 300;
+    }
+    
   }
 }
