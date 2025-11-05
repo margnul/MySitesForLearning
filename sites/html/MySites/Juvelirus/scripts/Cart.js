@@ -12,10 +12,13 @@ class Cart {
     orderScreen: '[data-js-order-screen]',
     orderButton: '[data-js-order-button]',
     cancelOrderButton: '[data-js-cancel-order-button]',
+
+    myHtml: '[data-js-html-element]',
   }
 
   stateClasses = {
     isActive: 'is-active',
+    isScrollLocked: 'is-lock',
   }
 
   constructor() {
@@ -24,6 +27,8 @@ class Cart {
     this.orderScreenElement = document.querySelector(this.selectors.orderScreen)
     this.orderButtonElement = document.querySelector(this.selectors.orderButton)
     this.cancelOrderButtonElement = document.querySelector(this.selectors.cancelOrderButton)
+
+    this.myHtmlElement = document.querySelector(this.selectors.myHtml)
 
     this.addElementsToCart()
     //this.connectElements()
@@ -129,10 +134,12 @@ class Cart {
 
   onOrderButtonClick() {
     this.orderScreenElement.classList.add(this.stateClasses.isActive)
+    this.myHtmlElement.classList.add(this.stateClasses.isScrollLocked)
   }
 
   onCancelOrderButtonClick() {
     this.orderScreenElement.classList.remove(this.stateClasses.isActive)
+    this.myHtmlElement.classList.remove(this.stateClasses.isScrollLocked)
   }
 }
 

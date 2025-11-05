@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-js-html-element>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="./styles/main.css">
   <script src="./scripts/main.js" type="module"></script>
 </head>
-<body>
+<body data-js-body-element>
   
   <header class="header">
     <div class="header__top container">
@@ -128,43 +128,7 @@
       </div>
     </section>
 
-    <section class="order-screen" data-js-order-screen>
-      <h2 class="h3 order-screen-title">Ваши данные для заказа</h2>
-      <button class="order-screen__cancel-button" data-js-cancel-order-button>&times;</button>
-
-      <form action="/" class="order-form">
-        <div class="order-form__cell field">
-          <label for="firstName" class="field__label">
-            Имя
-          </label>
-          <input class="field__control" id="firstName" placeholder="Иван" required>
-        </div>
-        <div class="order-form__cell field">
-          <label for="lastName" class="field__label">
-            Фамилия
-          </label>
-          <input class="field__control" id="lastName" placeholder="Иванов" required>
-        </div>
-        <div class="order-form__cell field">
-          <label for="phoneNumber" class="field__label">
-            Номер телефона
-          </label>
-          <input class="field__control" id="phoneNumber" placeholder="71234567890" required>
-        </div>
-        <div class="order-form__cell field">
-          <label for="email" class="field__label">
-            Почта
-          </label>
-          <input class="field__control" id="email" placeholder="example@email.com" required>
-        </div>
-        <label for="agreement" class="checkbox">
-          <input type="checkbox" class="checkbox__input" id="agreement" required>
-          <span class="checkbox__label">Я согласен/а на обработку персональных данных</span>
-        </label>
-        <button class="order-form__submit-button button button--accent" type="submit">Оформить заказ</button>
-      </form>
-
-    </section>
+    
     
   </main>
   
@@ -178,6 +142,44 @@
       </div>
     </div>
   </footer>
+
+  <section class="order-screen" data-js-order-screen>
+    <h2 class="h3 order-screen-title">Ваши данные для заказа</h2>
+    <button class="order-screen__cancel-button" data-js-cancel-order-button>&times;</button>
+  
+    <form action="/" class="order-form">
+      <div class="order-form__cell field">
+        <label for="firstName" class="field__label">
+          Имя
+        </label>
+        <input class="field__control" id="firstName" placeholder="Иван" required>
+      </div>
+      <div class="order-form__cell field">
+        <label for="lastName" class="field__label">
+          Фамилия
+        </label>
+        <input class="field__control" id="lastName" placeholder="Иванов" required>
+      </div>
+      <div class="order-form__cell field">
+        <label for="phoneNumber" class="field__label">
+          Номер телефона
+        </label>
+        <input class="field__control" id="phoneNumber" placeholder="71234567890" required>
+      </div>
+      <div class="order-form__cell field">
+        <label for="email" class="field__label">
+          Почта
+        </label>
+        <input class="field__control" id="email" placeholder="example@email.com" required>
+      </div>
+      <label for="agreement" class="checkbox">
+        <input type="checkbox" class="checkbox__input" id="agreement" required>
+        <span class="checkbox__label">Я согласен/а на обработку персональных данных</span>
+      </label>
+      <button class="order-form__submit-button button button--accent" type="submit">Оформить заказ</button>
+    </form>
+  
+  </section>
 
 </body>
 </html>
