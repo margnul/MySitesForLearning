@@ -8,7 +8,8 @@
     "materials": "Кулон, белое золото, бриллианты",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id nostrum harum nesciunt excepturi earum, deserunt exercitationem praesentium! Explicabo temporibus maxime dolores impedit quam illum, iusto labore atque veritatis, corrupti accusamus.",
     "price": "871 000 руб.",
-    "image": "./images/products/product1.jpg"
+    "image": "./images/products/product1-700.jpg",
+    "srcset": "./images/products/product1-100.jpg 100w, ./images/products/product1-300.jpg 300w, ./images/products/product1-700.jpg 700w, ./images/products/product1-1000.jpg 1000w"
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "materials": "Кулон, белое золото, бриллианты",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id laborum laudantium enim ab doloremque voluptas qui neque animi optio aspernatur sit, unde eligendi velit, quasi possimus tenetur libero nostrum dignissimos nihil.",
     "price": "Цена по запросу",
-    "image": "./images/products/product2.jpg"
+    "image": "./images/products/product2-700.jpg",
+    "srcset": "./images/products/product2-100.jpg 100w, ./images/products/product2-300.jpg 300w, ./images/products/product2-700.jpg 700w, ./images/products/product2-1000.jpg 1000w"
   },
   {
     "id": 3,
@@ -26,7 +28,8 @@
     "materials": "Кулон, белое золото, бриллианты",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non vel vitae totam eum inventore. Aspernatur laboriosam autem est excepturi optio fugiat nisi aperiam repellendus, magnam quaerat, eius temporibus corrupti?",
     "price": "Цена по запросу",
-    "image": "./images/products/product3.jpg"
+    "image": "./images/products/product3-700.jpg",
+    "srcset": "./images/products/product3-100.jpg 100w, ./images/products/product3-300.jpg 300w, ./images/products/product3-700.jpg 700w, ./images/products/product3-1000.jpg 1000w"
   },
   {
     "id": 4,
@@ -35,7 +38,8 @@
     "materials": "Кулон, белое золото, бриллианты",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga inventore nisi, velit cupiditate voluptatum illum culpa praesentium sunt error quas tempora officiis. Nulla nobis totam eos repellendus repudiandae temporibus qui iusto animi.",
     "price": "Цена по запросу",
-    "image": "./images/products/product4.jpg"
+    "image": "./images/products/product4-700.jpg",
+    "srcset": "./images/products/product4-100.jpg 100w, ./images/products/product4-300.jpg 300w, ./images/products/product4-700.jpg 700w, ./images/products/product4-1000.jpg 1000w"
   }
 ]
 }

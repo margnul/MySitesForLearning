@@ -1,0 +1,19 @@
+@use '../helpers/' as *;
+
+.loading-tile{
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+
+  background-color: rgba(200, 0, 0, 0.8);
+  top: 25vh;
+  left: 25vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__text{
+    color: var(--color-dark);
+  }
+}

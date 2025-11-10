@@ -1,0 +1,23 @@
+@use '../helpers/' as *;
+
+.messages-console{
+  position: absolute;
+  width: 30vw;
+  height: 30vh;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+
+    border: 1px solid rgb(255,255,255);
+    margin: rem(5);
+    padding: rem(10);
+  }
+}

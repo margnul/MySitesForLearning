@@ -36,7 +36,7 @@ class Product{
   }
 
   replaceText() {
-    const { brand, name, materials, description, price, image} = productsData.products[this.productId-1]
+    const { brand, name, materials, description, price, image, srcset} = productsData.products[this.productId-1]
     this.productBrandElement.innerHTML = brand
     this.productNameElement.innerHTML = name
     this.productDetailsElement.innerHTML = materials
@@ -44,6 +44,8 @@ class Product{
     this.productPriceElement.innerHTML = price
     this.productImageElements.forEach((productImageElement) => {
       productImageElement.setAttribute('src', image)
+      productImageElement.setAttribute('srcset', srcset)
+      productImageElement.setAttribute('sizes', "(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1023px) 50vw, 35vw")
     })
     this.pageTitleElement.innerHTML = brand + " - " + name
   }
