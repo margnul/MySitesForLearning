@@ -11,9 +11,10 @@ export interface ActionButtonProps {
   ID: number,
   BackgroundColor: string,
   count: number,
+  plusClick: () => void,
 }
 
-function ActionButton({ ActionType, ButtonText, BackgroundColor, count }: ActionButtonProps) {
+function ActionButton({ ActionType, ButtonText, BackgroundColor, count, plusClick }: ActionButtonProps) {
   const dispatch = useDispatch<AppDispatch>();
   const isLoading = useSelector((state: RootState) => state.counter.loading)
 
@@ -31,7 +32,10 @@ function ActionButton({ ActionType, ButtonText, BackgroundColor, count }: Action
 
   return (
     <button
-      onClick={isLoading ? () => { } : handleClick }
+      onClick={isLoading ? () => { } : () => {
+        handleClick()
+        plusClick()
+      }}
       type="button"
       className="input-tile__button"
       style={{ backgroundColor: BackgroundColor }}

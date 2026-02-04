@@ -1,0 +1,85 @@
+@use '../helpers/' as *;
+
+.about{
+
+  &__container{
+    margin-block: 33vh;
+
+    @include laptop{
+      margin-block: 25vh;
+    }
+
+    @include tablet{
+      margin-block: 30vh;
+    }
+
+    @include mobile{
+      margin-block: 18vh;
+    }
+  }
+
+  &__text{
+    font-size: 1.25rem;
+    font-weight: 500;
+
+    @include tablet{
+      font-size: 1.125rem;
+    }
+
+    @include mobile{
+      font-size: 1rem;
+    }
+
+    &-wrapper{
+      margin-left: 9vw;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      column-gap: 10vw;
+      row-gap: 2vh;
+
+      width: 60vw;
+      max-width: 60%;
+
+      @include laptop{
+        width: 65vw;
+        max-width: 65%;
+      }
+
+      @media (width < rem(1280)){
+        width: 80vw;
+        max-width: 80%;
+      }
+
+      @include tablet{
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        max-width: 50%;
+        margin-left: 14vw;
+      }
+
+      @include mobile{
+        margin-left: 9vw;
+        width: 80vw;
+        max-width: 80%;
+      }
+    }
+  }
+
+
+  .about__container{
+    transition: clip-path 2s, opacity 1s;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    opacity: 1;
+  }
+
+  &.not-animated{
+    .about__container{
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      opacity: 0;
+    }
+    
+  }
+}

@@ -1,0 +1,128 @@
+@use '../helpers/' as *;
+
+.hero {
+  height: 100dvh;
+  width: 100%;
+  padding-top: var(--container-offset);
+
+
+  &__container {
+    position: relative;
+    height: 100%;
+    padding-bottom: rem(20);
+    justify-content: flex-start;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+      row-gap: rem(20);
+
+      --width: calc(var(--title-relative-width) * var(--container-width));
+      --height: calc(var(--width) / 3.975);
+
+      top: var(--height);
+      height: calc(100% - var(--height));
+    }
+  }
+
+  &__title {
+    width: fit-content;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    flex-wrap: wrap;
+
+    @include tablet {
+      position: relative;
+      width: 100%;
+      display: flex;
+      column-gap: 3vw;
+    }
+
+    &-word {
+      font-size: min(7.5rem, var(--hero-title-font-size));
+      font-weight: 500;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+
+      @include tablet {
+        font-size: calc(var(--hero-title-font-size) * 1.8);
+      }
+    }
+
+    & .hero__title-word-wrapper {
+      //transform-origin: 0% 100%;
+      //transition: scale 1s 1s cubic-bezier(0.86, 0, 0.07, 1), transform 1s cubic-bezier(0.7, 0, 0.15, 1), clip-path 1s cubic-bezier(0.7, 0, 0.15, 1);
+      //scale: 1 1;
+      //clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+      //transform: translateY(0%);
+    }
+
+    &.not-animated {
+      & .hero__title-word-wrapper {
+        scale: .8 .8;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transform: translateY(100%);
+      }
+    }
+  }
+
+
+
+  &__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 66%;
+    height: 100%;
+
+    @include tablet {
+      position: relative;
+      width: 100%;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0;
+
+    &-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    &-cover {
+      max-width: max-content;
+      position: absolute;
+      z-index: 2;
+
+      opacity: 0;
+      transition: .5s opacity;
+    }
+  }
+
+  &__canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+  }
+
+}

@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FB1G0GLK7P"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-FB1G0GLK7P');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta name="description"
+    content="Blæd Agency is a fashion event production agency specializing in shows, shootings, launches and collection coordination for luxury brands worldwide.">
+
+
+  <style>
+    *,
+    :after,
+    :before {
+      box-sizing: border-box
+    }
+
+    body,
+    h1,
+    ul {
+      margin: 0;
+      padding: 0
+    }
+
+    img,
+    video {
+      display: block;
+      height: auto;
+      max-width: 100%
+    }
+
+    html {
+      height: 100%;
+      scrollbar-width: none;
+      width: 100vw
+    }
+
+    :root {
+      --container-max-width: 1920px;
+      --container-padding-x: 1rem;
+      --container-outer-margin: max(0px, calc(50vw - 960px));
+      --content-width: calc(100vw - var(--container-outer-margin)*2 - 20px);
+      --title-relative-width: 69/100
+    }
+
+    body {
+      background-color: #fff;
+      color: #100f0e;
+      font-family: sans-serif;
+      line-height: 1.5
+    }
+
+    .container,
+    body {
+      overflow-x: hidden
+    }
+
+    .container {
+      margin-inline: auto;
+      max-width: 100%;
+      overflow-y: hidden;
+      width: var(--content-width)
+    }
+
+    .video-section__container {
+      overflow-x: initial;
+      overflow-y: initial
+    }
+
+    .visually-hidden {
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      clip: rect(0, 0, 0, 0);
+      border: 0
+    }
+
+    .header {
+      left: 0;
+      position: absolute;
+      top: 20px;
+      width: 100%;
+      z-index: 10
+    }
+
+    .header__container {
+      align-items: flex-start;
+      display: flex;
+      justify-content: space-between
+    }
+
+    .header__title {
+      background: #fff;
+      width: 69%
+    }
+
+    @media (max-width:1024px) {
+      .header__title {
+        width: 57%
+      }
+    }
+
+    @media (max-width:768px) {
+      .header__title {
+        padding-top: 30px;
+        width: 100%
+      }
+    }
+
+    .header__logo svg {
+      display: block;
+      height: auto;
+      width: 100%
+    }
+
+    .header__logo svg path {
+      transform: translateY(150%)
+    }
+
+    .header__title-baseline {
+      overflow: hidden;
+      white-space: nowrap
+    }
+
+    .header__title-baseline-wrapper {
+      display: flex;
+      gap: 10px;
+      width: -moz-max-content;
+      width: max-content
+    }
+
+    .header__title-baseline-reveal-wrapper {
+      transform: translateY(100%)
+    }
+
+    .header__title-baseline-item {
+      font-size: 15px;
+      line-height: 4;
+      text-transform: uppercase
+    }
+
+    .header__nav-wrapper {
+      display: none
+    }
+
+    .header__nav-button {
+      background: #100f0e;
+      height: 3.75rem;
+      position: relative;
+      position: fixed;
+      right: calc(var(--container-outer-margin) + 20px);
+      top: 0;
+      width: 3.75rem;
+      z-index: 20
+    }
+
+    .header__nav-button-line {
+      background: #fff;
+      height: 2px;
+      left: 20%;
+      position: absolute;
+      top: 50%;
+      width: 60%
+    }
+
+    .header__nav-button-line:first-child {
+      transform: translateY(-4px)
+    }
+
+    .header__nav-button-line:nth-child(2) {
+      transform: translateY(4px)
+    }
+
+    .hero {
+      height: 100dvh;
+      overflow: hidden;
+      padding-top: 20px;
+      position: relative;
+      width: 100%
+    }
+
+    .hero__container {
+      height: 100%;
+      max-height: 100%;
+      position: relative
+    }
+
+    .hero__media {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 66%;
+      z-index: 1
+    }
+
+    .hero__video,
+    .hero__video-cover {
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      width: 100%
+    }
+
+    .hero__video,
+    .hero__video-cover {
+      opacity: 0
+    }
+
+    .hero__video,
+    .hero__video-wrapper {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%
+    }
+
+    .hero__video-wrapper {
+      overflow: hidden
+    }
+
+    .hero__canvas {
+      height: 100%;
+      opacity: 1;
+      top: 0;
+      width: 100%
+    }
+
+    .hero__canvas,
+    .hero__title {
+      left: 0;
+      position: absolute;
+      z-index: 2
+    }
+
+    .hero__title {
+      bottom: 0;
+      font-size: clamp(3rem, 6vw, 7.5rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: .9;
+      margin: 0
+    }
+
+    .hero__title-word {
+      display: block;
+      font-weight: 500
+    }
+
+    .hero__title-word-wrapper {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      scale: .8 .8;
+      transform: translateY(100%)
+    }
+
+    .footer__motion svg {
+      width: 100%
+    }
+
+    @media (max-width:768px) {
+      .hero__container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: start;
+        --width: calc(var(--title-relative-width)*var(--content-width));
+        --height: calc(var(--width)/3.975);
+        height: calc(100% - var(--height));
+        top: var(--height)
+      }
+
+      .hero__media {
+        height: 100%
+      }
+
+      .hero__media,
+      .hero__title {
+        position: relative;
+        width: 100%
+      }
+
+      .hero__title {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        -moz-column-gap: 3vw;
+        column-gap: 3vw
+      }
+
+      .hero__title-word {
+        font-size: 10.8vw
+      }
+    }
+
+    /*# sourceMappingURL=critical.min.css.map */
+  </style>
+
+  <link rel="stylesheet" href="./styles/minimized/critical-continue.min.css" media="print" onload="this.media='all'">
+
+  <link rel="stylesheet" href="./styles/minimized/main.min.css" media="print" onload="this.media='all'">
+
+  <!-- <script src="./scripts/Revealer.js" type="module"></script> -->
+  <!-- <script src="./scripts/Header.js" type="module"></script> -->
+
+  <script src="./scripts/HeroMedia3.js" type="module"></script>
+  <script src="./scripts/HeroVideoLoader.js" type="module"></script>
+
+
+
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="preload" as="image" href="./images/blaed-agency-hero.jpg">
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js" defer></script>
+  <script src="./scripts/SmoothScrolling.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__title">
+        <div class="header__title-wrapper">
+          <a href="https://lungram.ru/MySites/Blaed%20Agency/index.html">
+            <div class="header__logo" data-js-to-reveal>
+              <svg width="1241" height="212" viewBox="0 0 1241 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M0.130859 0.455796L198.945 0.415039C218.394 2.17779 240.233 5.48931 255.634 18.2769C279.63 38.197 280.805 78.0983 254.53 96.6733C249.748 100.056 243.779 101.829 239.272 105.395C267.877 111.978 284.372 136.646 278.853 165.757C272.895 197.119 241.807 208.684 213.253 211.415L0.130859 211.374L0.130859 0.455796ZM94.1523 84.008H162.113C162.706 84.008 169.369 81.6645 170.473 81.1347C181.367 75.826 182.655 59.7371 172.527 53.2466C168.439 50.6279 158.639 48.3455 153.938 48.3455H95.6853L94.1523 49.8739V84.008ZM94.1523 163.485H164.157C165.251 163.485 171.904 161.997 173.417 161.508C188.215 156.831 189.615 136.157 175.593 129.666C174.459 129.136 167.826 126.803 167.223 126.803H94.1523V163.485Z"
+                  fill="#100F0E" />
+                <path d="M395.635 0.45575V144.125H522.359V211.374H301.613V0.45575H395.635Z" fill="#100F0E" />
+                <path
+                  d="M928.081 0.45575V56.4969H827.928V79.9323H916.84V125.275L915.307 126.803H827.928V154.824L829.461 156.352H931.147V211.374H735.951V182.844H652.66L633.242 211.374H528.49L669.011 0.45575H928.081ZM736.973 44.2697L677.698 134.954H736.973V44.2697Z"
+                  fill="#100F0E" />
+                <path
+                  d="M951.588 211.374V0.455796L1123.83 0.415039C1183.94 3.49221 1235.76 31.4007 1239.84 96.6937C1244.29 167.988 1198.7 205.994 1130.98 211.415L951.588 211.374ZM1042.54 150.238H1103.35C1137.61 150.238 1159.06 115.921 1143.91 85.3428C1138.02 73.4315 1120.79 62.6105 1107.44 62.6105H1042.54V150.238Z"
+                  fill="#100F0E" />
+                <title id="logo-title">Blaed Agency</title>
+              </svg>
+            </div>
+          </a>
+          <div class="header__title-baseline" data-js-to-reveal>
+            <div class="header__title-baseline-reveal-wrapper">
+              <div class="header__title-baseline-wrapper" data-js-baseline-wrapper>
+                <span class="header__title-baseline-item" data-word="Production">
+                  Production
+                </span>
+                <span class="header__title-baseline-item" data-word="Collection Coordination">
+                  Collection Coordination
+                </span>
+                <span class="header__title-baseline-item" data-word="Shooting Coordination">
+                  Shooting Coordination
+                </span>
+                <span class="header__title-baseline-item" data-word="Staffing">
+                  Staffing
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header__nav-wrapper" data-js-nav-wrapper>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#savoir-faire" aria-current="page" class="header__nav-link">
+                <span class="header__nav-text" data-text="Savoir-Faire">
+                  Savoir-Faire
+                </span>
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#shows" aria-current="page" class="header__nav-link">
+                <span class="header__nav-text" data-text="Latest Projects">
+                  Latest Projects
+                </span>
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#blaed" aria-current="page" class="header__nav-link">
+                <span class="header__nav-text" data-text="Blæd">
+                  Blæd
+                </span>
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#heritage" aria-current="page" class="header__nav-link">
+                <span class="header__nav-text" data-text="Our Heritage">
+                  Our Heritage
+                </span>
+              </a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#contact" aria-current="page" class="header__nav-link">
+                <span class="header__nav-text" data-text="Contact">
+                  Contact
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header__nav-button" data-js-nav-button>
+        <div class="header__nav-button-line"></div>
+        <div class="header__nav-button-line"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="hero">
+      <div class="container hero__container">
+        <h1 class="hero__title" aria-label="Behind every fashion moment" data-js-to-reveal>
+          <div class="hero__title-word-wrapper" aria-hidden="true">
+            <span class="hero__title-word">BEHIND</span>
+          </div>
+          <div class="hero__title-word-wrapper" aria-hidden="true">
+            <span class="hero__title-word">EVERY</span>
+          </div>
+          <div class="hero__title-word-wrapper" aria-hidden="true">
+            <span class="hero__title-word">FASHION</span>
+          </div>
+          <div class="hero__title-word-wrapper" aria-hidden="true">
+            <span class="hero__title-word">MOMENT</span>
+          </div>
+        </h1>
+        <div class="hero__media">
+          <div class="hero__video-wrapper" data-js-video-wrapper>
+
+            <video class="hero__video" data-js-video data-src="./videos/blaed-agency-hero-uhd.mp4" preload="none" loop
+              muted playsinline width="1280" height="1280" data-ratio="1"></video>
+
+
+            <video class="hero__video" data-js-video data-src="./videos/blaed-agency-hero-hd.mp4" preload="none" loop
+              muted playsinline width="1024" height="1024" data-ratio="1"></video>
+
+
+            <video class="hero__video" data-js-video data-src="./videos/blaed-agency-hero-md.mp4" preload="none" loop
+              muted playsinline width="960" height="960" data-ratio="1"></video>
+
+
+            <video class="hero__video" data-js-video data-src="./videos/blaed-agency-hero-ld.mp4" preload="none" loop
+              muted playsinline width="640" height="640" data-ratio="1"></video>
+
+
+            <img class="hero__video-cover " data-js-cover-image src="./images/blaed-agency-hero.jpg" alt="" width="1280"
+              height="1280" data-ratio="1" fetchpriority="high" decoding="async" loading="eager">
+          </div><!-- .s__video-wrapper -->
+
+          <canvas class="hero__canvas" data-js-canvas></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="about" data-js-to-reveal>
+      <div class="container about__container">
+        <div class="about__text-wrapper">
+          <p class="about__text">Blæd Agency is an event production company specialising in collection coordination
+            for
+            the luxury and fashion industry.</p>
+          <p class="about__text">Our team is dedicated to creating unique content that embodies and elevates each
+            client’s
+            exclusive vision, wherever
+            their creative ambitions take them.</p>
+          <p class="about__text">We offer a full-service approach, guiding our clients from concept to execution to
+            deliver seamless, high-end
+            experiences.</p>
+          <p class="about__text">Our creative staffing ensures every detail is handled with expertise and precision.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="savoir-faire" id="savoir-faire" data-js-savoir-faire-section>
+      <div class="container savoir-faire__container">
+        <h2 class="savoir-faire__title" data-js-to-reveal>
+          <span class="savoir-faire__title-inner">
+            Savoir
+            <span class="savoir-faire__title-dash">-</span>
+            <br>
+            Faire
+          </span>
+        </h2>
+        <div class="savoir-faire__content-wrapper">
+          <div class="savoir-faire__content">
+            <ul class="savoir-faire__nav">
+              <li class="savoir-faire__nav-item">
+                <a href="" data-index="01." data-service-index="0" class="savoir-faire__nav-link" data-js-service-link>
+                  01.
+                </a>
+              </li>
+              <li class="savoir-faire__nav-item">
+                <a href="" data-index="02." data-service-index="1" class="savoir-faire__nav-link" data-js-service-link>
+                  02.
+                </a>
+              </li>
+              <li class="savoir-faire__nav-item">
+                <a href="" data-index="03." data-service-index="2" class="savoir-faire__nav-link" data-js-service-link>
+                  03.
+                </a>
+              </li>
+              <li class="savoir-faire__nav-item">
+                <a href="" data-index="04." data-service-index="3" class="savoir-faire__nav-link" data-js-service-link>
+                  04.
+                </a>
+              </li>
+            </ul>
+            <div class="savoir-faire__services">
+              <div class="savoir-faire__service" id="service-1" data-js-savoir-faire-service>
+                <h3 class="savoir-faire__service-title">
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Collection
+                  </span>
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Coordination
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content">
+                  <ul class="savoir-faire__service-content-list">
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Pre- and Post- Production
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Services Planning & Schedule Management
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Tailored Client Workflows
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Prep & Show day Oversight
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service" id="service-2" data-js-savoir-faire-service>
+                <h3 class="savoir-faire__service-title">
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Production
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content">
+                  <ul class="savoir-faire__service-content-list">
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Project Management
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Event & Showroom Production
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Product Launches
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Show Production & Show Calling
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service" id="service-3" data-js-savoir-faire-service>
+                <h3 class="savoir-faire__service-title">
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Shooting
+                  </span>
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Management
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content">
+                  <ul class="savoir-faire__service-content-list">
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Shoot Planning & Scheduling
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      On-Site Setup & Team Coordination
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Talent Booking
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Post-Production Management (Editing & Retouching)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service" id="service-4" data-js-savoir-faire-service>
+                <h3 class="savoir-faire__service-title">
+                  <span class="savoir-faire__service-title-word" data-js-savoir-faire-service-title-word>
+                    Staffing
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content">
+                  <ul class="savoir-faire__service-content-list">
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Identification & Recruitment
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Contract Management
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Training & Best Practices
+                    </li>
+                    <li class="savoir-faire__service-content-item" data-js-savoir-faire-service-content-item>
+                      Post-Production Follow-up
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="savoir-faire__small-title" data-js-savoir-faire-small-title>
+              <div class="savoir-faire__small-title-icon"></div>
+              <div class="savoir-faire__small-title-text" data-title="Savoir-Faire"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="savoir-faire__content-wrapper--mobile">
+          <div class="savoir-faire__content--mobile">
+            <div class="savoir-faire__services--mobile">
+              <div class="savoir-faire__service--mobile" id="service-1-mobile">
+                <h3 class="savoir-faire__service-title--mobile">
+                  <span class="savoir-faire__service-number--mobile">
+                    01.
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Collection
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Coordination
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content--mobile">
+                  <ul class="savoir-faire__service-content-list--mobile">
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Pre- and Post- Production
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Services Planning & Schedule Management
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Tailored Client Workflows
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Prep & Show day Oversight
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service--mobile" id="service-2-mobile">
+                <h3 class="savoir-faire__service-title--mobile">
+                  <span class="savoir-faire__service-number--mobile">
+                    02.
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Production
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content--mobile">
+                  <ul class="savoir-faire__service-content-list--mobile">
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Project Management
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Event & Showroom Production
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Product Launches
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Show Production & Show Calling
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service--mobile" id="service-3-mobile">
+                <h3 class="savoir-faire__service-title--mobile">
+                  <span class="savoir-faire__service-number--mobile">
+                    03.
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Shooting
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Management
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content--mobile">
+                  <ul class="savoir-faire__service-content-list--mobile">
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Shoot Planning & Scheduling
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      On-Site Setup & Team Coordination
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Talent Booking
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Post-Production Management (Editing & Retouching)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="savoir-faire__service--mobile" id="service-4-mobile">
+                <h3 class="savoir-faire__service-title--mobile">
+                  <span class="savoir-faire__service-number--mobile">
+                    04.
+                  </span>
+                  <span class="savoir-faire__service-title-word--mobile">
+                    Staffing
+                  </span>
+                </h3>
+                <div class="savoir-faire__service-content--mobile">
+                  <ul class="savoir-faire__service-content-list--mobile">
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Identification & Recruitment
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Contract Management
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Training & Best Practices
+                    </li>
+                    <li class="savoir-faire__service-content-item--mobile">
+                      Post-Production Follow-up
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <div class="latest-projects" id="shows">
+      <div class="container latest-projects__container">
+        <h2 class="latest-projects__title" data-js-to-reveal>
+          <span class="latest-projects__title-inner">Latest Projects</span>
+        </h2>
+        <div class="latest-projects__content-wrapper">
+          <ul class="latest-projects__projects-wrapper">
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">NINA RICCI</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Fittings Management</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Louboutin</span>
+                  <span class="latest-projects__project-event">Louboutin Show</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Performers Management</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Jean Paul Gaultier</span>
+                  <span class="latest-projects__project-event">SS26 "Junior"</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Fittings Management</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Victoria Beckham</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Fittings Production Coordination</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Alaïa</span>
+                  <span class="latest-projects__project-event">Winter/Spring 26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Showcalling</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Mugler</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Dressers</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Isabel Marant</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Shooting management</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Gabriela Hearst</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Fittings Production</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Dior</span>
+                  <span class="latest-projects__project-event">SS26</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">show calling assistance</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+            <li class="latest-projects__project" data-js-to-reveal-15-percent>
+              <a href="#" class="latest-projects__project-link">
+                <span class="latest-projects__project-inner">
+                  <span class="latest-projects__project-client">Bottega Veneta</span>
+                  <span class="latest-projects__project-event">Summer 2026</span>
+                  <span class="latest-projects__project-city">Paris</span>
+                  <span class="latest-projects__project-role">Collection Coordination</span>
+                </span>
+                <span class="latest-projects__project-background"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-section" id="blaed" data-js-video-section>
+      <div class="container video-section__container">
+        <div class="video-section__video-background" data-js-video-section-video-background>
+          <span>(blεd)</span>
+        </div>
+        <div class="video-section__video-wrapper" data-js-video-section-video-wrapper>
+          <video class="video-section__video-preview" src="./videos/blaed-agency-loop-ld.mp4" autoplay muted loop
+            playsinline webkit-playsinline preload="auto"></video>
+        </div>
+        <div class="video-section__description is-active" data-js-video-section-description>
+          <p class="video-section__description-line" data-js-video-section-description-line>The name BLÆD [blεd]
+            derives
+            from the</p>
+          <p class="video-section__description-line" data-js-video-section-description-line>Maghreb Arabic word
+            “bled”,
+            that can be</p>
+          <p class="video-section__description-line" data-js-video-section-description-line>translated as “the place
+            we
+            come from”,</p>
+          <p class="video-section__description-line" data-js-video-section-description-line>the Motherland.</p>
+        </div>
+        <div class="video-section__main-video-wrapper" data-js-video-section-main-video-wrapper>
+          <div class="video-section__main-video-fitting" data-js-video-section-main-video-fitting>
+            <video class="video-section__main-video" src="./videos/blaed-agency.mp4" data-js-video-section-main-video
+              playsinline webkit-playsinline preload="auto" data-plr-loading="lazy"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="heritage" id="heritage">
+      <div class="container heritage__container">
+        <div class="heritage__content" data-js-to-reveal-15-percent>
+          <h2 class="heritage__title">
+            <span class="heritage__title-word">Our</span>
+            <span class="heritage__title-word">Heritage</span>
+          </h2>
+          <div class="heritage__text">
+            <p class="heritage__text-paragraph">Blæd was founded in 2021 by Myriam Ettayeb, Rebeca Pimentel, and
+              Sheila
+              Gomis, building on over a decade of experience
+              in the fashion and luxury industry.</p>
+            <p class="heritage__text-paragraph">Our story is one of three African women who bring inclusivity,
+              integrity, and respect to everything we create.</p>
+          </div>
+        </div>
+        <div class="heritage__image">
+          <img loading="lazy" src="./images/blaed-agency-1920x2228.jpg" alt="" width="1920" height="2228">
+        </div>
+        <div class="heritage__founders" data-js-to-reveal-5-percent>
+          <div class="heritage__founder">
+            <h3 class="heritage__founder-name">Myriam Ettayeb</h3>
+            <div class="heritage__founder-text-wrapper">
+              <p class="heritage__founder-text">With a background in business management, Myriam combines structure
+                with
+                creativity, guiding each project with precision
+                and a human touch. Her approach ensures that every detail serves the bigger picture while keeping
+                the
+                experience
+                authentic and collaborative. She is passionate about transforming ideas into seamless experiences
+                that
+                leave a lasting
+                impression.</p>
+            </div>
+          </div>
+          <div class="heritage__founder">
+            <h3 class="heritage__founder-name">Rebeca Pimentel</h3>
+            <div class="heritage__founder-text-wrapper">
+              <p class="heritage__founder-text">A graduate in Fashion Business (Marketing & Management) from ESMOD
+                ISEM
+                in Paris, Rebeca has been working in the fashion
+                industry since 2011. With a lifelong passion for the arts and a background in ballet, she brings
+                discipline, rigour, and
+                a drive for perfection to every project. She is dedicated to pushing boundaries, always striving for
+                more and better in
+                every detail she oversees.</p>
+            </div>
+          </div>
+          <div class="heritage__founder">
+            <h3 class="heritage__founder-name">Sheila Gomis</h3>
+            <div class="heritage__founder-text-wrapper">
+              <p class="heritage__founder-text">With over a decade of experience, Sheila began her career as a
+                collection coordinator before moving into fashion show
+                production. Over the years, she has specialised in showcalling, overseeing fittings and runway shows
+                for
+                leading luxury
+                brands. Her strength lies in orchestrating high-end events with both attention to detail and
+                creativity,
+                ensuring every
+                moment runs flawlessly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer" data-js-footer>
+    <div class="container footer__container">
+      <div class="footer__motion" data-js-motion-section>
+        <div class="footer__motion-logo" data-js-motion-logo-word>
+          <span class="footer__motion-logo-span">
+            <svg width="1241" height="212" viewBox="0 0 1241 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.130859 0.455796L198.945 0.415039C218.394 2.17779 240.233 5.48931 255.634 18.2769C279.63 38.197 280.805 78.0983 254.53 96.6733C249.748 100.056 243.779 101.829 239.272 105.395C267.877 111.978 284.372 136.646 278.853 165.757C272.895 197.119 241.807 208.684 213.253 211.415L0.130859 211.374L0.130859 0.455796ZM94.1523 84.008H162.113C162.706 84.008 169.369 81.6645 170.473 81.1347C181.367 75.826 182.655 59.7371 172.527 53.2466C168.439 50.6279 158.639 48.3455 153.938 48.3455H95.6853L94.1523 49.8739V84.008ZM94.1523 163.485H164.157C165.251 163.485 171.904 161.997 173.417 161.508C188.215 156.831 189.615 136.157 175.593 129.666C174.459 129.136 167.826 126.803 167.223 126.803H94.1523V163.485Z"
+                fill="#100F0E" data-svg-origin="140.02098044753075 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+              <path d="M395.635 0.45575V144.125H522.359V211.374H301.613V0.45575H395.635Z" fill="#100F0E"
+                data-svg-origin="411.9860076904297 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M928.081 0.45575V56.4969H827.928V79.9323H916.84V125.275L915.307 126.803H827.928V154.824L829.461 156.352H931.147V211.374H735.951V182.844H652.66L633.242 211.374H528.49L669.011 0.45575H928.081ZM736.973 44.2697L677.698 134.954H736.973V44.2697Z"
+                fill="#100F0E" data-svg-origin="729.8184814453125 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M951.588 211.374V0.455796L1123.83 0.415039C1183.94 3.49221 1235.76 31.4007 1239.84 96.6937C1244.29 167.988 1198.7 205.994 1130.98 211.415L951.588 211.374ZM1042.54 150.238H1103.35C1137.61 150.238 1159.06 115.921 1143.91 85.3428C1138.02 73.4315 1120.79 62.6105 1107.44 62.6105H1042.54V150.238Z"
+                fill="#100F0E" data-svg-origin="1095.8636474609375 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+            </svg>
+          </span>
+        </div>
+        <div class="footer__motion-logo" data-js-motion-logo-word>
+          <span class="footer__motion-logo-span">
+            <svg width="1241" height="212" viewBox="0 0 1241 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.130859 0.455796L198.945 0.415039C218.394 2.17779 240.233 5.48931 255.634 18.2769C279.63 38.197 280.805 78.0983 254.53 96.6733C249.748 100.056 243.779 101.829 239.272 105.395C267.877 111.978 284.372 136.646 278.853 165.757C272.895 197.119 241.807 208.684 213.253 211.415L0.130859 211.374L0.130859 0.455796ZM94.1523 84.008H162.113C162.706 84.008 169.369 81.6645 170.473 81.1347C181.367 75.826 182.655 59.7371 172.527 53.2466C168.439 50.6279 158.639 48.3455 153.938 48.3455H95.6853L94.1523 49.8739V84.008ZM94.1523 163.485H164.157C165.251 163.485 171.904 161.997 173.417 161.508C188.215 156.831 189.615 136.157 175.593 129.666C174.459 129.136 167.826 126.803 167.223 126.803H94.1523V163.485Z"
+                fill="#100F0E" data-svg-origin="140.02098044753075 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+              <path d="M395.635 0.45575V144.125H522.359V211.374H301.613V0.45575H395.635Z" fill="#100F0E"
+                data-svg-origin="411.9860076904297 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M928.081 0.45575V56.4969H827.928V79.9323H916.84V125.275L915.307 126.803H827.928V154.824L829.461 156.352H931.147V211.374H735.951V182.844H652.66L633.242 211.374H528.49L669.011 0.45575H928.081ZM736.973 44.2697L677.698 134.954H736.973V44.2697Z"
+                fill="#100F0E" data-svg-origin="729.8184814453125 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M951.588 211.374V0.455796L1123.83 0.415039C1183.94 3.49221 1235.76 31.4007 1239.84 96.6937C1244.29 167.988 1198.7 205.994 1130.98 211.415L951.588 211.374ZM1042.54 150.238H1103.35C1137.61 150.238 1159.06 115.921 1143.91 85.3428C1138.02 73.4315 1120.79 62.6105 1107.44 62.6105H1042.54V150.238Z"
+                fill="#100F0E" data-svg-origin="1095.8636474609375 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+            </svg>
+          </span>
+        </div>
+        <div class="footer__motion-logo" data-js-motion-logo-word>
+          <span class="footer__motion-logo-span">
+            <svg width="1241" height="212" viewBox="0 0 1241 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.130859 0.455796L198.945 0.415039C218.394 2.17779 240.233 5.48931 255.634 18.2769C279.63 38.197 280.805 78.0983 254.53 96.6733C249.748 100.056 243.779 101.829 239.272 105.395C267.877 111.978 284.372 136.646 278.853 165.757C272.895 197.119 241.807 208.684 213.253 211.415L0.130859 211.374L0.130859 0.455796ZM94.1523 84.008H162.113C162.706 84.008 169.369 81.6645 170.473 81.1347C181.367 75.826 182.655 59.7371 172.527 53.2466C168.439 50.6279 158.639 48.3455 153.938 48.3455H95.6853L94.1523 49.8739V84.008ZM94.1523 163.485H164.157C165.251 163.485 171.904 161.997 173.417 161.508C188.215 156.831 189.615 136.157 175.593 129.666C174.459 129.136 167.826 126.803 167.223 126.803H94.1523V163.485Z"
+                fill="#100F0E" data-svg-origin="140.02098044753075 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+              <path d="M395.635 0.45575V144.125H522.359V211.374H301.613V0.45575H395.635Z" fill="#100F0E"
+                data-svg-origin="411.9860076904297 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M928.081 0.45575V56.4969H827.928V79.9323H916.84V125.275L915.307 126.803H827.928V154.824L829.461 156.352H931.147V211.374H735.951V182.844H652.66L633.242 211.374H528.49L669.011 0.45575H928.081ZM736.973 44.2697L677.698 134.954H736.973V44.2697Z"
+                fill="#100F0E" data-svg-origin="729.8184814453125 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M951.588 211.374V0.455796L1123.83 0.415039C1183.94 3.49221 1235.76 31.4007 1239.84 96.6937C1244.29 167.988 1198.7 205.994 1130.98 211.415L951.588 211.374ZM1042.54 150.238H1103.35C1137.61 150.238 1159.06 115.921 1143.91 85.3428C1138.02 73.4315 1120.79 62.6105 1107.44 62.6105H1042.54V150.238Z"
+                fill="#100F0E" data-svg-origin="1095.8636474609375 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+            </svg>
+          </span>
+        </div>
+        <div class="footer__motion-logo" data-js-motion-logo-word>
+          <span class="footer__motion-logo-span">
+            <svg width="1241" height="212" viewBox="0 0 1241 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.130859 0.455796L198.945 0.415039C218.394 2.17779 240.233 5.48931 255.634 18.2769C279.63 38.197 280.805 78.0983 254.53 96.6733C249.748 100.056 243.779 101.829 239.272 105.395C267.877 111.978 284.372 136.646 278.853 165.757C272.895 197.119 241.807 208.684 213.253 211.415L0.130859 211.374L0.130859 0.455796ZM94.1523 84.008H162.113C162.706 84.008 169.369 81.6645 170.473 81.1347C181.367 75.826 182.655 59.7371 172.527 53.2466C168.439 50.6279 158.639 48.3455 153.938 48.3455H95.6853L94.1523 49.8739V84.008ZM94.1523 163.485H164.157C165.251 163.485 171.904 161.997 173.417 161.508C188.215 156.831 189.615 136.157 175.593 129.666C174.459 129.136 167.826 126.803 167.223 126.803H94.1523V163.485Z"
+                fill="#100F0E" data-svg-origin="140.02098044753075 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+              <path d="M395.635 0.45575V144.125H522.359V211.374H301.613V0.45575H395.635Z" fill="#100F0E"
+                data-svg-origin="411.9860076904297 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M928.081 0.45575V56.4969H827.928V79.9323H916.84V125.275L915.307 126.803H827.928V154.824L829.461 156.352H931.147V211.374H735.951V182.844H652.66L633.242 211.374H528.49L669.011 0.45575H928.081ZM736.973 44.2697L677.698 134.954H736.973V44.2697Z"
+                fill="#100F0E" data-svg-origin="729.8184814453125 105.9148717224598" data-js-motion-logo-letter>
+              </path>
+              <path
+                d="M951.588 211.374V0.455796L1123.83 0.415039C1183.94 3.49221 1235.76 31.4007 1239.84 96.6937C1244.29 167.988 1198.7 205.994 1130.98 211.415L951.588 211.374ZM1042.54 150.238H1103.35C1137.61 150.238 1159.06 115.921 1143.91 85.3428C1138.02 73.4315 1120.79 62.6105 1107.44 62.6105H1042.54V150.238Z"
+                fill="#100F0E" data-svg-origin="1095.8636474609375 105.91501611471176" data-js-motion-logo-letter>
+              </path>
+            </svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="footer__baseline" data-js-footer-baseline>
+        <div class="footer__baseline-wrapper" data-js-baseline-wrapper>
+          <span class="footer__baseline-item" data-word="Production">
+            Production
+          </span>
+          <span class="footer__baseline-item" data-word="Collection Coordination">
+            Collection Coordination
+          </span>
+          <span class="footer__baseline-item" data-word="Shooting Coordination">
+            Shooting Coordination
+          </span>
+          <span class="footer__baseline-item" data-word="Staffing">
+            Staffing
+          </span>
+        </div>
+      </div>
+
+      <div class="footer__image" data-js-foter-image-wrapper>
+        <img loading="lazy" class="s__image js-image" src="./images/footer-image.jpg" alt="" width="1920" height="1584"
+          data-js-foter-image-object>
+      </div>
+
+      <div class="footer__cta">
+        <div class="footer__cta-row">Let's plan</div>
+        <div class="footer__cta-row">your next</div>
+        <div class="footer__cta-row"></div>
+        <div class="footer__cta-words" data-js-cta-row-motion>
+          <div class="footer__cta-word" data-js-cta-word>
+            <span class="footer__cta-letter" data-js-cta-letter>s</span>
+            <span class="footer__cta-letter" data-js-cta-letter>h</span>
+            <span class="footer__cta-letter" data-js-cta-letter>o</span>
+            <span class="footer__cta-letter" data-js-cta-letter>w</span>
+          </div>
+
+          <div class="footer__cta-word" data-js-cta-word>
+            <span class="footer__cta-letter" data-js-cta-letter>s</span>
+            <span class="footer__cta-letter" data-js-cta-letter>h</span>
+            <span class="footer__cta-letter" data-js-cta-letter>o</span>
+            <span class="footer__cta-letter" data-js-cta-letter>o</span>
+            <span class="footer__cta-letter" data-js-cta-letter>t</span>
+            <span class="footer__cta-letter" data-js-cta-letter>i</span>
+            <span class="footer__cta-letter" data-js-cta-letter>n</span>
+            <span class="footer__cta-letter" data-js-cta-letter>g</span>
+          </div>
+
+          <div class="footer__cta-word" data-js-cta-word>
+            <span class="footer__cta-letter" data-js-cta-letter>e</span>
+            <span class="footer__cta-letter" data-js-cta-letter>v</span>
+            <span class="footer__cta-letter" data-js-cta-letter>e</span>
+            <span class="footer__cta-letter" data-js-cta-letter>n</span>
+            <span class="footer__cta-letter" data-js-cta-letter>t</span>
+          </div>
+
+          <div class="footer__cta-word" data-js-cta-word>
+            <span class="footer__cta-letter" data-js-cta-letter>l</span>
+            <span class="footer__cta-letter" data-js-cta-letter>a</span>
+            <span class="footer__cta-letter" data-js-cta-letter>u</span>
+            <span class="footer__cta-letter" data-js-cta-letter>n</span>
+            <span class="footer__cta-letter" data-js-cta-letter>c</span>
+            <span class="footer__cta-letter" data-js-cta-letter>h</span>
+          </div>
+
+          <div class="footer__cta-word" data-js-cta-word>
+            <span class="footer__cta-letter" data-js-cta-letter>p</span>
+            <span class="footer__cta-letter" data-js-cta-letter>r</span>
+            <span class="footer__cta-letter" data-js-cta-letter>o</span>
+            <span class="footer__cta-letter" data-js-cta-letter>j</span>
+            <span class="footer__cta-letter" data-js-cta-letter>e</span>
+            <span class="footer__cta-letter" data-js-cta-letter>c</span>
+            <span class="footer__cta-letter" data-js-cta-letter>t</span>
+          </div>
+        </div>
+      </div>
+
+      <ul class="contact" id="contact">
+        <li>
+          <a href="/" class="contact__link contact__link--instagram">
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a href="/" class="contact__link">
+            +33 333 333 333
+          </a>
+        </li>
+        <li>
+          <a href="/" class="contact__link">
+            contact@blaedagency.com
+          </a>
+        </li>
+
+      </ul>
+
+
+      <div class="footer__bottom">
+        <div class="footer__bottom-legal">
+          <div>©BLÆD Agency - 2026</div>
+          <div>
+            <a href="/">Legal Notice</a>
+          </div>
+        </div>
+        <div class="footer__bottom-credits">
+          <div>
+            <a href="/">Credits</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="scrollbar__container">
+    <div class="scrollbar" data-js-scrollthumb></div>
+    <div class="scrollbar scrollbar--mobile" data-js-scrollthumb></div>
+  </div>
+
+
+
+  <!-- <script src="./scripts/SavoirFaire.js" type="module"></script>
+  <script src="./scripts/VideoTranslation.js" type="module"></script>
+  <script src="./scripts/Motion.js" type="module"></script>
+  <script src="./scripts/FooterImageMotion.js" type="module"></script>
+  <script src="./scripts/FooterWordsAnimation.js" type="module"></script>
+  <script src="./scripts/Scrollbar.js" type="module"></script> -->
+
+  <script type="module">
+    new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        if (entry.entryType === 'largest-contentful-paint') {
+
+          import('./scripts/HeroMedia3.js');
+          import('./scripts/HeroVideoLoader.js');
+
+          requestIdleCallback(() => {
+            import('./scripts/Revealer.js');
+            import('./scripts/Header.js');
+            import('./scripts/SavoirFaire.js');
+            import('./scripts/VideoTranslation.js');
+            import('./scripts/Motion.js');
+            import('./scripts/FooterImageMotion.js');
+            import('./scripts/FooterWordsAnimation.js');
+            import('./scripts/Scrollbar.js');
+          });
+
+        }
+      }
+    }).observe({ type: 'largest-contentful-paint', buffered: true });
+  </script>
+
+
+</body>
+
+</html>

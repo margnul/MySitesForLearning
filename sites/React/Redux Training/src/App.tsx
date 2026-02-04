@@ -1,15 +1,27 @@
 import { useSelector } from "react-redux";
+import { useState } from "react"
 import type { RootState } from "./store/store";
 
 import ActionButton from '../components/ActionButton.tsx';
 import LoadingTile from '../components/LoadingTile.tsx';
 import MessagesConsole from '../components/MessagesConsole.tsx';
+import ButtonClicksStats from '../components/ButtonClicksStats.tsx'
 
 import buttons from "../src/consts/buttons";
 
+
+
 function App() {
   const count = useSelector((state: RootState) => state.counter.value);
+  const [buttonClicks, changeButtonClicks] = useState(0)
+  
+  function plusClick() {
+    changeButtonClicks(buttonClicks + 1)
+  }
 
+  function resetClicks() {
+    changeButtonClicks(0)
+  }
 
   return (
     <>
@@ -25,7 +37,7 @@ function App() {
 
           {
             buttons.map(btn => (
-              <ActionButton key={btn.ID} {...btn} count={count}></ActionButton>
+              <ActionButton key={btn.ID} {...btn} count={count} plusClick={plusClick}></ActionButton>
             ))
           }
 
@@ -33,6 +45,7 @@ function App() {
       </div>
       <LoadingTile></LoadingTile>
       <MessagesConsole></MessagesConsole>
+      <ButtonClicksStats number={buttonClicks} resetClicks={resetClicks}></ButtonClicksStats>
     </>
   )
 }

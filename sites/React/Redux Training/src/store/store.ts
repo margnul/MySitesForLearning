@@ -1,7 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit"
 import counterReducer from "./features/counter/counterSlice.ts";
 import { counterMiddleware } from './features/counter/counterMiddleware.ts';
-
 import messagesReducer from "./features/messages/messagesSlice.ts";
 
 export const store = configureStore({

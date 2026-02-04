@@ -1,0 +1,509 @@
+@use '../helpers/' as *;
+
+
+
+.footer {
+  &__motion {
+
+    &-logo {
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+
+      &-span {
+        display: block;
+
+        & svg {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+
+  &__baseline {
+    width: var(--title-width - 20px);
+
+    @include tablet {
+      width: var(--title-width);
+    }
+
+    height: auto;
+    overflow: hidden;
+
+    &-wrapper {
+      width: var(--baseline-wrapper-width);
+      display: flex;
+      flex-direction: row;
+
+      animation: footer-baseline 20s linear infinite;
+    }
+
+    &-item {
+      --baseline-words-spacing: 30px;
+      //--baseline-words-font-size: 1vw;
+      --baseline-words-font-size: 15px;
+      --baseline-dot-size: 3px;
+
+      font-size: var(--baseline-words-font-size);
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      line-height: 4;
+      padding-right: var(--baseline-words-spacing);
+      white-space: nowrap;
+      position: relative;
+      overflow: visible;
+      box-sizing: border-box;
+
+      width: fit-content;
+      height: fit-content;
+
+      @include tablet {
+        font-size: var(--baseline-words-font-size);
+      }
+
+      padding: 0 0 0 calc(var(--baseline-words-spacing) * 2 + var(--baseline-dot-size));
+      background: radial-gradient(circle at calc(var(--baseline-words-spacing) + var(--baseline-dot-size) * 0.5) calc(50% - var(--baseline-dot-size) * 0.25), currentcolor calc(var(--baseline-dot-size) * 0.45), transparent calc(var(--baseline-dot-size) * 0.55)) 0 0 / 100% 100% no-repeat;
+
+
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: var(--baseline-wrapper-width); // ???
+        //width: auto;
+        content: attr(data-word);
+
+        font-size: var(--baseline-words-font-size);
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        line-height: 4;
+        padding-right: var(--baseline-words-spacing);
+        white-space: nowrap;
+        overflow: visible;
+        box-sizing: border-box;
+
+        @include tablet {
+          font-size: var(--baseline-words-font-size);
+        }
+
+        padding: 0 0 0 calc(var(--baseline-words-spacing) * 2 + var(--baseline-dot-size));
+        background: radial-gradient(circle at calc(var(--baseline-words-spacing) + var(--baseline-dot-size) * 0.5) calc(50% - var(--baseline-dot-size) * 0.25), currentcolor calc(var(--baseline-dot-size) * 0.45), transparent calc(var(--baseline-dot-size) * 0.55)) 0 0 / 100% 100% no-repeat;
+      }
+
+      &::after {
+        left: calc(var(--baseline-wrapper-width) * 2);
+      }
+
+    }
+  }
+
+
+  &__image {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+
+    &::before {
+      display: block;
+      padding-top: 56.25%;
+      content: "";
+    }
+
+    & img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120%;
+      object-fit: cover;
+    }
+
+    &::after {
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      bottom: -100px;
+      left: -100px;
+      z-index: 3;
+      background: url(../../images/grain.jpg) 50% / 512px 512px;
+      mix-blend-mode: multiply;
+      animation: noise-animation .25s steps(1) infinite;
+      content: "";
+    }
+  }
+
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 4;
+    margin: -0.9em 0 0;
+    width: fit-content;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    line-height: .9;
+    text-transform: uppercase;
+
+    font-size: min(10.625rem, 6vw * 1.4167);
+    //font-size: 10.625rem;
+
+    @include tablet {
+      margin-top: .1em;
+      font-size: min(7rem, 14.5834vw);
+    }
+
+    @media (width <=rem(767)) {
+      font-size: 4rem;
+    }
+
+    &-row {
+      padding: 0 .1em 0 0;
+      background-color: var(--color-white);
+    }
+
+    &-words {
+      position: absolute;
+      bottom: 0;
+      left: 100%;
+      width: max-content;
+      width: 100%;
+      height: .9em;
+      overflow: hidden;
+
+      @include tablet {
+        position: relative;
+        left: 0;
+      }
+    }
+
+    &-word {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      white-space: nowrap;
+
+      //animation: word-animation calc((--words-quantity)*var(--step-duration)) infinite;
+
+      &:nth-child(1) {
+        --word: 1;
+        animation: word-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration)) cubic-bezier(0.86, 0, 0.07, 1);
+
+        & .footer__cta-letter {
+          &:nth-child(1) {
+            --letter: 1;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(2) {
+            --letter: 2;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(3) {
+            --letter: 3;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(4) {
+            --letter: 4;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        --word: 2;
+        animation: word-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration)) cubic-bezier(0.86, 0, 0.07, 1);
+
+        & .footer__cta-letter {
+          &:nth-child(1) {
+            --letter: 1;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(2) {
+            --letter: 2;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(3) {
+            --letter: 3;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(4) {
+            --letter: 4;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(5) {
+            --letter: 5;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(6) {
+            --letter: 6;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(7) {
+            --letter: 7;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(8) {
+            --letter: 8;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        --word: 3;
+        animation: word-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration)) cubic-bezier(0.86, 0, 0.07, 1);
+
+        & .footer__cta-letter {
+          &:nth-child(1) {
+            --letter: 1;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(2) {
+            --letter: 2;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(3) {
+            --letter: 3;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(4) {
+            --letter: 4;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(5) {
+            --letter: 5;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        --word: 4;
+        animation: word-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration)) cubic-bezier(0.86, 0, 0.07, 1);
+
+        & .footer__cta-letter {
+          &:nth-child(1) {
+            --letter: 1;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(2) {
+            --letter: 2;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(3) {
+            --letter: 3;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(4) {
+            --letter: 4;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(5) {
+            --letter: 5;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(6) {
+            --letter: 6;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+        }
+      }
+
+      &:nth-child(5) {
+        --word: 5;
+        animation: word-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration)) cubic-bezier(0.86, 0, 0.07, 1);
+
+        & .footer__cta-letter {
+          &:nth-child(1) {
+            --letter: 1;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(2) {
+            --letter: 2;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(3) {
+            --letter: 3;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(4) {
+            --letter: 4;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(5) {
+            --letter: 5;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(6) {
+            --letter: 6;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+
+          &:nth-child(7) {
+            --letter: 7;
+            animation: letter-animation calc(var(--words-quantity) * var(--step-duration)) infinite calc(var(--word) * var(--step-duration) + var(--letter) * var(--letter-delay)) cubic-bezier(0, 0, 0.3, 1);
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    margin: 6.25rem 0 0;
+    font-size: 14px;
+    width: 100%;
+    padding: 20px;
+
+    & a {
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    &-legal {
+      display: flex;
+      position: absolute;
+      left: 0;
+      top: 0;
+      gap: 3.25rem;
+
+      @include mobile-s {
+        flex-direction: column;
+        gap: .3rem;
+      }
+    }
+
+    &-credits {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+
+@keyframes footer-baseline {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-100%, 0, 0);
+    //transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes word-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  40% {
+    transform: translate3d(0, -200%, 0);
+  }
+
+  40.001% {
+    transform: translate3d(0, 0%, 0);
+  }
+
+  60% {
+    transform: translate3d(0, 0%, 0);
+  }
+
+  80% {
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+@keyframes letter-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(0, 20%, 0);
+  }
+
+  20% {
+    transform: translate3d(0, 0%, 0);
+  }
+
+  30% {
+    transform: translate3d(0, 20%, 0);
+  }
+
+  40% {
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+
+@keyframes noise-animation {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(50px, 30px, 0);
+  }
+
+  40% {
+    transform: translate3d(10px, 50px, 0);
+  }
+
+  60% {
+    transform: translate3d(30px, 20px, 0);
+  }
+
+  80% {
+    transform: translate3d(50px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100px, 0, 0);
+  }
+}

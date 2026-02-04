@@ -1,0 +1,32 @@
+@use '../helpers/' as *;
+
+.hero {
+
+
+  &__container {
+    height: auto;
+    padding-top: 30%;
+    padding-bottom: var(--line-padding);
+    position: relative;
+
+    &::after {
+      position: absolute;
+      display: block;
+      background-color: var(--color-gray-50);
+      width: calc(100% - 2 * var(--offset-addition));
+      height: var(--line-height);
+      left: var(--offset-addition);
+      bottom: 0;
+      content: "";
+    }
+  }
+
+  &__title-wrapper {
+    padding-left: var(--offset-addition);
+    width: var(--small-width);
+
+    & * {
+      margin: 0;
+    }
+  }
+}

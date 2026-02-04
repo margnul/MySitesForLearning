@@ -1,3 +1,5 @@
+@use './styles/blocks/product-card';
+
 @mixin global-margin{
   width: 90%;
   margin: {
@@ -546,9 +548,5 @@ $button-coffee-step3-duration: 2s;
 
   &--flex-element{
     flex-grow: 1;
-  }
-
-  &__button{
-
   }
 }

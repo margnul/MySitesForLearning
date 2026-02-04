@@ -1,0 +1,85 @@
+@use '../helpers/' as *;
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 6.25rem 0 0;
+  padding: 0;
+  list-style: none;
+
+
+  @media (width <=rem(767)) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    margin-top: 3rem;
+
+  }
+
+
+  width: 80%;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    content: "";
+
+    @media (width <=rem(767)) {
+      content: none;
+    }
+  }
+
+  & li {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    padding: 0 1.5rem;
+    background-color: var(--color-white);
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    @media (width <=rem(767)) {
+      padding: 0 0 0 0;
+
+      &:not(:last-child) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--color-black);
+
+    &--instagram::before {
+      --size: 0.61em;
+      display: inline-block;
+      margin: 0 .15em 0 0;
+      width: var(--size);
+      height: var(--size);
+      background: currentcolor;
+      -webkit-mask: url(../../icons/arrow-right.svg) 100% / 100% no-repeat;
+      mask: url(../../icons/arrow-right.svg) 100% / 100% no-repeat;
+      transform-origin: 0% 100%;
+      transition: transform .3s cubic-bezier(0.23, 1, 0.32, 1);
+      content: "";
+    }
+  }
+}

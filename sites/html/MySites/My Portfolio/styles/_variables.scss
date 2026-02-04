@@ -1,0 +1,48 @@
+@use 'helpers' as *;
+
+:root {
+  --color-light: #FFFFFF;
+
+  --color-black: #000000;
+  --color-dark: #141414;
+  --color-dark-10: #1A1A1A;
+  --color-dark-15: #262626; //
+  --color-dark-20: #4e4e4e; //
+  --color-dark-40: #696767; //
+
+  --color-gray-50: #b7b7b7; //
+  --color-gray-60: #cecece; //
+
+  --color-accent: #FFD11A;
+  --color-red: #FF5500;
+
+  --gradient: linear-gradient(45deg,
+      var(--color-dark-15) 65%,
+      var(--color-accent) 135%);
+  --border: #{rem(1)} solid var(--color-dark-15);
+
+  --shadow: 0 0 0 #{rem(3)} #191919;
+
+  --font-family-base: 'Bounded', sans-serif;
+  --font-family-accent: 'Bounded', sans-serif;
+
+  --container-small-offset: #{rem(15)};
+  --container-big-offset: #{rem(28)};
+  --offset-addition: #{rem(13)};
+  --container-width: calc(100vw - 2*var(--container-small-offset));
+  --small-width: calc(100% - 2 * var(--offset-addition));
+
+  --transition-duration: 0.2s;
+
+  --line-height: #{rem(4)};
+  --line-padding: #{rem(5)};
+
+
+  @media (width < rem(370)) {
+    --container-small-offset: #{rem(5)};
+    --container-big-offset: #{rem(14)};
+    --offset-addition: #{rem(9)};
+  }
+
+
+}

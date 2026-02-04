@@ -1,0 +1,19 @@
+@use '../helpers/' as *;
+
+.cases{
+
+
+  &__container{
+    margin-top: #{rem(80)};
+  }
+
+  &__album-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    //gap: rem(20);
+
+  }
+}

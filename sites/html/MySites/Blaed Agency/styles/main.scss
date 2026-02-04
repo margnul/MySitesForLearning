@@ -1,0 +1,16 @@
+@use 'normalize';
+@use 'fonts';
+@use 'variables';
+@use 'utils';
+@use 'globals';
+
+@use './blocks/header';
+@use './blocks/hero';
+@use './blocks/about';
+@use './blocks/savoir-faire';
+@use './blocks/latest-projects';
+@use './blocks/video-section';
+@use './blocks/heritage';
+@use './blocks/footer';
+@use './blocks/contact';
+@use './blocks/scrollbar';

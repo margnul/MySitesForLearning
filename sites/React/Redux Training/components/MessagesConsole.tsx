@@ -28,11 +28,10 @@ function LoadButton({ func, text = "Reload" }: LoadButtonProps) {
   )
 }
 
-export default function MessagesConsole() {
+function MessagesConsole() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [status, setStatus] = useState <MessagesStatus>('idle')
   const messageID = useSelector((state: RootState) => state.counter.value)
-  
 
   const loadMessages = async () => {
     try {
@@ -101,3 +100,5 @@ export default function MessagesConsole() {
     }
   })();
 }
+
+export default MessagesConsole
