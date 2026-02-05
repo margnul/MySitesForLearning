@@ -1,19 +1,48 @@
 @use '../helpers/' as *;
 
-.cases{
+.cases {
 
 
-  &__container{
+  &__container {
     margin-top: #{rem(80)};
   }
 
-  &__album-wrapper{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    //gap: rem(20);
+  &__album-wrapper {
+    width: min-content;
+    justify-self: center;
+    overflow: visible;
 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    font-size: clamp(0.1rem, .8vw, 7.5rem);
+    column-gap: rem(40);
+    row-gap: rem(40);
+
+    @media (width < rem(1380)) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      font-size: clamp(.8rem, 1.1vw, 7.5rem);
+      column-gap: rem(40);
+      row-gap: rem(40);
+    }
+
+    @media (width < rem(700)) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      font-size: clamp(0.1rem, 2.2  vw, 7.5rem);
+      column-gap: rem(20);
+      row-gap: rem(20);
+    }
+
+    @media (width < rem(430)) {
+      margin-top: rem(20);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      font-size: clamp(0.1rem, 3.4vw, 7.5rem);
+      margin-inline: rem(40);
+      column-gap: rem(0);
+      row-gap: rem(40);
+    }
   }
 }

@@ -535,7 +535,6 @@ button[aria-label]::before {
 }
 .about__canvas-album {
   width: var(--small-width);
-  aspect-ratio: 2/1;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -543,12 +542,26 @@ button[aria-label]::before {
   gap: 1.875rem;
   margin-bottom: 0.9375rem;
 }
+@media (width < 50rem) {
+  .about__canvas-album {
+    gap: 0;
+  }
+}
 .about__canvas-wrapper {
   flex-grow: 1;
   height: 100%;
+  width: 100%;
   display: inline-block;
-  flex: 1 1 180px;
-  min-width: 180px;
+  flex: 1 1 140px;
+  min-width: 140px;
+  min-height: 200px;
+  max-height: 60vh;
+  aspect-ratio: 1/1.5;
+}
+@media (width < 50rem) {
+  .about__canvas-wrapper {
+    aspect-ratio: 1/1.5;
+  }
 }
 .about__image-wrapper {
   display: block;
@@ -567,11 +580,49 @@ button[aria-label]::before {
   margin-top: 5rem;
 }
 .cases__album-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: start;
+  width: -moz-min-content;
+  width: min-content;
+  justify-self: center;
+  overflow: visible;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  font-size: clamp(0.1rem, 0.8vw, 7.5rem);
+  -moz-column-gap: 2.5rem;
+       column-gap: 2.5rem;
+  row-gap: 2.5rem;
+}
+@media (width < 86.25rem) {
+  .cases__album-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    font-size: clamp(0.8rem, 1.1vw, 7.5rem);
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+    row-gap: 2.5rem;
+  }
+}
+@media (width < 43.75rem) {
+  .cases__album-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    font-size: clamp(0.1rem, 2.2 vw, 7.5rem);
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+    row-gap: 1.25rem;
+  }
+}
+@media (width < 26.875rem) {
+  .cases__album-wrapper {
+    margin-top: 1.25rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    font-size: clamp(0.1rem, 3.4vw, 7.5rem);
+    margin-inline: 2.5rem;
+    -moz-column-gap: 0rem;
+         column-gap: 0rem;
+    row-gap: 2.5rem;
+  }
 }
 
 .case {
@@ -581,51 +632,54 @@ button[aria-label]::before {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  height: 310px;
+  width: 100%;
+  aspect-ratio: 1/1.5;
+  justify-self: center;
+  align-self: center;
   display: grid;
   grid-template-rows: 65% 1fr 2fr;
   border-radius: 10px;
-  width: 200px;
-  border: 3px solid var(--color-dark-10);
   --transition-duration: 1.2s;
   --transform-function: cubic-bezier(.08, .71, 0, 1);
   --transition-delay: .0s;
-  transition: transform var(--transition-duration) var(--transform-function) var(--transition-delay), margin 1.2s var(--transform-function) var(--transition-delay), scale var(--transition-duration) var(--transform-function) var(--transition-delay), box-shadow 0.2s var(--transform-function) var(--transition-delay);
-  --overlay: 0px;
-  --hover-gap: 30px;
-  --scaling: 1.1;
-  --translationY: -30px;
-  margin-right: calc(-1 * var(--overlay));
+  --total-scaling: 0.2;
+  scale: calc(0.9 + (var(--animator)) * var(--total-scaling));
+  --rotation: 1deg;
+  transition: scale 0.1s linear, rotate 0.2s;
 }
-.case.is-hovered {
-  margin-left: calc(var(--overlay) + var(--hover-gap));
-  margin-right: var(--hover-gap);
-  transform: translateY(var(--translationY));
-  scale: var(--scaling);
-  box-shadow: 0px 0px 10px var(--color-light);
-  transition: transform var(--transition-duration) var(--transform-function) var(--transition-delay), margin 1.2s var(--transform-function) var(--transition-delay), scale var(--transition-duration) var(--transform-function) var(--transition-delay), box-shadow 0.35s cubic-bezier(0.54, 0.52, 0.57, 0.45) var(--transition-delay);
+@media (any-hover: hover) {
+  .case:hover {
+    animation: caseHoverAnimation 0.6s ease-in-out infinite 0.1s;
+  }
 }
-.case.is-neighbour-hovered {
-  transform: translateY(calc(var(--translationY) / 2));
-  scale: calc((var(--scaling) - 1) / 2 + 1);
+@media (any-hover: none) {
+  .case:active {
+    animation: caseHoverAnimation 0.6s ease-in-out infinite 0.1s;
+  }
 }
-.case:nth-child(1) {
-  z-index: 1;
+@media (hover: none) and (pointer: coarse) {
+  .case {
+    scale: 1;
+    --rotation: 0deg;
+  }
 }
-.case:nth-child(2) {
-  z-index: 2;
+.case.to-animate-transition {
+  transition: scale 0.9s ease-out, rotate 0.2s;
 }
-.case:nth-child(3) {
-  z-index: 3;
+@media (width < 86.25rem) {
+  .case {
+    max-width: 28vw;
+  }
 }
-.case:nth-child(4) {
-  z-index: 4;
+@media (width < 43.75rem) {
+  .case {
+    max-width: 40vw;
+  }
 }
-.case:nth-child(5) {
-  z-index: 5;
-}
-.case:nth-child(6) {
-  z-index: 6;
+@media (width < 26.875rem) {
+  .case {
+    max-width: 80vw;
+  }
 }
 .case__image-wrapper {
   display: block;
@@ -645,12 +699,12 @@ button[aria-label]::before {
 .case__title h4 {
   font-weight: 800;
   letter-spacing: 0.03em;
+  font-size: 1.5em;
 }
 
 #Blaed {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
 }
 #Blaed span {
   color: var(--color-black);
@@ -659,7 +713,6 @@ button[aria-label]::before {
 #Positivus {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
 }
 #Positivus span {
   color: var(--color-black);
@@ -668,7 +721,6 @@ button[aria-label]::before {
 #Nexcent {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
 }
 #Nexcent span {
   color: var(--color-black);
@@ -678,7 +730,6 @@ button[aria-label]::before {
   background: #3F38C7;
   background: linear-gradient(0deg, rgb(63, 56, 199) 12%, rgb(37, 20, 216) 81%);
   color: var(--color-light);
-  border-color: var(--color-black);
 }
 #NoTab span {
   color: var(--color-light);
@@ -687,7 +738,6 @@ button[aria-label]::before {
 #Aaronn {
   background-color: #1a1a1a;
   color: var(--color-light);
-  border-color: var(--color-light);
 }
 #Aaronn span {
   color: var(--color-light);
@@ -697,12 +747,25 @@ button[aria-label]::before {
   background: #1A1A1A;
   background: linear-gradient(180deg, rgb(26, 26, 26) 53%, rgb(99, 99, 99) 100%);
   color: var(--color-light);
-  border-color: var(--color-light);
 }
 #FutureTech span {
   color: var(--color-light);
 }
 
+@keyframes caseHoverAnimation {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: calc(-1 * var(--rotation));
+  }
+  75% {
+    rotate: calc(1 * var(--rotation));
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
 .footer {
   --line-height: 0.25rem;
   --line-gap: 0.625rem;

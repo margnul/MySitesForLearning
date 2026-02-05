@@ -1,6 +1,8 @@
 @use '../helpers/' as *;
 
 .footer{
+  --line-height: #{rem(4)};
+  --line-gap: #{rem(10)};
 
   &__container{
     width: 100%;
@@ -34,8 +36,7 @@
     font-weight: 900;
   }
 
-  --line-height: #{rem(4)};
-  --line-gap: #{rem(10)};
+
 
   &__lines{
     display: flex;

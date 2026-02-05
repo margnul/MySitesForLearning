@@ -32,6 +32,7 @@ class PhotoCard {
   initCamera() {
     const width = this.wrapperElement.offsetWidth
     const height = this.wrapperElement.offsetHeight
+    console.log(this.wrapperElement.offsetHeight)
     this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100)
     this.camera.position.z = 3
   }
@@ -127,6 +128,7 @@ class PhotoCard {
     }
 
     this.renderer.render(this.scene, this.camera)
+   
   }
 
   resetCardRotation() {
@@ -166,6 +168,10 @@ class PhotoCard {
         this.resetCardRotation()
       }
     })
+
+    window.addEventListener('blur', () => this.resetCardRotation())
+    document.addEventListener('visibilitychange', () => this.resetCardRotation())
+    
   }
 }
 
@@ -187,6 +193,8 @@ export function createPhotoCards(containerSelector, imageUrls, normalMapUrls) {
 const images = [
   '../images/photocards/photocard1.jpg',
   '../images/photocards/photocard2.jpg'
+  // '../images/photocards/material_4.jpg',
+  // '../images/photocards/material_5.jpg'
 ]
 
 const normalMaps = [

@@ -4,61 +4,65 @@
   padding: rem(40) rem(10) rem(25) rem(10);
   //flex: 1 1 180px;
   min-width: 180px;
-  cursor:pointer;
-  user-select:none;
+  cursor: pointer;
+  user-select: none;
 
-  height: 310px;
+  width: 100%;
+  aspect-ratio: 1/1.5;
+
+  justify-self: center;
+  align-self: center;
 
   display: grid;
   grid-template-rows: 65% 1fr 2fr;
   border-radius: 10px;
 
-  width: 200px;
-  border: 3px solid var(--color-dark-10);
+  //border: 3px solid var(--color-dark-10);
+  //border-color: red;
 
   --transition-duration: 1.2s;
   --transform-function: cubic-bezier(.08, .71, 0, 1);
   --transition-delay: .0s;
 
-  transition:
-    transform var(--transition-duration) var(--transform-function) var(--transition-delay),
-    margin 1.2s var(--transform-function) var(--transition-delay),
-    scale var(--transition-duration) var(--transform-function) var(--transition-delay),
-    box-shadow 0.2s var(--transform-function) var(--transition-delay);
+
+  // JS animations
+
+  --total-scaling: 0.2;
+  scale: calc(0.9 + ((var(--animator)) * var(--total-scaling)));
 
 
-  --overlay: 0px;
-  --hover-gap: 30px;
-  --scaling: 1.1;
-  --translationY: -30px;
-  margin-right: calc(-1 * var(--overlay));
+  --rotation: 1deg;
 
-  &.is-hovered {
-    margin-left: calc(var(--overlay) + var(--hover-gap));
-    margin-right: var(--hover-gap);
-    transform: translateY(var(--translationY));
-    scale: var(--scaling);
-
-    box-shadow: 0px 0px 10px var(--color-light);
-    transition:
-        transform var(--transition-duration) var(--transform-function) var(--transition-delay),
-        margin 1.2s var(--transform-function) var(--transition-delay),
-        scale var(--transition-duration) var(--transform-function) var(--transition-delay),
-        box-shadow 0.35s cubic-bezier(.54, .52, .57, .45) var(--transition-delay);
+  @include hover {
+    animation: caseHoverAnimation .6s ease-in-out infinite .1s;
   }
 
-  &.is-neighbour-hovered {
-    //margin-left: calc( (var(--overlay) + var(--hover-gap)) / 2);
-    //margin-right: calc(var(--hover-gap) / 2);
-    transform: translateY(calc(var(--translationY) / 2));
-    scale: calc(((var(--scaling) - 1) / 2) + 1);
+  @media (hover: none) and (pointer: coarse) {
+    scale: 1;
+    --rotation: 0deg;
   }
 
-  @for $i from 1 through 6 {
-    &:nth-child(#{$i}) {
-      z-index: $i;
-    }
+  transition: scale .1s linear,
+  rotate .2s;
+
+  &.to-animate-transition {
+    transition: scale .9s ease-out, rotate .2s;
   }
+
+
+
+  @media (width < rem(1380)) {
+    max-width: 28vw;
+  }
+
+  @media (width < rem(700)) {
+    max-width: 40vw;
+  }
+
+  @media (width < rem(430)) {
+    max-width: 80vw;
+  }
+
 
   &__image-wrapper {
     display: block;
@@ -82,6 +86,8 @@
   &__title h4 {
     font-weight: 800;
     letter-spacing: 0.03em;
+
+    font-size: 1.5em;
   }
 }
 
@@ -89,7 +95,7 @@
 #Blaed {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
+  //border-color: var(--color-black);
 
   & span {
     color: var(--color-black);
@@ -99,7 +105,7 @@
 #Positivus {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
+  //border-color: var(--color-black);
 
   & span {
     color: var(--color-black);
@@ -109,7 +115,7 @@
 #Nexcent {
   background-color: var(--color-light);
   color: var(--color-black);
-  border-color: var(--color-black);
+  //border-color: var(--color-black);
 
   & span {
     color: var(--color-black);
@@ -120,7 +126,7 @@
   background: #3F38C7;
   background: linear-gradient(0deg, rgba(63, 56, 199, 1) 12%, rgba(37, 20, 216, 1) 81%);
   color: var(--color-light);
-  border-color: var(--color-black);
+  //border-color: var(--color-black);
 
   & span {
     color: var(--color-light);
@@ -130,7 +136,7 @@
 #Aaronn {
   background-color: #1a1a1a;
   color: var(--color-light);
-  border-color: var(--color-light);
+  //border-color: var(--color-light);
 
   & span {
     color: var(--color-light);
@@ -141,9 +147,52 @@
   background: #1A1A1A;
   background: linear-gradient(180deg, rgba(26, 26, 26, 1) 53%, rgba(99, 99, 99, 1) 100%);
   color: var(--color-light);
-  border-color: var(--color-light);
+  //border-color: var(--color-light);
 
   & span {
     color: var(--color-light);
   }
 }
+
+
+@keyframes caseHoverAnimation {
+  0% {
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: calc(-1 * var(--rotation));
+  }
+
+  75% {
+    rotate: calc(1 * var(--rotation));
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+
+
+
+
+// transition:
+//   transform var(--transition-duration) var(--transform-function) var(--transition-delay),
+//   margin 1.2s var(--transform-function) var(--transition-delay),
+//   scale var(--transition-duration) var(--transform-function) var(--transition-delay),
+//   box-shadow 0.2s var(--transform-function) var(--transition-delay);
+
+
+// --overlay: 0px;
+// --hover-gap: 30px;
+// --scaling: 1.1;
+// --translationY: -30px;
+// margin-right: calc(-1 * var(--overlay));
+
+
+// @for $i from 1 through 6 {
+//   &:nth-child(#{$i}) {
+//     z-index: $i;
+//   }
+// }
