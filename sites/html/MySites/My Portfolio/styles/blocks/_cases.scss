@@ -22,7 +22,7 @@
     @media (width < rem(1380)) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      font-size: clamp(.8rem, 1.1vw, 7.5rem);
+      font-size: clamp(.8rem, .9vw, 7.5rem);
       column-gap: rem(40);
       row-gap: rem(40);
     }

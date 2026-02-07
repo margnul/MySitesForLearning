@@ -731,6 +731,8 @@ button[aria-label]::before {
   position: fixed;
   right: var(--burger-button-offset);
   z-index: 9;
+  display: block;
+  border: none;
   width: var(--burger-button-width);
   height: var(--burger-button-width);
   background-color: var(--color-black);

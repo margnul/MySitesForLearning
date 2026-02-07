@@ -157,6 +157,7 @@ body {
   right: calc(var(--container-outer-margin) + 20px);
   top: 0;
   z-index: 20;
+  border: none;
 }
 
 .header__nav-button-line {

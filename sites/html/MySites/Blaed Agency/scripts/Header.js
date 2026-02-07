@@ -4,7 +4,7 @@ class Header {
   selectors = {
     navButton: '[data-js-nav-button]',
     navWrapper: '[data-js-nav-wrapper]',
-    baselineWrapepr: '[data-js-baseline-wrapper]',
+    baselineWrapper: '[data-js-baseline-wrapper]',
   }
 
   stateClasses = {
@@ -14,14 +14,16 @@ class Header {
   constructor() {
     this.navButtonElement = document.querySelector(this.selectors.navButton)
     this.navWrapperElement = document.querySelector(this.selectors.navWrapper)
-    this.baselineWrapperElement = document.querySelector(this.selectors.baselineWrapepr)
+    this.baselineWrapperElement = document.querySelector(this.selectors.baselineWrapper)
 
     this.bindEvents()
   }
 
+
+
   bindEvents() {
     this.navButtonElement.addEventListener('click', (btn) => {
-      btn.preventDefault()
+      //btn.preventDefault()
 
       const isButtonActive = this.navButtonElement.classList.contains(this.stateClasses.isActive)
 
