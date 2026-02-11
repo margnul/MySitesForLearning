@@ -49,17 +49,22 @@ class HeroMedia {
   /* ---------------------------------- */
 
   createImage() {
-    this.img = new Image()
-    this.img.src = this.coverImageElement.src
-
-    this.drawTransparent()
-
+    this.img = new Image();
+    // Сначала вешаем обработчик, потом задаем src
     this.img.onload = () => {
-      this.getCanvasSize()
-      this.sliceHeight = this.canvasHeight / this.slicesCount
-      this.prepareSlices()
-      this.animateSlicesRAF()
-      this.initVideo()
+      this.getCanvasSize();
+      this.sliceHeight = this.canvasHeight / this.slicesCount;
+      this.prepareSlices();
+      this.animateSlicesRAF();
+      this.initVideo();
+    };
+
+    this.img.src = this.coverImageElement.src;
+
+    // Если картинка уже была в кэше и загружена
+    if (this.img.complete) {
+      this.img.onload();
+      this.img.onload = null; // Чтобы не сработало дважды
     }
   }
 
@@ -85,7 +90,7 @@ class HeroMedia {
     }
   }
 
-  drawTransparent() { 
+  drawTransparent() {
     this.ctx.fillStyle = '#fff0'
     this.ctx.fillRect(0, 0, this.canvasWidth, this.canvasHeight)
   }
@@ -112,30 +117,36 @@ class HeroMedia {
   }
 
   drawSlice(slice) {
-    const cw = this.canvasWidth
-    const ch = this.sliceHeight
+    const cw = this.canvasWidth;
+    const ch = this.canvasHeight;
+    const iw = this.img.width;
+    const ih = this.img.height;
 
-    const iw = this.img.width
-    const ih = this.img.height / this.slicesCount
+    // 1. Считаем общий масштаб (Cover)
+    const scale = Math.max(cw / iw, ch / ih);
+    const dw = iw * scale;
+    const dh = ih * scale;
 
-    const scale = Math.max(cw / iw, ch / ih)
-    const dw = iw * scale
-    const dh = ih * scale
+    const dx = (cw - dw) / 2;
+    const dy = (ch - dh) / 2;
 
-    const dx = (cw - dw) / 2
-    const dy = slice.index * this.sliceHeight + (this.sliceHeight - dh) / 2
+    // 2. Высота сегмента в исходнике и на канвасе
+    const sourceSliceHeight = ih / this.slicesCount;
+    const destinationSliceHeight = dh / this.slicesCount;
 
+    // 3. Рисуем с нахлестом
     this.ctx.drawImage(
       this.img,
       0,
-      ih * slice.index,
+      sourceSliceHeight * slice.index,
       iw,
-      ih,
+      sourceSliceHeight,
       slice.offsetX + dx,
-      dy,
+      dy + (destinationSliceHeight * slice.index),
       dw,
-      dh
-    )
+      // Добавляем 1px к высоте, чтобы перекрыть щель между слайсами
+      destinationSliceHeight + 1
+    );
   }
 
   drawVideo() {
@@ -173,24 +184,34 @@ class HeroMedia {
     const start = performance.now()
 
     const animate = (now) => {
-      const progress = Math.min((now - start) / duration, 1)
-      const eased = this.easeOutCubic(progress)
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = this.easeOutCubic(progress);
 
       this.slices.forEach(slice => {
-        slice.offsetX = slice.fromX * (1 - eased)
-      })
+        slice.offsetX = slice.fromX * (1 - eased);
+      });
 
-      this.drawBackground()
-      this.slices.forEach(slice => this.drawSlice(slice))
+      this.drawBackground();
+      this.slices.forEach(slice => this.drawSlice(slice));
 
       if (progress < 1) {
-        requestAnimationFrame(animate)
+        requestAnimationFrame(animate);
       } else {
-        requestAnimationFrame(this.renderLoop)
-      }
-    }
+        // --- ВОТ ЗДЕСЬ ЗАПУСКАЕМ ВИДЕО ---
+        if (this.video && this.videoReady) {
+          this.video.currentTime = 0; // Сбрасываем на начало на всякий случай
+          this.video.play()
+            .then(() => {
+              this.useVideo = true; // Разрешаем отрисовку видео в renderLoop
+            })
+            .catch(e => console.warn("Video play failed:", e));
+        }
 
-    requestAnimationFrame(animate)
+        requestAnimationFrame(this.renderLoop);
+      }
+    };
+
+    requestAnimationFrame(animate);
   }
 
   /* ---------------------------------- */
@@ -198,19 +219,20 @@ class HeroMedia {
   /* ---------------------------------- */
 
   initVideo() {
-    this.video = document.createElement('video')
-    this.video.src = this.getVideoForScreen()
-    this.video.muted = true
-    this.video.loop = true
-    this.video.playsInline = true
-    this.video.autoplay = true
-    this.video.preload = 'auto'
+    this.video = document.createElement('video');
+    this.video.src = this.getVideoForScreen();
+    this.video.muted = true;
+    this.video.loop = true;
+    this.video.playsInline = true;
+    this.video.autoplay = false; // Отключаем автоплей
+    this.video.preload = 'auto';
 
     this.video.addEventListener('canplay', () => {
-      this.videoReady = true
-      this.useVideo = true
-      //this.video.play().catch(() => { })
-    })
+      this.videoReady = true;
+      // Больше здесь ничего не запускаем
+    }, { once: true });
+
+    this.video.load();
   }
 
   /* ---------------------------------- */
@@ -218,21 +240,15 @@ class HeroMedia {
   /* ---------------------------------- */
 
   renderLoop() {
-    //this.drawBackground()
-    this.drawImageCover()
+    this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
 
     if (this.useVideo && this.videoReady) {
-      this.video.play().catch(() => { })
-      this.drawVideo()
+      this.drawVideo();
     } else {
-      this.drawImageCover()
-
-      if (this.coverImageElement.classList.contains(this.stateClasses.videoLoaded)) {
-        this.canvasElement.style.opacity = '0'
-      }
+      this.drawImageCover();
     }
 
-    requestAnimationFrame(this.renderLoop)
+    requestAnimationFrame(this.renderLoop);
   }
 
   /* ---------------------------------- */
@@ -240,9 +256,16 @@ class HeroMedia {
   /* ---------------------------------- */
 
   bindEvents() {
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-      this.getCanvasSize()
-    })
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        this.getCanvasSize();
+        // Пересчитываем слайсы только если реально изменились размеры
+        this.sliceHeight = this.canvasHeight / this.slicesCount;
+        this.prepareSlices();
+      }, 150); // Ждем 150мс после окончания ресайза
+    });
 
     document.addEventListener("DOMContentLoaded", () => {
       // this.createImage()
