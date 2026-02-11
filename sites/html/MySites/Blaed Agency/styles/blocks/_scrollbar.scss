@@ -1,5 +1,14 @@
 @use '../helpers/' as *;
 
+.is-mac {
+  .scrollbar__container {
+    // &::-webkit-scrollbar {
+    //   display: none;
+    // }
+    display: none;
+  }
+}
+
 .scrollbar {
   --scrollthumb-height: 5vh;
   --scrollthumb-progress: 0;
@@ -18,8 +27,10 @@
 
   cursor: grab;
 
+
+
   @media (hover: none) and (pointer: coarse) {
-    @include mobile{
+    @include mobile {
       display: none;
     }
   }
@@ -33,7 +44,7 @@
 
 
     @media (hover: none) and (pointer: coarse) {
-      @include mobile{
+      @include mobile {
         display: block;
       }
     }
@@ -47,15 +58,27 @@
     right: 0;
     top: 0;
     z-index: 8;
+
+    @supports (-webkit-touch-callout: none) {
+      /* macOS */
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0 !important;
+      height: 0 !important;
+      background: transparent; // На всякий случай
+    }
   }
 
 
-  @include hover{
+  @include hover {
     background-color: #222;
     scale: 1 1.2;
   }
 
-  &.is-dragging{
+  &.is-dragging {
     background-color: #000;
     scale: 1 1.2;
     cursor: grabbing;

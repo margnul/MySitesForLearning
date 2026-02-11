@@ -23,7 +23,8 @@ video {
 
 html {
   height: 100%;
-  width: 100vw;
+  //width: 100vw;
+  width: 100%;
   scrollbar-width: none;
 }
 
@@ -32,8 +33,12 @@ html {
   --container-max-width: 1920px;
   --container-padding-x: 1rem;
   /* Вычисляем отступы упрощенно */
-  --container-outer-margin: max(0px, calc((100vw - 1920px) / 2));
-  --content-width: calc(100vw - (var(--container-outer-margin) * 2) - 20px);
+
+  //--container-outer-margin: max(0px, calc((100vw - 1920px) / 2));
+  --container-outer-margin: max(0px, calc((100% - 1920px) / 2));
+  //--content-width: calc(100vw - (var(--container-outer-margin) * 2) - 20px);
+  --content-width: calc(100% - (var(--container-outer-margin) * 2) - 20px);
+
   /* 40px scrollbar offset approx */
 
   --title-relative-width: 69/100;
@@ -45,7 +50,7 @@ body {
   color: #100F0E;
   background-color: #fff;
   line-height: 1.5;
-  overflow-x: hidden;
+  //overflow-x: hidden;
   /* Важно для hero */
 }
 
@@ -54,11 +59,11 @@ body {
   width: var(--content-width);
   margin-inline: auto;
   max-width: 100%;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  //overflow-x: hidden;
+  //overflow-y: hidden;
 }
 
-.video-section__container{
+.video-section__container {
   overflow-x: initial;
   overflow-y: initial;
 }
@@ -161,6 +166,7 @@ body {
   right: calc(var(--container-outer-margin) + 20px);
   top: 0;
   z-index: 20;
+  border: none;
 }
 
 .header__nav-button-line {
@@ -223,7 +229,7 @@ body {
   opacity: 0;
 }
 
-.hero__video{
+.hero__video {
   opacity: 0;
 }
 
@@ -285,6 +291,11 @@ body {
 }
 
 
+.hero__container {
+  --width: calc(var(--title-relative-width) * var(--content-width));
+  --height: calc(var(--width) / 3.975);
+}
+
 /* Адаптив Hero */
 @media (max-width: 768px) {
   .hero__container {
@@ -292,11 +303,8 @@ body {
     flex-direction: column-reverse;
     justify-content: start;
 
-    --width: calc(var(--title-relative-width) * var(--content-width));
-    --height: calc(var(--width) / 3.975);
-
-    top: var(--height);
     height: calc(100% - var(--height));
+    top: var(--height);
   }
 
   .hero__media {

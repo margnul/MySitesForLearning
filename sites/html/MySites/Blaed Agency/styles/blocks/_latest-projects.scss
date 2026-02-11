@@ -1,6 +1,8 @@
 @use '../helpers/' as *;
 
 .latest-projects {
+  overflow-x: hidden;
+  overflow-y: hidden;
 
   &__title {
     position: relative;
@@ -95,6 +97,7 @@
     }
 
     &s-wrapper {
+
       &::after {
         content: "";
         position: absolute;
@@ -112,6 +115,7 @@
       width: 100%;
       height: 100%;
       box-sizing: border-box;
+      z-index: 1;
     }
 
     &-background {
@@ -232,7 +236,7 @@
         }
       }
 
-      @media (width <=rem(767)) {
+      @media (max-width: rem(767)) { // <=
         grid-template-columns: min-content min-content auto;
         grid-template-rows: repeat(3, auto);
 
@@ -324,7 +328,7 @@
             transform: translateY(280%);
           }
 
-          @media (width <=rem(767)) {
+          @media (max-width: rem(767)) { // <=
             transform: translateY(350%);
           }
 

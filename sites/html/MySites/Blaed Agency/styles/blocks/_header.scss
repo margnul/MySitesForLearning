@@ -128,6 +128,7 @@
           //width: auto;
           content: attr(data-word);
 
+
           font-size: var(--baseline-words-font-size);
           text-transform: uppercase;
           font-weight: 400;
@@ -217,9 +218,11 @@
       height: auto;
       background-color: var(--color-black);
       color: var(--color-white);
+      
+      will-change: clip-path;
 
       @include laptop {
-        width: auto;
+        width: max-content;
       }
 
       @include tablet {
@@ -321,6 +324,8 @@
       position: fixed;
       right: var(--burger-button-offset);
       z-index: 9;
+      display: block;
+      border: none;
 
       @include square(var(--burger-button-width));
       background-color: var(--color-black);

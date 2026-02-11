@@ -11,7 +11,7 @@
   list-style: none;
 
 
-  @media (width <=rem(767)) {
+  @media (max-width: rem(767)) { // <=
     flex-direction: column-reverse;
     align-items: flex-start;
     margin-top: 3rem;
@@ -31,7 +31,7 @@
     background-color: #ccc;
     content: "";
 
-    @media (width <=rem(767)) {
+    @media (max-width: rem(767)) { // <=
       content: none;
     }
   }
@@ -51,7 +51,7 @@
       padding-right: 0;
     }
 
-    @media (width <=rem(767)) {
+    @media (max-width: rem(767)) { // <=
       padding: 0 0 0 0;
 
       &:not(:last-child) {
