@@ -1268,6 +1268,7 @@ button[aria-label]::before {
   position: absolute;
   width: var(--content-width);
   height: var(--content-height);
+  max-height: 20vh;
   bottom: var(--background-margin-top);
   right: calc((var(--background-width) - var(--content-width)) / 2);
   display: flex;
@@ -1290,7 +1291,7 @@ button[aria-label]::before {
 @media (width <= 61.87375rem) {
   .savoir-faire__service-content-list {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 4rem;
+    row-gap: min(4rem, 8vh);
   }
 }
 .savoir-faire__service-content-item {

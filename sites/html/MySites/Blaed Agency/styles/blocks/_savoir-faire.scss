@@ -233,7 +233,6 @@
 
     &-title {
       --title-font-size: min(9.375rem, 7.8125vw);
-      ;
 
       top: 0;
       height: 100%;
@@ -277,6 +276,7 @@
       position: absolute;
       width: var(--content-width);
       height: var(--content-height);
+      max-height: 20vh;
       bottom: var(--background-margin-top);
       right: calc((var(--background-width) - var(--content-width)) / 2);
       display: flex;
@@ -298,7 +298,7 @@
 
         @include tablet {
           grid-template-columns: repeat(2, 1fr);
-          row-gap: 4rem;
+          row-gap: min(4rem, 8vh);
         }
       }
 
