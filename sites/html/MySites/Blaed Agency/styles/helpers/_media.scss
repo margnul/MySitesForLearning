@@ -6,52 +6,52 @@ $mobile: 576.98;
 $mobile-s: 480.98;
 
 @mixin laptop-above{
-  @media (width > rem($laptop)){
+  @media (min-width: rem($laptop)){
     @content;
   }
 }
 
 @mixin laptop{
-  @media (width <= rem($laptop)){
+  @media (max-width: rem($laptop)){
     @content;
   }
 }
 
 
 @mixin tablet-above{
-  @media (width > rem($tablet)){
+  @media (min-width: rem($tablet)){
     @content;
   }
 }
 
 @mixin tablet{
-  @media (width <= rem($tablet)){
+  @media (max-width: rem($tablet)){
     @content;
   }
 }
 
 
 @mixin mobile-above{
-  @media (width > rem($mobile)){
+  @media (min-width: rem($mobile)){
     @content;
   }
 }
 
 @mixin mobile{
-  @media (width <= rem($mobile)){
+  @media (max-width: rem($mobile)){
     @content;
   }
 }
 
 
 @mixin mobile-s-above{
-  @media (width > rem($mobile-s)){
+  @media (min-width: rem($mobile-s)){
     @content;
   }
 }
 
 @mixin mobile-s{
-  @media (width <= rem($mobile-s)){
+  @media (max-width: rem($mobile-s)){
     @content;
   }
 }

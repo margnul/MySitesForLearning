@@ -47,7 +47,7 @@
         max-width: 65%;
       }
 
-      @media (width < rem(1280)){
+      @media (max-width: rem(1280)){ // <
         width: 80vw;
         max-width: 80%;
       }

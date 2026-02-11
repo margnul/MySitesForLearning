@@ -133,6 +133,7 @@
       z-index: 3;
       background: url(../../images/grain.jpg) 50% / 512px 512px;
       mix-blend-mode: multiply;
+      will-change: transform;
       animation: noise-animation .25s steps(1) infinite;
       content: "";
     }
@@ -161,7 +162,7 @@
       font-size: min(7rem, 14.5834vw);
     }
 
-    @media (width <=rem(767)) {
+    @media (max-width: rem(767)) { // <=
       font-size: 4rem;
     }
 

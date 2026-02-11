@@ -2,6 +2,7 @@ class Scrollbar {
 
   selectors = {
     scrollthumb: '[data-js-scrollthumb]',
+    scrollContainer: '[data-js-scroll-container]',
   }
 
   stateClasses = {
@@ -16,11 +17,13 @@ class Scrollbar {
 
   constructor() {
     this.scrollthumbElements = document.querySelectorAll(this.selectors.scrollthumb)
+    this.scrollContainerElement = document.querySelector(this.selectors.scrollContainer)
 
     this.state = { ...this.initialState }
 
     this.scrollthumbHeight = 0;
     this.scrollbarMargin = 20; // px
+
 
     this.bindEvents()
     this.updateHeight()
@@ -61,7 +64,7 @@ class Scrollbar {
       el.style.setProperty('--scrollthumb-progress', (yClamped) + 'px');
     })
 
-    
+
     const progress = yClamped / (window.innerHeight - this.scrollbarMargin - this.scrollthumbHeight)
     const scrollPosition = progress * (document.documentElement.scrollHeight - window.innerHeight + this.scrollbarMargin)
 
