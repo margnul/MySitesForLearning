@@ -42,8 +42,7 @@
     --rotation: 0deg;
   }
 
-  transition: scale .1s linear,
-  rotate .2s;
+  transition: scale .1s linear, rotate .2s;
 
   &.to-animate-transition {
     transition: scale .9s ease-out, rotate .2s;
@@ -51,15 +50,15 @@
 
 
 
-  @media (width < rem(1380)) {
+  @media (max-width: rem(1380)) {
     max-width: 28vw;
   }
 
-  @media (width < rem(700)) {
+  @media (max-width: rem(700)) {
     max-width: 40vw;
   }
 
-  @media (width < rem(430)) {
+  @media (max-width: rem(430)) {
     max-width: 80vw;
   }
 
@@ -87,7 +86,11 @@
     font-weight: 800;
     letter-spacing: 0.03em;
 
-    font-size: 1.5em;
+    font-size: 1.1rem; // 1.5em
+  }
+
+  &__description {
+    font-size: .9rem;
   }
 }
 

@@ -456,10 +456,15 @@ button[aria-label]::before {
   content: "";
 }
 
+.header {
+  position: absolute;
+  width: 100%;
+}
 .header__container {
   height: auto;
   position: relative;
   padding-block: calc(var(--line-padding) + var(--line-height));
+  margin-top: 0.625rem;
 }
 .header__container::before, .header__container::after {
   position: absolute;
@@ -478,36 +483,75 @@ button[aria-label]::before {
   left: var(--offset-addition);
 }
 .header__logo-wrapper {
-  width: 30vw;
+  width: -moz-max-content;
+  width: max-content;
   height: auto;
   position: relative;
   left: var(--offset-addition);
 }
+.header__logo-wrapper a {
+  text-decoration: none;
+}
 .header__logo {
-  width: 100%;
-  height: 100%;
+  width: 21rem;
+  height: 3rem;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
+  font-size: 2.5rem;
 }
-.header__logo svg {
-  width: 100%;
-  height: -moz-min-content;
-  height: min-content;
-  color: var(--color-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header__logo svg g {
+.header__logo span {
+  text-decoration: none;
   display: block;
+  background-color: var(--color-dark);
+  position: relative;
+  transition: margin-left 0.15s ease-out;
+}
+.header__logo span:not(:first-child) {
+  margin-left: -2.3rem;
+}
+.header__logo span:nth-child(1) {
+  z-index: 7;
+  transition-delay: 0.125s;
+}
+.header__logo span:nth-child(2) {
+  z-index: 6;
+  transition-delay: 0.25s;
+}
+.header__logo span:nth-child(3) {
+  z-index: 5;
+  transition-delay: 0.375s;
+}
+.header__logo span:nth-child(4) {
+  z-index: 4;
+  transition-delay: 0.5s;
+}
+.header__logo span:nth-child(5) {
+  z-index: 3;
+  transition-delay: 0.625s;
+}
+.header__logo span:nth-child(6) {
+  z-index: 2;
+  transition-delay: 0.75s;
+}
+.header__logo span:nth-child(7) {
+  z-index: 1;
+  transition-delay: 0.875s;
+}
+.header__logo.active span {
+  margin-left: 0;
 }
 
+.hero {
+  height: 100vh;
+  height: 100dvh;
+}
 .hero__container {
-  height: auto;
-  padding-top: 30%;
+  height: 100%;
   padding-bottom: var(--line-padding);
   position: relative;
+  margin-top: 0;
 }
 .hero__container::after {
   position: absolute;
@@ -522,6 +566,8 @@ button[aria-label]::before {
 .hero__title-wrapper {
   padding-left: var(--offset-addition);
   width: var(--small-width);
+  position: absolute;
+  bottom: 0.625rem;
 }
 .hero__title-wrapper * {
   margin: 0;
@@ -666,17 +712,17 @@ button[aria-label]::before {
 .case.to-animate-transition {
   transition: scale 0.9s ease-out, rotate 0.2s;
 }
-@media (width < 86.25rem) {
+@media (max-width: 86.25rem) {
   .case {
     max-width: 28vw;
   }
 }
-@media (width < 43.75rem) {
+@media (max-width: 43.75rem) {
   .case {
     max-width: 40vw;
   }
 }
-@media (width < 26.875rem) {
+@media (max-width: 26.875rem) {
   .case {
     max-width: 80vw;
   }
@@ -699,7 +745,10 @@ button[aria-label]::before {
 .case__title h4 {
   font-weight: 800;
   letter-spacing: 0.03em;
-  font-size: 1.5em;
+  font-size: 1.1rem;
+}
+.case__description {
+  font-size: 0.9rem;
 }
 
 #Blaed {

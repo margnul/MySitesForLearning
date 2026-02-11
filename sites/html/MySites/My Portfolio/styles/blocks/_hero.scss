@@ -1,13 +1,16 @@
 @use '../helpers/' as *;
 
 .hero {
+  height: 100vh;
+  height: 100dvh;
 
 
   &__container {
-    height: auto;
-    padding-top: 30%;
+    height: 100%;
+    //padding-top: 30%;
     padding-bottom: var(--line-padding);
     position: relative;
+    margin-top: 0;
 
     &::after {
       position: absolute;
@@ -24,6 +27,8 @@
   &__title-wrapper {
     padding-left: var(--offset-addition);
     width: var(--small-width);
+    position: absolute;
+    bottom: rem(10);
 
     & * {
       margin: 0;
