@@ -4,20 +4,29 @@
   height: 100vh;
   height: 100dvh;
   background-color: #ff4500;
+  z-index: 4;
 
   &__wrapper {
     padding-left: var(--offset-addition);
+    padding-bottom: 10vmin;
+    height: 100%;
     width: var(--small-width);
-    position: absolute;
-    bottom: 2vmin;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
   }
 
   &__container {
-    height: 100%;
+    height: 95vh;
+    height: 95dvh;
     //padding-top: 30%;
-    padding-bottom: var(--line-padding);
+    padding-bottom: 0;
     position: relative;
-    margin-top: 0;
+    margin: 0;
+    z-index: 4;
 
     &::after {
       position: absolute;
@@ -140,6 +149,18 @@
         animation-play-state: running;
       }
     }
+  }
+
+  &__bottom{
+    position: relative;
+    height: 5vmin;
+    height: 5vmin;
+    width: 100%;
+    z-index: 3;
+
+    background: url("../../images/wave4.svg") repeat-x top;
+    background-size: auto 100%;
+    background-position-y: -1px;
   }
 }
 

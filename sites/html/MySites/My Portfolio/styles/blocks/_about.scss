@@ -1,13 +1,21 @@
 @use '../helpers/' as *;
 
 .about {
+  background-color: plum;
+  z-index: 3;
 
+  &__title{
+    position: absolute;
+    top: calc(5vmin + 3rem);
+  }
 
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    margin-top: -5vmin;
   }
 
   &__canvas-album {

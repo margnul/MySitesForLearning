@@ -228,8 +228,8 @@ svg * {
       var(--color-accent) 135%);
   --border: 0.0625rem solid var(--color-dark-15);
   --shadow: 0 0 0 0.1875rem #191919;
-  --font-family-base: "Bounded", sans-serif;
-  --font-family-accent: "Bounded", sans-serif;
+  --font-family-base: 'Bounded', sans-serif;
+  --font-family-accent: 'Bounded', sans-serif;
   --container-small-offset: 0.9375rem;
   --container-big-offset: 1.75rem;
   --offset-addition: 0.8125rem;
@@ -547,18 +547,26 @@ button[aria-label]::before {
   height: 100vh;
   height: 100dvh;
   background-color: #ff4500;
+  z-index: 4;
 }
 .hero__wrapper {
   padding-left: var(--offset-addition);
+  padding-bottom: 10vmin;
+  height: 100%;
   width: var(--small-width);
-  position: absolute;
-  bottom: 2vmin;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
 }
 .hero__container {
-  height: 100%;
-  padding-bottom: var(--line-padding);
+  height: 95vh;
+  height: 95dvh;
+  padding-bottom: 0;
   position: relative;
-  margin-top: 0;
+  margin: 0;
+  z-index: 4;
 }
 .hero__container::after {
   position: absolute;
@@ -665,6 +673,16 @@ html.font-loaded .hero__subtitle {
 html.font-loaded .hero__subtitle-word {
   animation-play-state: running;
 }
+.hero__bottom {
+  position: relative;
+  height: 5vmin;
+  height: 5vmin;
+  width: 100%;
+  z-index: 3;
+  background: url("../../images/wave4.svg") repeat-x top;
+  background-size: auto 100%;
+  background-position-y: -1px;
+}
 
 @keyframes title-letter-animation {
   0% {
@@ -684,11 +702,21 @@ html.font-loaded .hero__subtitle-word {
     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
   }
 }
+.about {
+  background-color: plum;
+  z-index: 3;
+}
+.about__title {
+  position: absolute;
+  top: calc(5vmin + 3rem);
+}
 .about__container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  margin-top: -5vmin;
 }
 .about__canvas-album {
   width: var(--small-width);
@@ -802,7 +830,6 @@ html.font-loaded .hero__subtitle-word {
   --total-scaling: 0.2;
   scale: calc(0.9 + (var(--animator)) * var(--total-scaling));
   --rotation: 1deg;
-  transition: scale 0.1s linear, rotate 0.2s;
 }
 @media (any-hover: hover) {
   .case:hover {
@@ -819,6 +846,9 @@ html.font-loaded .hero__subtitle-word {
     scale: 1;
     --rotation: 0deg;
   }
+}
+.case {
+  transition: scale 0.1s linear, rotate 0.2s;
 }
 .case.to-animate-transition {
   transition: scale 0.9s ease-out, rotate 0.2s;
