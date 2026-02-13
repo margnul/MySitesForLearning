@@ -26,10 +26,10 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" style="display: none;">
     <div class="header__container container">
       <div class="header__logo-wrapper">
-        <a >
+        <a>
           <div class="header__logo" data-js-header-logo>
             <span class="header__logo-letter">M</span>
             <span class="header__logo-letter">A</span>
@@ -47,13 +47,28 @@
   <main>
     <div class="hero">
       <div class="hero__container container">
-        <div class="hero__title-wrapper">
-          <h1>
-            <span>ИВАН</span>
-            <span>МЕЙНАРТ</span>
+        <div class="hero__wrapper">
+          <h1 class="hero__title" data-js-title>
+            <div class="hero__title-word">
+              <span class="hero__title-letter">И</span>
+              <span class="hero__title-letter">В</span>
+              <span class="hero__title-letter">А</span>
+              <span class="hero__title-letter">Н</span>
+            </div>
+            <div class="hero__title-word">
+              <span class="hero__title-letter">М</span>
+              <span class="hero__title-letter">Е</span>
+              <span class="hero__title-letter">Й</span>
+              <span class="hero__title-letter">Н</span>
+              <span class="hero__title-letter">А</span>
+              <span class="hero__title-letter">Р</span>
+              <span class="hero__title-letter">Т</span>
+            </div>
           </h1>
-          <h2>
-            <span>Разработка сайтов</span>
+          <h2 class="hero__subtitle" data-js-subtitle>
+            <div class="hero__subtitle-word">
+              <span class="hero__subtitle-word">Разработка сайтов</span>
+            </div>
           </h2>
         </div>
       </div>
@@ -213,10 +228,60 @@
   </footer>
 
   <script>
-      const logoElement = document.querySelector('[data-js-header-logo]')
-      logoElement.addEventListener('click', () => {
-        logoElement.classList.toggle('active')
-      })
+    const logoElement = document.querySelector('[data-js-header-logo]')
+    logoElement.addEventListener('click', () => {
+      logoElement.classList.toggle('active')
+    })
+
+    function playAnimation() {
+      const delay = 3000
+      setTimeout(() => {
+        let startTime = null;
+        const duration = 3000;
+        const currentScale = 0;
+
+        function animate(currentTime) {
+          if (!startTime) startTime = currentTime;
+
+          const progress = (currentTime - startTime) / duration;
+
+          if (progress < 1) {
+            const newScale = currentScale + (5 - currentScale) * progress;
+            titleElement.style.setProperty('--scale', newScale);
+            subTitleElement.style.setProperty('--scale', newScale);
+            requestAnimationFrame(animate);
+          } else {
+            titleElement.style.setProperty('--scale', 5);
+            subTitleElement.style.setProperty('--scale', 5);
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }, delay);
+    }
+
+    const titleElement = document.querySelector('[data-js-title]');
+    const subTitleElement = document.querySelector('[data-js-subtitle]');
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const fonts = [
+        document.fonts.load('1em "Bounded"'),
+        document.fonts.load('1em "Bounded"', 'Variable font')
+      ];
+
+      Promise.all(fonts)
+        .then(function () {
+          document.documentElement.classList.add('font-loaded');
+          playAnimation()
+        })
+        .catch(function (err) {
+          console.error('Ошибка загрузки шрифтов:', err);
+          // Все равно добавляем класс, чтобы не ломать дизайн
+          document.documentElement.classList.add('font-loaded');
+        });
+
+
+    });
   </script>
 
 </body>

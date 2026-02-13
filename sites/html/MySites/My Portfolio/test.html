@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    :root {
+      --bg-color: #ff5e00;
+      /* Тот самый оранжевый */
+      --card-color: #ff7a33;
+      /* Чуть светлее для объема */
+    }
+
+    body {
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Контейнер с фильтром */
+    .stage {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      /* Применяем ID нашего SVG фильтра */
+      filter: url('#gooey');
+      overflow: hidden;
+    }
+
+    /* Сама карточка */
+    .card {
+      width: 180px;
+      height: 100px;
+      background: var(--card-color);
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+      /* Анимация появления */
+      animation: popOut 3s infinite ease-in-out;
+    }
+
+    @keyframes popOut {
+
+      0%,
+      100% {
+        transform: scale(0);
+        /* Карточка «внутри» поверхности */
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1.1);
+        /* Выталкивается наружу */
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stage">
+    <div class="card">CARD</div>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;">
+    <defs>
+      <filter id="gooey">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  
+                               0 1 0 0 0  
+                               0 0 1 0 0  
+                               0 0 0 20 -10" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+      </filter>
+    </defs>
+  </svg>
+
+</body>
+
+</html>
