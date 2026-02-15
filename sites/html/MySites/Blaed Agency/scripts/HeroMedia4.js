@@ -50,23 +50,28 @@ class HeroMedia {
 
   createImage() {
     this.img = new Image();
-    // Сначала вешаем обработчик, потом задаем src
-    this.img.onload = () => {
+    let started = false;
+
+    const handleLoad = () => {
+      if (started) return;
+      started = true;
+
       this.getCanvasSize();
       this.sliceHeight = this.canvasHeight / this.slicesCount;
+      this.updateDimensions();
       this.prepareSlices();
       this.animateSlicesRAF();
       this.initVideo();
     };
 
+    this.img.onload = handleLoad;
     this.img.src = this.coverImageElement.src;
 
-    // Если картинка уже была в кэше и загружена
     if (this.img.complete) {
-      this.img.onload();
-      this.img.onload = null; // Чтобы не сработало дважды
+      handleLoad();
     }
   }
+
 
   /* ---------------------------------- */
   /* CANVAS */
@@ -116,36 +121,43 @@ class HeroMedia {
     this.ctx.drawImage(this.img, dx, dy, dw, dh)
   }
 
-  drawSlice(slice) {
-    const cw = this.canvasWidth;
-    const ch = this.canvasHeight;
+  updateDimensions() {
+    const dpr = window.devicePixelRatio || 1;
+    const cw = this.canvasElement.offsetWidth;
+    const ch = this.canvasElement.offsetHeight;
+
+    // Устанавливаем реальный размер буфера с учетом Retina
+    this.canvasElement.width = cw * dpr;
+    this.canvasElement.height = ch * dpr;
+    this.ctx.scale(dpr, dpr); // Масштабируем контекст, чтобы координаты в коде остались прежними
+
+    this.canvasWidth = cw;
+    this.canvasHeight = ch;
+
+    // Предрассчитываем масштаб (Cover) один раз
     const iw = this.img.width;
     const ih = this.img.height;
-
-    // 1. Считаем общий масштаб (Cover)
     const scale = Math.max(cw / iw, ch / ih);
-    const dw = iw * scale;
-    const dh = ih * scale;
 
-    const dx = (cw - dw) / 2;
-    const dy = (ch - dh) / 2;
+    this.precomputed = {
+      dw: iw * scale,
+      dh: ih * scale,
+      dx: (cw - iw * scale) / 2,
+      dy: (ch - ih * scale) / 2,
+      sourceSliceHeight: ih / this.slicesCount,
+      destSliceHeight: (ih * scale) / this.slicesCount
+    };
+  }
 
-    // 2. Высота сегмента в исходнике и на канвасе
-    const sourceSliceHeight = ih / this.slicesCount;
-    const destinationSliceHeight = dh / this.slicesCount;
+  drawSlice(slice) {
+    const p = this.precomputed;
 
-    // 3. Рисуем с нахлестом
     this.ctx.drawImage(
       this.img,
-      0,
-      sourceSliceHeight * slice.index,
-      iw,
-      sourceSliceHeight,
-      slice.offsetX + dx,
-      dy + (destinationSliceHeight * slice.index),
-      dw,
-      // Добавляем 1px к высоте, чтобы перекрыть щель между слайсами
-      destinationSliceHeight + 1
+      0, p.sourceSliceHeight * slice.index,
+      this.img.width, p.sourceSliceHeight,
+      slice.offsetX + p.dx, p.dy + (p.destSliceHeight * slice.index),
+      p.dw, p.destSliceHeight + 1
     );
   }
 
@@ -175,7 +187,6 @@ class HeroMedia {
   }
 
   animateSlicesRAF() {
-
     if (this.coverImageElement.classList.contains(this.stateClasses.videoLoaded)) {
       return
     }
@@ -231,6 +242,10 @@ class HeroMedia {
       this.videoReady = true;
       // Больше здесь ничего не запускаем
     }, { once: true });
+    
+    if (this.video.readyState >= 3) {
+      this.videoReady = true;
+    }
 
     this.video.load();
   }
@@ -243,7 +258,7 @@ class HeroMedia {
     this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight);
 
     if (this.useVideo && this.videoReady) {
-      //console.log("showing video")
+      //console.log('video is playing')
       this.drawVideo();
     } else {
       this.drawImageCover();
@@ -264,6 +279,7 @@ class HeroMedia {
         this.getCanvasSize();
         // Пересчитываем слайсы только если реально изменились размеры
         this.sliceHeight = this.canvasHeight / this.slicesCount;
+        this.updateDimensions();
         this.prepareSlices();
       }, 150); // Ждем 150мс после окончания ресайза
     });

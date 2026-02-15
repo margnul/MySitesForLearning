@@ -1,13 +1,9 @@
 @use '../helpers/' as *;
 
 .about {
-  background-color: plum;
+  background-color: var(--about-color);
   z-index: 3;
 
-  &__title{
-    position: absolute;
-    top: calc(5vmin + 3rem);
-  }
 
   &__container {
     position: relative;
@@ -15,7 +11,7 @@
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    margin-top: calc(-3rem + 2px);
+    margin-top: 0;
   }
 
   &__canvas-album {
@@ -60,6 +56,62 @@
       width: 100%;
       height: 100%;
       border-radius: 5px;
+    }
+  }
+
+  &__advantages-block {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    gap: 2rem;
+
+    &-nav {
+
+      &-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      &-item {
+        padding: 1rem;
+        text-align: center;
+        align-content: center;
+        border-radius: 20px;
+        z-index: 2;
+        background-color: var(--about-color);
+
+        box-shadow:
+          inset 2px 2px 5px 0 #ffffff77,
+          5px 5px 5px 0 #00000055;
+
+        & h4 {
+          font-weight: 700;
+          font-size: rem(30);
+        }
+
+        &.is-active {
+          box-shadow:
+            inset 5px 5px 5px 0 #00000055,
+            inset -2px -2px 5px 0 #00000022;
+        }
+      }
+    }
+
+    &-text-wrapper {
+      padding: 20px;
+      box-shadow:
+        inset 5px 5px 5px 0 #00000055,
+        inset -2px -2px 5px 0 #00000022;
+
+      border-radius: 20px;
+
+      & p {
+        font-weight: 500;
+        font-size: rem(24);
+      }
     }
   }
 }

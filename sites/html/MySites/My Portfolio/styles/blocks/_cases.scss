@@ -1,10 +1,13 @@
 @use '../helpers/' as *;
 
 .cases {
-
+  background-color: var(--cases-color);
+  background: linear-gradient(to bottom, var(--cases-color) calc(100% - 10vh), var(--about-color) 100%);
 
   &__container {
-    margin-top: #{rem(80)};
+    margin-top: calc(-2rem + 2px);
+    padding-top: calc(5vmin + 3rem);
+    padding-bottom: 20vh;
   }
 
   &__album-wrapper {
@@ -30,7 +33,7 @@
     @media (width < rem(700)) {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      font-size: clamp(0.1rem, 2.2  vw, 7.5rem);
+      font-size: clamp(0.1rem, 2.2 vw, 7.5rem);
       column-gap: rem(20);
       row-gap: rem(20);
     }
@@ -44,5 +47,16 @@
       column-gap: rem(0);
       row-gap: rem(40);
     }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__bottom {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    background: var(--cases-color);
   }
 }

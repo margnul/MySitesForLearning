@@ -35,8 +35,8 @@
   <!-- <script src="./scripts/Revealer.js" type="module"></script> -->
   <!-- <script src="./scripts/Header.js" type="module"></script> -->
 
-  <script src="./scripts/HeroMedia3.js" type="module"></script>
-  <script src="./scripts/HeroVideoLoader.js" type="module"></script>
+  <!-- <script src="./scripts/HeroMedia3.js" type="module"></script>
+  <script src="./scripts/HeroVideoLoader.js" type="module"></script> -->
 
 
 
@@ -158,7 +158,7 @@
           </div>
         </h1>
         <div class="hero__media">
-          <div class="hero__video-wrapper" style="display: none;" data-js-video-wrapper>
+          <div class="hero__video-wrapper" data-js-video-wrapper>
 
             <video class="hero__video" data-js-video data-src="./videos/blaed-agency-hero-uhd.mp4" preload="none" loop
               muted playsinline width="1280" height="1280" data-ratio="1" webkit-playsinline></video>
@@ -924,7 +924,7 @@
         if (initialized) return;
         initialized = true;
 
-        import('./scripts/HeroMedia3.js');
+        import('./scripts/HeroMedia4.js');
         import('./scripts/HeroVideoLoader.js');
 
         const idle = window.requestIdleCallback || (cb => setTimeout(cb, 1));

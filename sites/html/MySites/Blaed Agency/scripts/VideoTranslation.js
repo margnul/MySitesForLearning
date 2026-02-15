@@ -134,7 +134,9 @@ class VideoTranslation {
     const sectionTop =
       window.scrollY + this.videoSectionElement.getBoundingClientRect().top
 
-    const targetScroll = sectionTop + window.innerHeight * 2
+    const MacCorrection = document.documentElement.classList.contains('is-mac');
+
+    const targetScroll = sectionTop + window.innerHeight * 2 - (MacCorrection * .1)
 
     this.scrollCheckDisabled = true
     this.translationEnabled = false

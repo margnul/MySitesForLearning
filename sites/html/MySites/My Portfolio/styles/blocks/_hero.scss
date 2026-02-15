@@ -3,7 +3,7 @@
 .hero {
   height: 97vh;
   height: auto;
-  background-color: #ff4500;
+  background-color: var(--hero-color);
   z-index: 4;
 
   &__wrapper {
@@ -22,7 +22,7 @@
   &__container {
     height: 92vh;
     height: 92dvh;
-    height: calc(100dvh - 3rem - 2vh);
+    height: calc(100dvh - 2rem - 2vh);
     //padding-top: 30%;
     padding-bottom: 0;
     position: relative;
@@ -42,32 +42,7 @@
   }
 
   &__title {
-    width: min-content;
-    transition: width 1s ease-in-out;
-
-    border-radius: 20px;
-    padding: 10px 20px;
-    background-color: var(--color-dark-15);
-    background-color: #ff4500;
-
     margin-bottom: 3vmin;
-
-    --scale: 0;
-
-    html.font-loaded & {
-      box-shadow:
-        calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 5px) 0px #ffffff77 inset,
-
-        calc(var(--scale) * -1px) calc(var(--scale) * -1px) calc(var(--scale) * 3px) rgba(0, 0, 0, 0.08),
-
-        calc(var(--scale) * 2px) calc(var(--scale) * 2px) calc(var(--scale) * 5px) rgba(0, 0, 0, 0.15),
-
-        calc(var(--scale) * 10px) calc(var(--scale) * 10px) calc(var(--scale) * 20px) rgba(0, 0, 0, 0.1),
-
-        calc(var(--scale) * 30px) calc(var(--scale) * 30px) calc(var(--scale) * 50px) rgba(0, 0, 0, 0.06),
-
-        calc(var(--scale) * 60px) calc(var(--scale) * 60px) calc(var(--scale) * 100px) rgba(0, 0, 0, 0.03);
-    }
 
     &-word {
       width: max-content;
@@ -110,31 +85,8 @@
   }
 
   &__subtitle {
-    background-color: #ff4500;
     display: flex;
-    height: min-content;
-    width: max-content;
-    border-radius: 20px;
-    padding: 10px 20px;
-    transition: width 1s ease-in-out;
-
-    --shadow-base: rgba(0, 0, 0, 0.15);
-    --scale: 0;
-
-    html.font-loaded & {
-      box-shadow:
-        calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 5px) 0px #ffffff77 inset,
-
-        calc(var(--scale) * -1px) calc(var(--scale) * -1px) calc(var(--scale) * 3px) rgba(0, 0, 0, 0.08),
-
-        calc(var(--scale) * 2px) calc(var(--scale) * 2px) calc(var(--scale) * 5px) rgba(0, 0, 0, 0.15),
-
-        calc(var(--scale) * 10px) calc(var(--scale) * 10px) calc(var(--scale) * 20px) rgba(0, 0, 0, 0.1),
-
-        calc(var(--scale) * 30px) calc(var(--scale) * 30px) calc(var(--scale) * 50px) rgba(0, 0, 0, 0.06),
-
-        calc(var(--scale) * 60px) calc(var(--scale) * 60px) calc(var(--scale) * 100px) rgba(0, 0, 0, 0.03);
-    }
+    width: min-content;
 
     &-word {
       font-size: 6vmin;
@@ -152,15 +104,16 @@
     }
   }
 
-  &__bottom{
+  &__bottom {
     position: relative;
-    height: 3rem;
+    height: 2rem;
     width: 100%;
     z-index: 3;
 
     background: url("../../images/wave5.svg") repeat-x top;
     background-size: auto 100%;
     background-position-y: -1px;
+    animation: waves-animation 1s linear infinite;
   }
 }
 
@@ -184,5 +137,23 @@
 
   100% {
     clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%);
+  }
+}
+
+@keyframes waves-animation {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    // 33px -> 3rem
+    // 11px -> 1rem
+    // 80px -> ?rem
+    // 80 / 11 = 7.27273
+    // 33px -> 2rem
+    // 16.5px -> 1rem
+    // 80px -> ?rem
+    // 80 / 33 * 2 = 4.84848
+    background-position-x: 4.84848rem;
   }
 }

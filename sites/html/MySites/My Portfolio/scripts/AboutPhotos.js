@@ -79,7 +79,7 @@ class PhotoCard {
   initCard() {
     const width = 1.4
     const height = 2
-    const depth = 0.03
+    const depth = 0.003
     const geometry = new THREE.BoxGeometry(width, height, depth)
 
     const frontMaterial = this.createFrontMaterial()

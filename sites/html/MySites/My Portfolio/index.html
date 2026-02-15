@@ -48,7 +48,7 @@
     <div class="hero">
       <div class="hero__container container">
         <div class="hero__wrapper">
-          <h1 class="hero__title" data-js-title>
+          <h1 class="hero__title hero-tile" data-js-hero-tile>
             <div class="hero__title-word">
               <span class="hero__title-letter">И</span>
               <span class="hero__title-letter">В</span>
@@ -65,58 +65,15 @@
               <span class="hero__title-letter">Т</span>
             </div>
           </h1>
-          <h2 class="hero__subtitle" data-js-subtitle>
-            <div class="hero__subtitle-word">
+          <h2 class="hero__subtitle">
+            <div class="hero__subtitle-word-wrapper hero-tile" data-js-hero-tile>
               <span class="hero__subtitle-word">Разработка сайтов</span>
             </div>
           </h2>
         </div>
       </div>
       <div class="hero__bottom">
-          
-        </div>
-    </div>
 
-    <div class="about">
-      <div class="about__container container">
-        <h3 class="about__title section-title">
-          <span>ОБО МНЕ</span>
-        </h3>
-        <div class="about__canvas-album" data-js-canvas-album>
-          <!-- указать количество в js -->
-          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
-          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
-        </div>
-        <div class="about__content text-tile">
-          <p>
-            Я помогаю творческим специалистам показать свою работу так, чтобы она говорила за вас. Работаю с
-            фотографами,
-            иллюстраторами, дизайнерами, видеографами и другими самозанятыми. В проектах для меня важно понимание ваших
-            задач и
-            ценностей, аккуратное отношение к стилю и простота для пользователя. Я слушаю, задаю вопросы и создаю сайт,
-            который
-            отражает вас и помогает чувствовать уверенность в своем онлайн-представительстве.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="services">
-      <div class="services__container container">
-        <h3 class="services__title section-title">
-          <span>УСЛУГИ</span>
-        </h3>
-        <div class="about__content text-tile">
-          <p>
-            Создаю сайты-портфолио и лендинги под ваши конкретные задачи: привлечение клиентов, рост доверия и
-            увеличение количества
-            заявок. Помогаю структурировать информацию, продумать логику страниц и сформулировать ответы на частые
-            вопросы, чтобы
-            снизить нагрузку на переписки. Могу разработать сайт с нуля или обновить существующий, навести порядок в
-            контенте и
-            визуале, сделать запуск быстрым и понятным.
-          </p>
-        </div>
       </div>
     </div>
 
@@ -207,6 +164,58 @@
         </div>
       </div>
     </div>
+
+    <div class="about">
+      <div class="about__container container">
+        <h3 class="about__title section-title">
+          <span>ОБО МНЕ</span>
+        </h3>
+        <div class="about__canvas-album" style="display: none;" data-js-canvas-album>
+          <!-- указать количество в js -->
+          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
+          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
+        </div>
+        <div class="about__text-block text-unit" style="display: none;">
+          <div class="text-unit__title">
+            <div class="text-unit__title-mark"></div>
+            <span>
+              Мой подход
+            </span>
+          </div>
+          <div class="text-unit__content">
+            <p>
+              Я не просто пишу код. Я слушаю ваш бизнес, нахожу лучших специалистов под задачу и контролирую результат
+              на
+              каждом этапе
+            </p>
+          </div>
+        </div>
+        <div class="about__content">
+          <div class="about__advantages-block">
+            <div class="about__advantages-block-nav">
+              <ul class="about__advantages-block-nav-list">
+                <li class="about__advantages-block-nav-item is-active">
+                  <h4>Комплексный подход</h4>
+                </li>
+                <li class="about__advantages-block-nav-item">
+                  <h4>Команда под задачу</h4>
+                </li>
+                <li class="about__advantages-block-nav-item">
+                  <h4>Внимание к эстетике</h4>
+                </li>
+              </ul>
+            </div>
+            <div class="about__advantages-block-text-wrapper">
+              <p>
+                Я беру на себя всё: от анализа задачи и поиска дизайнеров до финального запуска на хостинге. Вам не
+                нужно быть
+                техническим экспертом — я стану вашим проводником.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
@@ -236,7 +245,11 @@
       logoElement.classList.toggle('active')
     })
 
+    const heroTileElements = document.querySelectorAll('[data-js-hero-tile]');
+
     function playAnimation() {
+      const heroTileElements = document.querySelectorAll('[data-js-hero-tile]');
+
       const delay = 3000
       setTimeout(() => {
         let startTime = null;
@@ -250,21 +263,20 @@
 
           if (progress < 1) {
             const newScale = currentScale + (5 - currentScale) * progress;
-            titleElement.style.setProperty('--scale', newScale);
-            subTitleElement.style.setProperty('--scale', newScale);
+            heroTileElements.forEach(element => {
+              element.style.setProperty('--scale', newScale);
+            });
             requestAnimationFrame(animate);
           } else {
-            titleElement.style.setProperty('--scale', 5);
-            subTitleElement.style.setProperty('--scale', 5);
+            heroTileElements.forEach(element => {
+              element.style.setProperty('--scale', 5);
+            });
           }
         }
 
         requestAnimationFrame(animate);
       }, delay);
     }
-
-    const titleElement = document.querySelector('[data-js-title]');
-    const subTitleElement = document.querySelector('[data-js-subtitle]');
 
     window.addEventListener('DOMContentLoaded', () => {
       const fonts = [
