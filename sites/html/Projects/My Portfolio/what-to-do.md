@@ -9,11 +9,16 @@
 - у кейсов убрать анимации наведения  для телефона
 
 
+в about сделать следующую за курсором анимацию
+
 примеры обо мне:
 https://valientebrands.com/
 https://www.ciridae.com/
 https://yucca.co.za/
+https://follow.art/
 gooey
+
+https://fooror.com/
 
 // сделать sticky и слева развернутый текст, а справа оглавление из заголовков
 

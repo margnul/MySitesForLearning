@@ -1,5 +1,18 @@
 @use 'helpers' as *;
 
+.sticky-container-wrapper{
+  position: relative;
+  overflow: clip;
+  min-height: 100vh;
+
+  & .container{
+    top: 1px;
+    left: 0;
+    position: sticky;
+    height: min-content;
+  }
+}
+
 .container {
   max-width: var(--container-width);
   margin-inline: auto;
