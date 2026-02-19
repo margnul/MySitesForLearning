@@ -266,7 +266,8 @@ svg * {
 }
 
 .container {
-  max-width: var(--container-width);
+  width: var(--container-width);
+  max-width: 1400px;
   margin-inline: auto;
   margin-top: 0.625rem;
 }
@@ -629,6 +630,7 @@ button[aria-label]::before {
   position: relative;
   margin-top: 0;
   z-index: 4;
+  max-width: var(--container-width);
 }
 .hero__container::after {
   position: absolute;
@@ -761,7 +763,6 @@ html.font-loaded .hero__subtitle-word {
   font-size: 8rem;
   justify-content: start;
   margin-top: 1rem;
-  padding-left: 2rem;
 }
 @media (width <= 63.99875rem) {
   .about__title {
@@ -771,8 +772,8 @@ html.font-loaded .hero__subtitle-word {
 }
 .about__content {
   width: 100%;
-  height: 80vh;
-  padding-bottom: 10rem;
+  height: auto;
+  padding-bottom: 4rem;
 }
 .about__container {
   position: relative;
@@ -839,7 +840,7 @@ html.font-loaded .hero__subtitle-word {
   gap: 2rem;
 }
 .about__advantages-block-space .about__advantages-block-item:nth-child(1) {
-  transform: translateX(20vw);
+  align-self: flex-end;
 }
 @media (width <= 63.99875rem) {
   .about__advantages-block-space .about__advantages-block-item:nth-child(1) {
@@ -855,7 +856,7 @@ html.font-loaded .hero__subtitle-word {
   }
 }
 .about__advantages-block-space .about__advantages-block-item:nth-child(3) {
-  transform: translateX(-20vw);
+  align-self: flex-start;
 }
 @media (width <= 63.99875rem) {
   .about__advantages-block-space .about__advantages-block-item:nth-child(3) {
@@ -865,6 +866,7 @@ html.font-loaded .hero__subtitle-word {
 .about__advantages-block-item {
   position: relative;
   width: auto;
+  max-width: 100%;
   height: auto;
   padding: 1rem;
   border-radius: 20px;
@@ -1002,6 +1004,14 @@ html.font-loaded .hero__subtitle-word {
     font-size: 1rem;
   }
 }
+@media (width <= 30.06125rem) {
+  .about__advantages-block-item .about__advantages-block-item-content p {
+    font-size: 0.9rem;
+  }
+  .about__advantages-block-item .about__advantages-block-item-heading-wrapper h4 {
+    font-size: 0.8rem;
+  }
+}
 
 .cases {
   --bottom-hiddener-height: 10vh;
@@ -1013,7 +1023,7 @@ html.font-loaded .hero__subtitle-word {
   overflow: hidden;
 }
 .cases__container {
-  padding-bottom: 20vh;
+  padding-bottom: 30rem;
 }
 .cases__album-wrapper {
   width: -moz-min-content;
@@ -1219,7 +1229,8 @@ html.font-loaded .hero__subtitle-word {
 .cases__preview-card {
   --preview-card-height: 0;
   pointer-events: none;
-  width: 15vw;
+  width: 16vw;
+  min-width: 15rem;
   background-origin: 0 0;
   height: var(--preview-card-height);
   position: absolute;
@@ -1244,6 +1255,11 @@ html.font-loaded .hero__subtitle-word {
 }
 .cases__preview-card.is-active {
   clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+}
+@media (hover: none) and (pointer: coarse) {
+  .cases__preview-card {
+    display: none;
+  }
 }
 .cases__bottom-hiddener {
   position: relative;

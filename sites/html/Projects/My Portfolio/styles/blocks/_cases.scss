@@ -14,7 +14,7 @@
   overflow: hidden;
 
   &__container {
-    padding-bottom: 20vh;
+    padding-bottom: 30rem;
   }
 
   &__album-wrapper {
@@ -280,7 +280,8 @@
     --preview-card-height: 0;
 
     pointer-events: none;
-    width: 15vw;
+    width: 16vw;
+    min-width: 15rem;
     background-origin: 0 0;
     height: var(--preview-card-height);
     position: absolute;
@@ -315,6 +316,10 @@
 
     &.is-active {
       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
     }
   }
 
