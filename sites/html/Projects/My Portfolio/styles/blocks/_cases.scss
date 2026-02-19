@@ -69,12 +69,13 @@
 
   &__cards-group {
     width: 100%;
-    padding-inline: 5rem;
+    //padding-inline: 5rem;
     height: auto;
 
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
   }
 
   .card {
@@ -84,6 +85,8 @@
     box-shadow:
       2px 2px 5px 0 #ffffff77 inset,
       5px 5px 5px 0 #00000033;
+
+    position: relative;
 
 
     &__content {
@@ -174,10 +177,106 @@
         padding-right: 0rem;
       }
     }
+
+    @include laptop-above {
+      .card {
+        &__content {
+          grid-template-columns: 23% 45% 20% auto;
+        }
+
+        &__title h4 {
+          font-size: 2.5rem;
+        }
+
+        &__description p {
+          font-size: 1.625rem;
+        }
+      }
+    }
+
+    @include laptop {
+      .card {
+        &__content {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 0;
+
+          padding-right: 2rem;
+        }
+
+        &__difficulty {
+          margin-top: 22px;
+        }
+
+        &__link {
+          position: absolute;
+          height: auto;
+          width: auto;
+          padding-right: none;
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+    }
+
+    @include tablet {
+      .card {
+        &__title h4 {
+          font-size: 2.25rem;
+        }
+
+        &__description p {
+          font-size: 1.375rem;
+        }
+
+        &__difficulty {
+          & span {
+            font-size: 1.25rem;
+          }
+
+          & svg {
+            height: 25px;
+            width: 25px;
+          }
+        }
+      }
+    }
+
+    @include mobile-s {
+      .card {
+        &__content {
+          grid-template-columns: 23% 45% 20% auto;
+        }
+
+        &__title h4 {
+          font-size: 2.25rem;
+        }
+
+        &__description p {
+          font-size: 1.125rem;
+        }
+
+        &__difficulty {
+          & span {
+            font-size: 1rem;
+          }
+
+          & svg {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        &__link {
+          display: none;
+        }
+      }
+    }
   }
 
 
-  &__preview-card{
+  &__preview-card {
     --preview-card-height: 0;
 
     pointer-events: none;
@@ -188,14 +287,14 @@
     clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
     //clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 
-    transition: 
+    transition:
       clip-path .4s ease-in-out,
       height .4s linear;
 
     display: flex;
     justify-content: center;
     align-items: start;
-    
+
     --pos-x: 10px;
     --pos-y: 10px;
     top: var(--pos-y);
@@ -203,10 +302,10 @@
 
     border: 5px solid #F831F8;
     background-color: #F831F8;
-    box-shadow: 
+    box-shadow:
       5px 5px 5px 0 #00000033;
 
-    & img{
+    & img {
       width: auto;
       height: auto;
 
@@ -214,13 +313,13 @@
       color: #000000;
     }
 
-    &.is-active{
+    &.is-active {
       clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
     }
   }
 
 
-  &__bottom-hiddener{
+  &__bottom-hiddener {
     position: relative;
     width: 100vw;
     height: var(--bottom-hiddener-height);
