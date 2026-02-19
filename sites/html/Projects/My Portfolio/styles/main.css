@@ -772,6 +772,7 @@ html.font-loaded .hero__subtitle-word {
 .about__content {
   width: 100%;
   height: 80vh;
+  padding-bottom: 10rem;
 }
 .about__container {
   position: relative;
