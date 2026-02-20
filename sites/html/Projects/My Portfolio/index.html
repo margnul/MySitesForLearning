@@ -27,6 +27,13 @@
 </head>
 
 <body>
+  <svg width="0" height="0" style="position:absolute">
+    <filter id="sectionDistortion">
+      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="2" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
   <header class="header" style="display: none;">
     <div class="header__container container">
       <div class="header__logo-wrapper">
@@ -202,7 +209,7 @@
             </a>
           </div>
           <div class="card" data-case="FutureTech" data-js-case-card>
-            <a class="card__content"  href="/#">
+            <a class="card__content" href="/#">
               <div class="card__title">
                 <h4>FutureTech</h4>
               </div>
@@ -387,7 +394,7 @@
             </a>
           </div>
         </div>
-      </div> 
+      </div>
       <div class="cases__preview-card" data-js-preview-card>
         <img src="./" alt=" ">
       </div>
@@ -516,32 +523,25 @@
           </div>
         </div>
       </div>
+      <div class="about__divider"></div>
     </div>
   </main>
 
   <footer class="footer">
     <div class="footer__container container">
-      <div class="footer__links">
-        <div class="footer__link-wrapper">
-          <a class="footer__link" href="/">INSTAGRAM</a>
-        </div>
-        <div class="footer__link-wrapper">
-          <a class="footer__link" href="/">TELEGRAM</a>
-        </div>
-        <div class="footer__link-wrapper">
-          <a class="footer__link" href="/">TGCHANNEL</a>
+      <div class="footer__link">
+        <a href="/">ТЕЛЕГРАМ</a>
+
+        <div class="footer__sublink">
+          <span>напиши мне</span>
         </div>
       </div>
-      <div class="footer__lines">
-        <div class="footer__line"></div>
-        <div class="footer__line"></div>
-        <div class="footer__line"></div>
-      </div>
+
     </div>
   </footer>
 
 
-  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <svg style="height: 0;" xmlns="http://www.w3.org/2000/svg" version="1.1">
     <defs>
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
