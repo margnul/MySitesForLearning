@@ -1,55 +1,81 @@
 @use '../helpers/' as *;
 
-.footer{
+.footer {
   --line-height: #{rem(4)};
   --line-gap: #{rem(10)};
 
-  &__container{
-    width: 100%;
-    max-width: none;
-    margin-inline: 0;
-    margin-top: rem(40);
-    padding-top: rem(10);
+  background-color: var(--footer-color);
 
-    background-color: var(--color-dark-20);
-    border-radius: 10px 10px 0 0;
-  }
+  height: 90vh;
 
-  &__links{
-    width: var(--small-width);
-    justify-self: center;
-    padding-bottom: rem(8);
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: start;
-    flex-wrap: wrap;
-  }
-
-  &__link-wrapper{
-    background-color: var(--color-gray-60);
-    padding: 8px 16px;
-    border: 3px solid var(--color-black);
-
-    color: var(--color-black);
-    font-weight: 900;
-  }
-
-
-
-  &__lines{
+  &__container {
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 
-    height: calc(3 * var(--line-height) + 5 * var(--line-gap));
+    height: 100%;
+    width: 100%;
   }
 
-  &__line{
-    width: var(--small-width);
-    height: rem(4);
-    background-color: var(--color-gray-50);
+  &__link {
+    overflow: hidden;
+    font-size: 10vw;
+    font-weight: 900;
+
+    $gap-width: 30%;
+
+    &>a {
+      position: relative;
+      text-decoration: none;
+
+      &::before,
+      &::after {
+        position: absolute;
+        bottom: 10px;
+        width: calc(100% + $gap-width);
+        height: 4px;
+        background-color: #ffffff;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        content: '';
+
+        transition: clip-path .5s ease-in-out;
+      }
+
+      &::before {
+        right: -$gap-width;
+      }
+
+      &::after {
+        transform-origin: 0 0;
+        left: -$gap-width;
+        content: '';
+        clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+      }
+    }
+
+    &:hover {
+      
+
+      a {
+        color: #ffffff99;
+
+        &::before {
+          clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+        }
+
+        &::after {
+          clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        }
+      }
+    }
   }
+
+  &__sublink {
+    font-size: 2vw;
+    font-weight: 800;
+    justify-self: right;
+  }
+
 }

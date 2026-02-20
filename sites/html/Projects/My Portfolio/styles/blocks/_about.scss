@@ -295,4 +295,13 @@
 
   }
 
+
+  &__divider {
+    height: 50px;
+    margin-top: -25px;
+    margin-bottom: -25px;
+    background: linear-gradient(to bottom, #111, #f5f5f5);
+    filter: url(#sectionDistortion);
+    z-index: 2;
+  }
 }
