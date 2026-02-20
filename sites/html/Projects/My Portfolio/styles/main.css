@@ -1006,7 +1006,7 @@ html.font-loaded .hero__subtitle-word {
   --bottom-hiddener-height: 10vh;
   background-color: var(--cases-color);
   background-color: var(--cases-color);
-  margin-top: calc(-2rem + 2px);
+  margin-top: calc(-2rem + 3px);
   padding-top: calc(5vmin + 3rem);
   position: relative;
   overflow: hidden;
