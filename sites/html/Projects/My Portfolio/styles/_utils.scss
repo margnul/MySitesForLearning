@@ -14,7 +14,8 @@
 }
 
 .container {
-  max-width: var(--container-width);
+  width: var(--container-width);
+  max-width: 1400px;
   margin-inline: auto;
   //padding-inline: var(--container-padding-x);
   margin-top: #{rem(10)};

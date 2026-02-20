@@ -92,10 +92,12 @@ class CasesPreview {
     if (!images || !images.length) return
 
     this.previewImageElement.src = images[this.imageIndex]
-    const imgHeight = 15 / this.aspectRatios[caseKey]
+    const width = this.previewCardElement.getBoundingClientRect().width
+    const imgHeight = width / this.aspectRatios[caseKey]
+    console.log(width, imgHeight)
     this.previewCardElement.style.setProperty(
       "--preview-card-height",
-      imgHeight.toString() + "vw"
+      imgHeight.toString() + "px"
     )
 
     this.imageInterval = setInterval(() => {
