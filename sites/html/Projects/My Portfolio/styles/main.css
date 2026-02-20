@@ -722,7 +722,7 @@ html.font-loaded .hero__subtitle-word {
   z-index: 3;
   background: url("../../images/wave5.svg") repeat-x top;
   background-size: auto 100%;
-  background-position-y: -1px;
+  background-position-y: 1px;
   animation: waves-animation 1s linear infinite;
 }
 
@@ -1017,7 +1017,7 @@ html.font-loaded .hero__subtitle-word {
   --bottom-hiddener-height: 10vh;
   background-color: var(--cases-color);
   background-color: var(--cases-color);
-  margin-top: calc(-2rem + 2px);
+  margin-top: calc(-2rem + 5px);
   padding-top: calc(5vmin + 3rem);
   position: relative;
   overflow: hidden;
@@ -1072,6 +1072,9 @@ html.font-loaded .hero__subtitle-word {
 }
 .cases__title {
   margin-bottom: 3rem;
+  font-size: min(10vw, 9.6rem);
+  color: #000000;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 .cases__bottom {
   position: relative;
