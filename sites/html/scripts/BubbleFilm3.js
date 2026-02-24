@@ -47,7 +47,7 @@ class BubbleWrap {
 
     this.popSoundElements = [...Array(4)].map(() => document.createElement('audio'))
     this.popSoundElements.forEach((el, index) => {
-      el.setAttribute('src', `../sounds/bubble-pop-${index+1}_1.mp3`)
+      el.setAttribute('src', `../sounds/pop-alt_2-${index + 1}.mp3`)
     })
     this.indexToPlay = 0
 
