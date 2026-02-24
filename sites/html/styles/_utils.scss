@@ -1,0 +1,187 @@
+@use 'helpers' as *;
+
+.divider {
+  height: 100px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sticky-container-wrapper {
+  position: relative;
+  overflow: clip;
+  min-height: 100vh;
+
+  & .container {
+    top: 1px;
+    left: 0;
+    position: sticky;
+    height: min-content;
+  }
+}
+
+.container {
+  width: var(--container-width);
+  max-width: 1400px;
+  margin-inline: auto;
+  //padding-inline: var(--container-padding-x);
+  margin-top: #{rem(10)};
+
+  @include mobile-s-above {
+    margin-top: #{rem(40)};
+  }
+}
+
+.section-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: rem(15);
+}
+
+.text-tile {
+  font-weight: 600;
+  letter-spacing: -0.00em;
+  display: block;
+  background-color: var(--color-dark-40);
+  //border: 5px solid var(--color-light);
+  //border-radius: 5px;
+  box-sizing: border-box;
+  padding: 10px;
+
+  --shadow-offset: 10px;
+  width: calc(var(--small-width) - var(--shadow-offset));
+  align-self: self-start;
+  margin-left: var(--offset-addition);
+
+  box-shadow: var(--shadow-offset) var(--shadow-offset) var(--color-dark-15);
+  margin-bottom: var(--shadow-offset);
+
+  @include mobile-s-above {
+    max-width: 80vw;
+    justify-self: center;
+    align-self: center;
+    margin-left: 0;
+  }
+}
+
+.text-unit {
+  width: 100%;
+  max-width: 20rem;
+  display: grid;
+  gap: 1rem;
+
+  &__title {
+    font-size: clamp(1.5rem, 1rem + 2.3vw, 4rem);
+    font-weight: 600;
+    text-wrap: nowrap;
+    text-shadow: 0 0 5px #00000055;
+
+    display: flex;
+  }
+
+  &__content {
+    font-size: clamp(1rem, .5rem + 0.5vw, 20.5rem);
+    font-weight: 400;
+    text-shadow: 0 0 5px #00000055;
+  }
+
+  &__title-mark {
+    height: calc(clamp(1.5rem, 1rem + 2.3vw, 4rem) / 2);
+    align-self: center;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 1000px;
+    margin-right: 1rem;
+  }
+}
+
+.hero-tile {
+  transition: width 1s ease-in-out;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background-color: var(--hero-color);
+  height: min-content;
+  width: max-content;
+
+  --shadow-base: rgba(0, 0, 0, 0.15);
+  --scale: 0;
+
+  html.font-loaded & {
+    box-shadow:
+      calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 2px) calc(var(--scale) / 5 * 5px) 0px #ffffff77 inset,
+
+      calc(var(--scale) * 1px) calc(var(--scale) * 1px) calc(var(--scale) * 3px) rgba(0, 0, 0, 0.12),
+
+      calc(var(--scale) * 2px) calc(var(--scale) * 2px) calc(var(--scale) * 5px) rgba(0, 0, 0, 0.20);
+
+      //calc(var(--scale) * 10px) calc(var(--scale) * 10px) calc(var(--scale) * 20px) rgba(0, 0, 0, 0.1);
+
+      //calc(var(--scale) * 30px) calc(var(--scale) * 30px) calc(var(--scale) * 50px) rgba(0, 0, 0, 0.06),
+
+      //calc(var(--scale) * 60px) calc(var(--scale) * 60px) calc(var(--scale) * 100px) rgba(0, 0, 0, 0.03);
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile {
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include mobile-above {
+    display: none !important;
+  }
+}
+
+.full-vw-line {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: calc((100vw - var(--container-width)) / 2);
+    height: rem(1);
+    background-color: var(--color-dark-15);
+  }
+
+  &--top {
+    &::before {
+      content: '';
+      bottom: 100%;
+    }
+  }
+
+  &--bottom {
+    &::after {
+      content: '';
+      top: 100%;
+    }
+  }
+
+  &--left {
+
+    &::before,
+    &::after {
+      right: 100%;
+    }
+  }
+
+  &--right {
+
+    &::before,
+    &::after {
+      left: 100%;
+    }
+  }
+}

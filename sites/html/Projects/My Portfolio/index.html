@@ -20,6 +20,8 @@
   <script src="./scripts/AboutPhotos.js" type="module"></script>
   <script src="./scripts/CasesAnimation.js" type="module"></script>
   <script src="./scripts/CasesPreview.js" type="module"></script>
+  <!-- <script src="./scripts/HeroTracker.js" type="module"></script> -->
+  <script src="./scripts/BubbleFilm3.js" type="module"></script>
 
 
   <!-- <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script> -->
@@ -27,13 +29,6 @@
 </head>
 
 <body>
-  <svg width="0" height="0" style="position:absolute">
-    <filter id="sectionDistortion">
-      <feTurbulence type="turbulence" baseFrequency="0.01" numOctaves="3" seed="2" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" xChannelSelector="R" yChannelSelector="G" />
-    </filter>
-  </svg>
-
   <header class="header" style="display: none;">
     <div class="header__container container">
       <div class="header__logo-wrapper">
@@ -53,10 +48,10 @@
   </header>
 
   <main>
-    <div class="hero">
+    <div class="hero" data-js-hero-section>
       <div class="hero__container container">
         <div class="hero__wrapper">
-          <h1 class="hero__title hero-tile" data-js-hero-tile>
+          <h1 class="hero__title hero-tile" data-js-hero-title data-js-hero-tile>
             <div class="hero__title-word">
               <span class="hero__title-letter">И</span>
               <span class="hero__title-letter">В</span>
@@ -73,15 +68,23 @@
               <span class="hero__title-letter">Т</span>
             </div>
           </h1>
-          <h2 class="hero__subtitle">
+          <h2 class="hero__subtitle" data-js-hero-subtitle>
             <div class="hero__subtitle-word-wrapper hero-tile" data-js-hero-tile>
               <span class="hero__subtitle-word">Разработка сайтов</span>
             </div>
           </h2>
         </div>
       </div>
-      <div class="hero__bottom">
-
+      <div class="hero__bottom"></div>
+      <div class="hero__bubble-film" data-js-hero-canvas-wrapper>
+        <canvas class="hero__bubble-film-canvas" id="bubbleWrap" data-js-hero-canvas></canvas>
+        <div class="hero__bubble-film-button" data-js-hero-canvas-button>
+          <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8.07112 0.292793C7.6806 -0.0977311 7.04743 -0.0977311 6.65691 0.292793L0.292946 6.65675C-0.0975788 7.04728 -0.0975788 7.68044 0.292946 8.07097C0.68347 8.46149 1.31663 8.46149 1.70716 8.07097L7.36401 2.41411L13.0209 8.07097C13.4114 8.46149 14.0446 8.46149 14.4351 8.07097C14.8256 7.68044 14.8256 7.04728 14.4351 6.65675L8.07112 0.292793ZM7.36401 1L8.36401 1L8.36401 0.9999L7.36401 0.9999L6.36401 0.9999L6.36401 1L7.36401 1Z"
+              fill="white" />
+          </svg>
+        </div>
       </div>
     </div>
 
@@ -407,7 +410,6 @@
           <span>ОБО МНЕ</span>
         </h3>
         <div class="about__canvas-album" style="display: none;" data-js-canvas-album>
-          <!-- указать количество в js -->
           <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
           <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
         </div>
@@ -523,22 +525,26 @@
           </div>
         </div>
       </div>
-      <div class="about__divider"></div>
+
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__link-wrapper">
+            <span>Обсудим проект?</span>
+            <a href="/">Telegram</a>
+
+            <!-- <div class="footer__sublink">
+              <span>@margnul</span>
+            </div> -->
+          </div>
+
+        </div>
+      </footer>
+
     </div>
+
   </main>
 
-  <footer class="footer">
-    <div class="footer__container container">
-      <div class="footer__link">
-        <a href="/">ТЕЛЕГРАМ</a>
 
-        <div class="footer__sublink">
-          <span>напиши мне</span>
-        </div>
-      </div>
-
-    </div>
-  </footer>
 
 
   <svg style="height: 0;" xmlns="http://www.w3.org/2000/svg" version="1.1">
@@ -546,7 +552,6 @@
       <filter id="goo">
         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
         <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
-        <feBlend in="SourceGraphic" in2="goo" />
       </filter>
     </defs>
   </svg>

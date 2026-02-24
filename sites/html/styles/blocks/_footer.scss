@@ -1,0 +1,99 @@
+@use '../helpers/' as *;
+
+.footer {
+  --line-height: #{rem(4)};
+  --line-gap: #{rem(10)};
+
+  background-color: var(--footer-color);
+
+  height: 100vh;
+  height: 100lvh;
+
+  z-index: 5;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  cursor: default;
+
+  & * {
+    z-index: 5;
+  }
+
+  &__container {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &__link-wrapper {
+    overflow: hidden;
+    font-size: min(7rem, 6vw);
+    font-weight: 700;
+
+    display: flex;
+    flex-direction: column;
+
+    $gap-width: 30%;
+
+    &>a {
+      position: relative;
+      text-decoration: none;
+      width: max-content;
+      overflow: hidden;
+      align-self: center;
+      font-weight: 800;
+
+      &::before,
+      &::after {
+        position: absolute;
+        bottom: 0px;
+        width: calc(100% + $gap-width);
+        height: 4px;
+        background-color: #ffffff;
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+        content: '';
+
+        transition: clip-path .5s ease-in-out;
+      }
+
+      &::before {
+        right: -$gap-width;
+      }
+
+      &::after {
+        transform-origin: 0 0;
+        left: -$gap-width;
+        content: '';
+        clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+      }
+    }
+
+
+
+    a:hover {
+      color: #ffffff99;
+
+      &::before {
+        clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
+      }
+
+      &::after {
+        clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+      }
+    }
+  }
+
+  &__sublink {
+    font-size: max(1rem, 2vw);
+    font-weight: 800;
+    justify-self: right;
+    align-self: flex-end;
+  }
+
+}

@@ -1,0 +1,84 @@
+@use '../helpers/' as *;
+
+.header {
+  position: absolute;
+  width: 100%;
+
+  &__container {
+    height: auto;
+    position: relative;
+
+    padding-block: calc(var(--line-padding) + var(--line-height));
+    margin-top: rem(10);
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      background-color: var(--color-gray-50);
+      width: 100%;
+      height: var(--line-height);
+      left: 0;
+      top: 0;
+      content: "";
+    }
+
+    &::after {
+      top: unset;
+      bottom: 0;
+      width: calc(100% - 2 * var(--offset-addition));
+      left: var(--offset-addition);
+    }
+  }
+
+  &__logo-wrapper {
+    //width: 30vw;
+    width: max-content;
+    height: auto;
+
+    position: relative;
+    left: var(--offset-addition);
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    $total-spans: 7;
+
+    width: calc(3rem * $total-spans);
+    height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    font-size: 2.5rem;
+
+    & span {
+      text-decoration: none;
+      display: block;
+      background-color: var(--color-dark);
+      position: relative;
+      transition: margin-left .15s ease-out;
+
+      &:not(:first-child) {
+        margin-left: -2.3rem;
+      }
+
+    }
+
+    @for $i from 1 through $total-spans {
+      & span:nth-child(#{$i}) {
+        z-index: $total-spans - $i + 1;
+        transition-delay: #{$i / 8}s;
+      }
+    }
+
+    &.active {
+      & span{
+        margin-left: 0;
+      }
+    }
+  }
+}

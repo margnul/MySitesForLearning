@@ -1,0 +1,15 @@
+@use '../helpers/' as *;
+
+.canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+
+  &__wrapper{
+    margin: 0;
+    height: 300vh;
+    background-color: var(--color-dark-20);
+  }
+
+}

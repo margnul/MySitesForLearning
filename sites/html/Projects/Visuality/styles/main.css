@@ -249,13 +249,13 @@ svg * {
     );
   --border: 0.0625rem solid var(--color-dark-15);
   --shadow: 0 0 0 0.1875rem #191919;
-  --font-family-base: "Inter", sans-serif;
-  --font-family-accent: "Kumbh Sans", sans-serif;
+  --font-family-base: 'Inter', sans-serif;
+  --font-family-accent: 'Kumbh Sans', sans-serif;
   --container-width: 100rem;
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
 }
-@media (width <= 90.06125rem) {
+@media (max-width: 90.06125rem) {
   :root {
     --container-width: 80rem;
   }
@@ -280,13 +280,13 @@ svg * {
   overflow: hidden !important;
 }
 
-@media (width <= 47.99875rem) {
+@media (max-width: 47.99875rem) {
   .hidden-mobile {
     display: none !important;
   }
 }
 
-@media (width > 47.99875rem) {
+@media (min-width: 47.99875rem) {
   .visible-mobile {
     display: none !important;
   }

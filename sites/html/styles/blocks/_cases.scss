@@ -1,0 +1,341 @@
+@use '../helpers/' as *;
+
+.cases {
+  --bottom-hiddener-height: max(5.25vw, 5rem);
+
+  background-color: var(--cases-color);
+  //background: linear-gradient(to bottom, var(--cases-color) calc(100% - 10vh - var(--bottom-hiddener-height)), var(--about-color) calc(100% - var(--bottom-hiddener-height)));
+  background-color: var(--cases-color);
+
+  margin-top: calc(-2rem + 3px);
+  padding-top: calc(5vmin + 3rem);
+  position: relative;
+
+  overflow: hidden;
+
+  &__container {
+    padding-bottom: 30rem;
+    padding-bottom: max(21vw, 20rem)  ;
+  }
+
+  &__album-wrapper {
+    width: min-content;
+    justify-self: center;
+    overflow: visible;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    font-size: clamp(0.1rem, .8vw, 7.5rem);
+    column-gap: rem(40);
+    row-gap: rem(40);
+
+    @media (max-width: rem(1380)) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      font-size: clamp(.8rem, .9vw, 7.5rem);
+      column-gap: rem(40);
+      row-gap: rem(40);
+    }
+
+    @media (max-width: rem(700)) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      font-size: clamp(0.1rem, 2.2 vw, 7.5rem);
+      column-gap: rem(20);
+      row-gap: rem(20);
+    }
+
+    @media (max-width: rem(430)) {
+      margin-top: rem(20);
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      font-size: clamp(0.1rem, 3.4vw, 7.5rem);
+      margin-inline: rem(40);
+      column-gap: rem(0);
+      row-gap: rem(40);
+    }
+  }
+
+  &__title {
+    margin-bottom: 3rem;
+    font-size: min(10vw, 9.6rem);
+    color: #000000;
+    text-shadow: 0 0 5px #00000099;
+  }
+
+  &__bottom {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    background: var(--cases-color);
+  }
+
+  &__cards-group {
+    width: 100%;
+    //padding-inline: 5rem;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+  }
+
+  .card {
+    cursor: default;
+    background-color: #ECC8EC;
+    border-radius: 20px;
+    box-shadow:
+      2px 2px 5px 0 #ffffff77 inset,
+      5px 5px 5px 0 #00000033;
+
+    position: relative;
+
+
+    &__content {
+      padding: 1rem;
+      color: #000000;
+      font-weight: 800;
+      display: grid;
+      grid-template-columns: 28% 45% 20% auto;
+      align-items: center;
+      gap: 1rem;
+
+      &>* {
+        height: 100%;
+      }
+    }
+
+    &__title h4 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #000000;
+    }
+
+    &__description {
+      display: flex;
+      align-items: center;
+
+      & p {
+        font-size: 1.75rem;
+      }
+    }
+
+    &__difficulty {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+
+      & span {
+        font-size: 1.5rem;
+      }
+
+      & svg {
+        color: var(--cases-color);
+      }
+
+      &[data-difficulty="1"] {
+        svg:nth-child(2) {
+          color: #FFFF36;
+        }
+      }
+
+      &[data-difficulty="2"] {
+        svg:nth-child(2) {
+          color: #FFFF36;
+        }
+
+        svg:nth-child(3) {
+          color: #FFFF36;
+        }
+      }
+
+      &[data-difficulty="3"] {
+        svg:nth-child(2) {
+          color: #FFFF36;
+        }
+
+        svg:nth-child(3) {
+          color: #FFFF36;
+        }
+
+        svg:nth-child(4) {
+          color: #FFFF36;
+        }
+      }
+    }
+
+    &__link {
+      cursor: pointer;
+      padding-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+
+      transition: padding-right .2s ease-in-out;
+
+      &:hover {
+        color: #000000;
+        padding-right: 0rem;
+      }
+    }
+
+    @include laptop-above {
+      .card {
+        &__content {
+          grid-template-columns: 23% 45% 20% auto;
+        }
+
+        &__title h4 {
+          font-size: 2.5rem;
+        }
+
+        &__description p {
+          font-size: 1.625rem;
+        }
+      }
+    }
+
+    @include laptop {
+      .card {
+        &__content {
+          display: flex;
+          flex-direction: column;
+          flex-direction: column;
+          align-items: start;
+          gap: 0;
+
+          padding-right: 2rem;
+        }
+
+        &__difficulty {
+          margin-top: 22px;
+        }
+
+        &__link {
+          position: absolute;
+          height: auto;
+          width: auto;
+          padding-right: none;
+          bottom: 1rem;
+          right: 1rem;
+        }
+      }
+    }
+
+    @include tablet {
+      .card {
+        &__title h4 {
+          font-size: 2.25rem;
+        }
+
+        &__description p {
+          font-size: 1.375rem;
+        }
+
+        &__difficulty {
+          & span {
+            font-size: 1.25rem;
+          }
+
+          & svg {
+            height: 25px;
+            width: 25px;
+          }
+        }
+      }
+    }
+
+    @include mobile-s {
+      .card {
+        &__content {
+          grid-template-columns: 23% 45% 20% auto;
+        }
+
+        &__title h4 {
+          font-size: 2.25rem;
+        }
+
+        &__description p {
+          font-size: 1.125rem;
+        }
+
+        &__difficulty {
+          & span {
+            font-size: 1rem;
+          }
+
+          & svg {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        &__link {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  &__preview-card {
+    --preview-card-height: 0;
+
+    pointer-events: none;
+    width: 16vw;
+    min-width: 15rem;
+    background-origin: 0 0;
+    height: var(--preview-card-height);
+    position: absolute;
+    clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
+    //clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+
+    transition:
+      clip-path .4s ease-in-out,
+      height .4s linear;
+
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    --pos-x: 10px;
+    --pos-y: 10px;
+    top: var(--pos-y);
+    left: var(--pos-x);
+
+    border: 5px solid #F831F8;
+    background-color: #F831F8;
+    box-shadow:
+      5px 5px 5px 0 #00000033;
+
+    & img {
+      width: auto;
+      height: auto;
+
+      background-color: #000000;
+      color: #000000;
+    }
+
+    &.is-active {
+      clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+      display: none;
+    }
+  }
+
+
+  &__bottom-hiddener {
+    position: absolute;
+    width: 100vw;
+    height: var(--bottom-hiddener-height);
+    bottom: 0;
+    left: 0;
+
+    background: linear-gradient(to bottom, #72df7200 0%, #72df72ff 100%);
+  }
+}

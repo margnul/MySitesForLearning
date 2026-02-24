@@ -34,9 +34,9 @@ class HeroMedia {
 
   getVideoForScreen() {
     const width = window.innerWidth
-    if (width >= 1280) return './videos/blaed-agency-hero-uhd.mp4'
-    if (width >= 1024) return './videos/blaed-agency-hero-hd.mp4'
-    if (width >= 960) return './videos/blaed-agency-hero-md.mp4'
+    if (width < 1280) return './videos/blaed-agency-hero-uhd.mp4'
+    if (width < 1024) return './videos/blaed-agency-hero-hd.mp4'
+    if (width < 960) return './videos/blaed-agency-hero-md.mp4'
     return './videos/blaed-agency-hero-ld.mp4'
   }
 

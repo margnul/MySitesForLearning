@@ -1,11 +1,22 @@
 @use 'helpers' as *;
 
-.sticky-container-wrapper{
+.divider {
+  height: 100px;
+  margin-top: -50px;
+  margin-bottom: -50px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sticky-container-wrapper {
   position: relative;
   overflow: clip;
   min-height: 100vh;
 
-  & .container{
+  & .container {
     top: 1px;
     left: 0;
     position: sticky;
@@ -59,13 +70,13 @@
   }
 }
 
-.text-unit{
+.text-unit {
   width: 100%;
   max-width: 20rem;
   display: grid;
   gap: 1rem;
 
-  &__title{
+  &__title {
     font-size: clamp(1.5rem, 1rem + 2.3vw, 4rem);
     font-weight: 600;
     text-wrap: nowrap;
@@ -74,13 +85,13 @@
     display: flex;
   }
 
-  &__content{
+  &__content {
     font-size: clamp(1rem, .5rem + 0.5vw, 20.5rem);
     font-weight: 400;
     text-shadow: 0 0 5px #00000055;
   }
 
-  &__title-mark{
+  &__title-mark {
     height: calc(clamp(1.5rem, 1rem + 2.3vw, 4rem) / 2);
     align-self: center;
     aspect-ratio: 1;
@@ -97,7 +108,7 @@
   background-color: var(--hero-color);
   height: min-content;
   width: max-content;
-  
+
   --shadow-base: rgba(0, 0, 0, 0.15);
   --scale: 0;
 

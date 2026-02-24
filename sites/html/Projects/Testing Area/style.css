@@ -351,8 +351,6 @@
   -webkit-line-clamp: 3;
   overflow: hidden;
   position: relative;
-  font-family: "Times New Roman", Times, serif;
-  font-weight: 600;
 }
 .text-block__paragraph::before {
   content: "3";
@@ -360,6 +358,10 @@
   left: 0px;
   top: 0;
   color: red;
+}
+.text-block__paragraph {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
 }
 .text-block__button {
   padding: 5px;

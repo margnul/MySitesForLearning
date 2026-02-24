@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-FB1G0GLK7P"></script>
@@ -12,25 +13,610 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vanya's sites</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Margnul</title>
+  <link rel="stylesheet" href="./styles/main-fast.css">
+  <link rel="stylesheet" href="./styles/main.css">
 
+
+  <!-- <script src="./scripts/AboutPhotos.js" type="module"></script> -->
+  <!-- <script src="./scripts/CasesAnimation.js" type="module"></script> -->
+  <script src="./scripts/CasesPreview.js" type="module"></script>
+  <!-- <script src="./scripts/HeroTracker.js" type="module"></script> -->
+  <script src="./scripts/BubbleFilm3.js" type="module"></script>
+
+  <!-- 1 -->
+
+  <script src="./scripts/main.js" type="module"></script>
 </head>
-<body>
-  <main>
-    <h1>Мои сайты</h1>
-    <div class="links-wrapper">
-      <a class="site-link" href="./WEB_PRO/Velocity/site/index.html">Velocity</a>
-      <a class="site-link" href="./WEB_PRO/Organic Juicy Co/site/index.html">Organic Juicy Co.</a>
-      <a class="site-link" href="./WEB_PRO/NoTab/site/index.html">NoTab</a>
-      <a class="site-link" href="./Projects/FutureTech/index.html">FutureTech</a>
 
-      <a class="site-link" href="./Projects/Nexcent/index.html">Nexcent</a>
-      <a class="site-link" href="./Projects/Positivus/index.html">Positivus</a>
-      <a class="site-link" href="./Projects/Aaronn/index.html">Aaronn</a>
-      <a class="site-link" href="./Projects/Juvelirus/index.html">Juvelirus</a>
-      <a class="site-link" href="./Projects/Blaed Agency/index.html">Blaed<span class="new-tile">new</span></a>
+<body>
+  <header class="header" style="display: none;">
+    <div class="header__container container">
+      <div class="header__logo-wrapper">
+        <a>
+          <div class="header__logo" data-js-header-logo>
+            <span class="header__logo-letter">M</span>
+            <span class="header__logo-letter">A</span>
+            <span class="header__logo-letter">R</span>
+            <span class="header__logo-letter">G</span>
+            <span class="header__logo-letter">N</span>
+            <span class="header__logo-letter">U</span>
+            <span class="header__logo-letter">L</span>
+          </div>
+        </a>
+      </div>
     </div>
+  </header>
+
+  <main>
+    <div class="hero" data-js-hero-section>
+      <div class="hero__container container">
+        <div class="hero__wrapper">
+          <h1 class="hero__title hero-tile" data-js-hero-title data-js-hero-tile>
+            <div class="hero__title-word">
+              <span class="hero__title-letter">И</span>
+              <span class="hero__title-letter">В</span>
+              <span class="hero__title-letter">А</span>
+              <span class="hero__title-letter">Н</span>
+            </div>
+            <div class="hero__title-word">
+              <span class="hero__title-letter">М</span>
+              <span class="hero__title-letter">Е</span>
+              <span class="hero__title-letter">Й</span>
+              <span class="hero__title-letter">Н</span>
+              <span class="hero__title-letter">А</span>
+              <span class="hero__title-letter">Р</span>
+              <span class="hero__title-letter">Т</span>
+            </div>
+          </h1>
+          <h2 class="hero__subtitle" data-js-hero-subtitle>
+            <div class="hero__subtitle-word-wrapper hero-tile" data-js-hero-tile>
+              <span class="hero__subtitle-word">Разработка сайтов</span>
+            </div>
+          </h2>
+        </div>
+      </div>
+      <div class="hero__bottom"></div>
+      <div class="hero__bubble-film" data-js-hero-canvas-wrapper>
+        <canvas class="hero__bubble-film-canvas" id="bubbleWrap" data-js-hero-canvas></canvas>
+        <div class="hero__bubble-film-button" data-js-hero-canvas-button>
+          <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8.07112 0.292793C7.6806 -0.0977311 7.04743 -0.0977311 6.65691 0.292793L0.292946 6.65675C-0.0975788 7.04728 -0.0975788 7.68044 0.292946 8.07097C0.68347 8.46149 1.31663 8.46149 1.70716 8.07097L7.36401 2.41411L13.0209 8.07097C13.4114 8.46149 14.0446 8.46149 14.4351 8.07097C14.8256 7.68044 14.8256 7.04728 14.4351 6.65675L8.07112 0.292793ZM7.36401 1L8.36401 1L8.36401 0.9999L7.36401 0.9999L6.36401 0.9999L6.36401 1L7.36401 1Z"
+              fill="white" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="cases" data-js-cases-section>
+      <div class="cases__container container">
+        <h3 class="cases__title section-title">
+          <span>МОИ РАБОТЫ</span>
+        </h3>
+        <div class="cases__album-wrapper" style="display: none;" data-js-cases-album>
+          <div class="case" data-js-case id="Blaed">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/Blaed/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>Blaed</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Организация модных мероприятий</p>
+            </div>
+          </div>
+          <div class="case" data-js-case id="Positivus">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/Positivus/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>Positivus</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Агентство цифрового маркетинга</p>
+            </div>
+          </div>
+          <div class="case" data-js-case id="Nexcent">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/Nexcent/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>Nexcent</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Простой лэндинг</p>
+            </div>
+          </div>
+          <div class="case" data-js-case id="NoTab">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/NoTab/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>NoTab</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Лэндинг для приложения</p>
+            </div>
+          </div>
+          <div class="case" data-js-case id="Aaronn">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/Aaronn/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>Aaronn</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Портфолио цифрового дизанера</p>
+            </div>
+          </div>
+          <div class="case" data-js-case id="FutureTech">
+            <div class="case__image-wrapper">
+              <img src="./images/cases/FutureTech/cover.png" alt="">
+            </div>
+            <div class="case__title">
+              <h4>
+                <span>FutureTech</span>
+              </h4>
+            </div>
+            <div class="case__description">
+              <p>Новости ИИ и технологий</p>
+            </div>
+          </div>
+        </div>
+        <div class="cases__cards-group">
+          <div class="card" data-case="Blaed" data-js-case-card>
+            <a class="card__content" href="./Projects/Blaed Agency/index.html">
+              <div class="card__title">
+                <h4>Blaed</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Организация модных мероприятий
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="3">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-case="FutureTech" data-js-case-card>
+            <a class="card__content" href="./Projects/FutureTech/index.html">
+              <div class="card__title">
+                <h4>FutureTech</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Новости ИИ и технологий
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="2">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-case="Positivus" data-js-case-card>
+            <a class="card__content" href="./Projects/Positivus/index.html">
+              <div class="card__title">
+                <h4>Positivus</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Агентство цифрового маркетинга
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="1">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-case="Aaronn" data-js-case-card>
+            <a class="card__content" href="./Projects/Aaronn/index.html">
+              <div class="card__title">
+                <h4>Aaronn</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Портфолио цифрового дизанера
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="1">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-case="NoTab" data-js-case-card>
+            <a class="card__content" href="./WEB_PRO/NoTab/site/index.html">
+              <div class="card__title">
+                <h4>NoTab</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Лэндинг для приложения
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="1">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-case="Nexcent" data-js-case-card>
+            <a class="card__content" href="./Projects/Nexcent/index.html">
+              <div class="card__title">
+                <h4>Nexcent</h4>
+              </div>
+              <div class="card__description">
+                <p>
+                  Простой лэндинг
+                </p>
+              </div>
+              <div class="card__difficulty" data-difficulty="1">
+                <span>сложность: </span>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.2656 0L17.6333 10.3647H28.5315L19.7147 16.7705L23.0824 27.1353L14.2656 20.7295L5.44885 27.1353L8.81656 16.7705L-0.00022316 10.3647H10.8979L14.2656 0Z"
+                    fill="#FFFF36" />
+                </svg>
+              </div>
+              <div class="card__link">
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M2 12.7279C0.895431 12.7279 1.68988e-07 13.6233 0 14.7279C-1.68988e-07 15.8325 0.89543 16.7279 2 16.7279L2 14.7279L2 12.7279ZM43.4142 16.1421C44.1953 15.3611 44.1953 14.0947 43.4142 13.3137L30.6863 0.585774C29.9052 -0.195275 28.6389 -0.195275 27.8579 0.585774C27.0768 1.36682 27.0768 2.63315 27.8579 3.4142L39.1716 14.7279L27.8579 26.0416C27.0768 26.8227 27.0768 28.089 27.8579 28.87C28.6389 29.6511 29.9052 29.6511 30.6863 28.87L43.4142 16.1421ZM2 14.7279L2 16.7279L42 16.7279L42 14.7279L42 12.7279L2 12.7279L2 14.7279Z"
+                    fill="black" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="cases__preview-card" data-js-preview-card>
+        <img src="./" alt=" ">
+      </div>
+      <div class="cases__bottom-hiddener"></div>
+    </div>
+
+    <div class="about">
+      <div class="about__container container">
+        <h3 class="about__title section-title">
+          <span>ОБО МНЕ</span>
+        </h3>
+        <div class="about__canvas-album" style="display: none;" data-js-canvas-album>
+          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
+          <div class="about__canvas-wrapper" data-js-canvas-wrapper></div>
+        </div>
+        <div class="about__text-block text-unit" style="display: none;">
+          <div class="text-unit__title">
+            <div class="text-unit__title-mark"></div>
+            <span>
+              Мой подход
+            </span>
+          </div>
+          <div class="text-unit__content">
+            <p>
+              Я не просто пишу код. Я слушаю ваш бизнес, нахожу лучших специалистов под задачу и контролирую результат
+              на
+              каждом этапе
+            </p>
+          </div>
+        </div>
+        <div class="about__content">
+          <div class="about__advantages-block">
+            <div class="about__advantages-block-space">
+              <div class="about__advantages-block-item" id="item-1">
+                <div class="about__advantages-block-item-cover">
+                  <h4>Комплексный подход</h4>
+                </div>
+                <div class="about__advantages-block-item-content">
+                  <div class="about__advantages-block-item-heading-wrapper">
+                    <h4>Комплексный подход</h4>
+                  </div>
+                  <div class="about__advantages-block-item-paragraph">
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>Я беру на себя всё: от анализа</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>задачи и поиска дизайнеров до</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>финального запуска на хостинге.</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>Вам не нужно быть техническим</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p> экспертом — я стану вашим</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>проводником.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__advantages-block-item" id="item-2">
+                <div class="about__advantages-block-item-cover">
+                  <h4>Команда под задачу</h4>
+                </div>
+                <div class="about__advantages-block-item-content">
+                  <div class="about__advantages-block-item-heading-wrapper">
+                    <h4>Команда под задачу</h4>
+                  </div>
+                  <div class="about__advantages-block-item-paragraph">
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>Для каждого проекта я собираю</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>лучших: проверенных</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>копирайтеров и дизайнеров. Вы</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>получаете экспертность</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>нескольких профи, общаясь</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>только с одним человеком.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="about__advantages-block-item" id="item-3">
+                <div class="about__advantages-block-item-cover">
+                  <h4>Внимание к эстетике</h4>
+                </div>
+                <div class="about__advantages-block-item-content">
+                  <div class="about__advantages-block-item-heading-wrapper">
+                    <h4>Внимание к эстетике</h4>
+                  </div>
+                  <div class="about__advantages-block-item-paragraph">
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>Я убежден, что код должен быть</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>чистым, а интерфейс —</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>красивым. Создаю адаптивные</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>сайты, которые одинаково</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>безупречно выглядят на iPhone и</p>
+                    </div>
+                    <div class="about__advantages-block-item-line-wrapper">
+                      <p>на широком мониторе.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__container container">
+          <div class="footer__link-wrapper">
+            <span>Обсудим проект?</span>
+            <a href="https://t.me/margnul">Telegram</a>
+
+            <!-- <div class="footer__sublink">
+              <span>@margnul</span>
+            </div> -->
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+
   </main>
+
+
+
+
+  <svg style="height: 0;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -9" result="goo" />
+      </filter>
+    </defs>
+  </svg>
+
+  <script>
+    const logoElement = document.querySelector('[data-js-header-logo]')
+    logoElement.addEventListener('click', () => {
+      logoElement.classList.toggle('active')
+    })
+
+    const heroTileElements = document.querySelectorAll('[data-js-hero-tile]');
+
+    function playAnimation() {
+      const heroTileElements = document.querySelectorAll('[data-js-hero-tile]');
+
+      const delay = 3000
+      setTimeout(() => {
+        let startTime = null;
+        const duration = 3000;
+        const currentScale = 0;
+
+        function animate(currentTime) {
+          if (!startTime) startTime = currentTime;
+
+          const progress = (currentTime - startTime) / duration;
+
+          if (progress < 1) {
+            const newScale = currentScale + (5 - currentScale) * progress;
+            heroTileElements.forEach(element => {
+              element.style.setProperty('--scale', newScale);
+            });
+            requestAnimationFrame(animate);
+          } else {
+            heroTileElements.forEach(element => {
+              element.style.setProperty('--scale', 5);
+            });
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }, delay);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const fonts = [
+        document.fonts.load('1em "Bounded"'),
+        document.fonts.load('1em "Bounded"', 'Variable font')
+      ];
+
+      Promise.all(fonts)
+        .then(function () {
+          document.documentElement.classList.add('font-loaded');
+          playAnimation()
+        })
+        .catch(function (err) {
+          console.error('Ошибка загрузки шрифтов:', err);
+          // Все равно добавляем класс, чтобы не ломать дизайн
+          document.documentElement.classList.add('font-loaded');
+        });
+
+
+    });
+  </script>
+
 </body>
+
 </html>

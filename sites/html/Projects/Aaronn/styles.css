@@ -354,14 +354,6 @@ html {
   width: 100%;
   text-align: center;
 }
-.cover__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  position: relative;
-  overflow: visible;
-}
 .cover__container::after {
   position: absolute;
   content: "";
@@ -373,6 +365,14 @@ html {
   top: -150px;
   z-index: -1;
   animation: shine 8s infinite 0s;
+}
+.cover__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  overflow: visible;
 }
 .cover__button {
   padding: 25px 33px 25px 40px;
@@ -796,6 +796,8 @@ html {
 .mission__img-wrapper {
   max-width: 360px;
   min-width: 260px;
+}
+.mission__img-wrapper {
   position: relative;
 }
 .mission__img-wrapper::before {
