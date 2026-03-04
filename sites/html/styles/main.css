@@ -1048,6 +1048,7 @@ html.font-loaded .hero__mouse-tracker {
   --bottom-hiddener-height: max(5.25vw, 5rem);
   background-color: var(--cases-color);
   background-color: var(--cases-color);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3333333333);
   margin-top: calc(-2rem + 3px);
   padding-top: calc(5vmin + 3rem);
   position: relative;
