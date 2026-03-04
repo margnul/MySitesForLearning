@@ -25,6 +25,10 @@ a, button{
   -webkit-tap-highlight-color: #baff6655;
 }
 
+a:hover{
+  text-decoration: underline;
+}
+
 body{
   /* background-color: var(--grey); */
   background-color: #fff;
@@ -71,6 +75,11 @@ p{
   border-radius: 14px;
   white-space: nowrap;
   width: min-content;
+  transition: scale .2s;
+}
+
+.common-button:hover{
+  scale: .9;
 }
 
 .common-button-grey {

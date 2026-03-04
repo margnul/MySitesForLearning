@@ -274,7 +274,7 @@ class BubbleWrap {
 
   playPopSound() {
     const randIndex = Math.round(Math.random() * 3)
-    console.log(randIndex)
+    //console.log(randIndex)
     this.popSoundElements[randIndex].play()
   }
 

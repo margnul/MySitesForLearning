@@ -1,0 +1,228 @@
+@use '../helpers/' as *;
+
+.me {
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--me-color);
+  position: relative;
+  margin-top: calc(-2rem + 3px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  &__container {
+    padding-block: 60px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "text-1 img" "text-2 img";
+    gap: 2rem;
+
+    @include tablet {
+      grid-template-areas: "text-1 img" "text-2 text-2";
+    }
+
+    @include mobile {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas: "text-1" "text-2" "img";
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border: 5px solid black;
+    box-shadow: 0px 0px 1px 3px #000000 inset;
+
+    mix-blend-mode: plus-lighter;
+    mix-blend-mode: screen;
+    mix-blend-mode: lighten;
+    mix-blend-mode: color-dodge;
+    mix-blend-mode: difference;
+
+    grid-area: img;
+
+    & img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::after {
+      width: 200%;
+      height: 200%;
+      position: absolute;
+      background: url(../../images/about/grain.jpg);
+      left: -50%;
+      top: -50%;
+      content: 'sss';
+      mix-blend-mode: color-burn;
+      //animation: grain .3s infinite steps(1), blendModeShift 50s linear;
+      //animation: ;
+
+      animation: grain .3s infinite steps(1);
+      mix-blend-mode: color-burn;
+      mix-blend-mode: color-dodge;
+    }
+  }
+
+  &__text-wrapper {
+    color: #000000;
+    font-weight: 800;
+    height: max-content;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    &:nth-child(1) {
+      grid-area: text-1;
+      align-items: end;
+      font-size: 2rem;
+    }
+
+    &:nth-child(2) {
+      grid-area: text-2;
+      align-items: start;
+      font-size: 1.75rem;
+    }
+
+    @include laptop {
+      &:nth-child(1) {
+        font-size: 1.75rem;
+      }
+
+      &:nth-child(2) {
+        font-size: 1.5rem;
+      }
+    }
+
+    @include tablet {
+      &:nth-child(1) {
+        align-items: center;
+        font-size: 1.5rem;
+      }
+
+      &:nth-child(2) {
+        font-size: 1.25rem;
+      }
+    }
+
+    @include mobile-s {
+      &:nth-child(1) {
+        font-size: 1.125rem;
+      }
+
+      &:nth-child(2) {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@keyframes grain {
+  0% {
+    transform: translate(-10px, 20px);
+  }
+
+  25% {
+    transform: translate(15px, -5px);
+  }
+
+  50% {
+    transform: translate(-8px, 12px);
+  }
+
+  75% {
+    transform: translate(12px, -15px);
+  }
+
+  100% {
+    transform: translate(-4px, 11px);
+  }
+}
+
+@keyframes blendModeShift {
+  0% {
+    mix-blend-mode: normal;
+  }
+
+  5.26% {
+    mix-blend-mode: multiply;
+  }
+
+  10.52% {
+    mix-blend-mode: screen;
+  }
+
+  15.78% {
+    mix-blend-mode: overlay;
+  }
+
+  21.04% {
+    mix-blend-mode: darken;
+  }
+
+  26.3% {
+    mix-blend-mode: lighten;
+  }
+
+  31.56% {
+    mix-blend-mode: color-dodge;
+  }
+
+  36.82% {
+    mix-blend-mode: color-burn;
+  }
+
+  42.08% {
+    mix-blend-mode: hard-light;
+  }
+
+  47.34% {
+    mix-blend-mode: soft-light;
+  }
+
+  52.6% {
+    mix-blend-mode: difference;
+  }
+
+  57.86% {
+    mix-blend-mode: exclusion;
+  }
+
+  63.12% {
+    mix-blend-mode: hue;
+  }
+
+  68.38% {
+    mix-blend-mode: saturation;
+  }
+
+  73.64% {
+    mix-blend-mode: color;
+  }
+
+  78.9% {
+    mix-blend-mode: luminosity;
+  }
+
+  84.16% {
+    mix-blend-mode: plus-darker;
+  }
+
+  89.42% {
+    mix-blend-mode: plus-lighter;
+  }
+
+  100% {
+    mix-blend-mode: normal;
+    /* Возврат к началу для плавной паузы или повтора */
+  }
+}

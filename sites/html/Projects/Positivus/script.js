@@ -40,7 +40,6 @@ PlusButtons.forEach(item => item.addEventListener("click", ()=> {
   if (WorkingProcessBlocks[index].classList.contains("working-process-block-active"))
     doNotActivate = true;
 
-  //console.log(item);
 
   for(let i = 0; i < PlusButtons.length; i++){
     PlusButtons[i].classList.remove("working-process-block-button-active");

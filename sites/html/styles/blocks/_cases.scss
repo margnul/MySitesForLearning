@@ -7,15 +7,17 @@
   //background: linear-gradient(to bottom, var(--cases-color) calc(100% - 10vh - var(--bottom-hiddener-height)), var(--about-color) calc(100% - var(--bottom-hiddener-height)));
   background-color: var(--cases-color);
 
-  margin-top: calc(-2rem + 3px);
+
+  //margin-top: calc(-4rem + 3px);
   padding-top: calc(5vmin + 3rem);
   position: relative;
 
   overflow: hidden;
+  color: #ffffff;
 
   &__container {
     padding-bottom: 30rem;
-    padding-bottom: max(21vw, 20rem)  ;
+    padding-bottom: max(21vw, 20rem);
   }
 
   &__album-wrapper {
@@ -60,8 +62,9 @@
   &__title {
     margin-bottom: 3rem;
     font-size: min(10vw, 9.6rem);
-    color: #000000;
+    color: inherit;
     text-shadow: 0 0 5px #00000099;
+    text-shadow: 0 0 5px #ffffff99;
   }
 
   &__bottom {
@@ -85,6 +88,8 @@
   .card {
     cursor: default;
     background-color: #ECC8EC;
+    background-color: #00000022;
+    background-color: #ffffff22;
     border-radius: 20px;
     box-shadow:
       2px 2px 5px 0 #ffffff77 inset,
@@ -96,6 +101,7 @@
     &__content {
       padding: 1rem;
       color: #000000;
+      color: inherit;
       font-weight: 800;
       display: grid;
       grid-template-columns: 28% 45% 20% auto;
@@ -111,6 +117,7 @@
       font-size: 3rem;
       font-weight: 800;
       color: #000000;
+      color: inherit;
     }
 
     &__description {
@@ -132,37 +139,38 @@
         font-size: 1.5rem;
       }
 
-      & svg {
-        color: var(--cases-color);
+      & svg path {
+        fill: #000000;
+        fill: #ffffff;
       }
 
       &[data-difficulty="1"] {
-        svg:nth-child(2) {
-          color: #FFFF36;
+        svg:nth-child(2) path {
+          fill: #FFFF36;
         }
       }
 
       &[data-difficulty="2"] {
-        svg:nth-child(2) {
-          color: #FFFF36;
+        svg:nth-child(2) path {
+          fill: #FFFF36;
         }
 
-        svg:nth-child(3) {
-          color: #FFFF36;
+        svg:nth-child(3) path {
+          fill: #FFFF36;
         }
       }
 
       &[data-difficulty="3"] {
-        svg:nth-child(2) {
-          color: #FFFF36;
+        svg:nth-child(2) path {
+          fill: #FFFF36;
         }
 
-        svg:nth-child(3) {
-          color: #FFFF36;
+        svg:nth-child(3) path {
+          fill: #FFFF36;
         }
 
-        svg:nth-child(4) {
-          color: #FFFF36;
+        svg:nth-child(4) path {
+          fill: #FFFF36;
         }
       }
     }
@@ -176,8 +184,13 @@
 
       transition: padding-right .2s ease-in-out;
 
+      path{
+        fill: #ffffff;
+      }
+
       &:hover {
         color: #000000;
+        color: inherit;
         padding-right: 0rem;
       }
     }
@@ -308,6 +321,8 @@
 
     border: 5px solid #F831F8;
     background-color: #F831F8;
+    border: 5px solid #2b8cee;
+    background-color: #2b8cee;
     box-shadow:
       5px 5px 5px 0 #00000033;
 
@@ -316,7 +331,9 @@
       height: auto;
 
       background-color: #000000;
+      background-color: inherit;
       color: #000000;
+      color: inherit;
     }
 
     &.is-active {
@@ -336,6 +353,6 @@
     bottom: 0;
     left: 0;
 
-    background: linear-gradient(to bottom, #72df7200 0%, #72df72ff 100%);
+    background: linear-gradient(to bottom, #72df7200 0%, var(--about-color) 100%);
   }
 }

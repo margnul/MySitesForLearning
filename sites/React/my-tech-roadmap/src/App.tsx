@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { mockTopics } from './data/mockTopics';
 import type { Topic, TopicStatus } from './types/topic';
+import { AddTopicForm, } from './components/AddTopicForm';
+import { withConfirm } from './utils/withConfirm';
+import { TopicStats } from './components/TopicStats';
 
 function App() {
   //const [count, setCount] = useState<number>(0)
-  const [topics, setTopics] = useState<Topic[]>(mockTopics);
+  const [topics, setTopics] = useState<Topic[]>(() => {
+    const data = localStorage.getItem('my-roadmap-data');
+
+    return data ? JSON.parse(data) : mockTopics;
+  });
 
   const toggleStatus = (id: number) => {
     const updateTopics = topics.map((topic) => {
@@ -22,6 +29,31 @@ function App() {
 
     setTopics(updateTopics);
   }
+
+  const deleteTask = (id: number) => {
+    const updatedTopics = topics.filter((t) => t.id !== id)
+
+    setTopics(updatedTopics)
+  }
+
+  const addTopic = (newTopic: Topic) => {
+    setTopics([
+      ...topics,
+      newTopic,
+    ])
+  }
+
+  const handleDelete = (id: number) => {
+    setTopics(topics.filter(t => t.id != id ));
+  }
+
+  const confirmDelete = withConfirm(handleDelete, "Ты точно уверен, что хочешь это удалить?")
+
+  
+
+  useEffect(() => {
+    localStorage.setItem('my-roadmap-data', JSON.stringify(topics));
+  }, [topics])
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial' }}>
@@ -43,21 +75,49 @@ function App() {
             <p>Статус: <strong>{topic.status}</strong></p>
 
             {/* Добавляем нашу кнопку */}
-            <button
-              onClick={() => toggleStatus(topic.id)}
-              style={{
-                cursor: 'pointer',
-                padding: '5px 10px',
-                backgroundColor: '#007bff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px'
-              }}
-            >
-              Сменить статус
-            </button>
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+            }}>
+              <button
+                onClick={() => toggleStatus(topic.id)}
+                style={{
+                  cursor: 'pointer',
+                  padding: '5px 10px',
+                  backgroundColor: '#007bff',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px'
+                }}
+              >
+                Сменить статус
+              </button>
+              <button
+                onClick={() => confirmDelete(topic.id)}
+                style={{
+                  cursor: 'pointer',
+                  padding: '5px 10px',
+                  backgroundColor: '#007bff',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '4px'
+                }}
+              >
+                Удалить
+              </button>
+            </div>
           </div>
         ))}
+        <TopicStats title="React HOCs и Паттерны" />
+      </div>
+
+      <div className="addForm"
+        style={{
+          position: 'absolute',
+          right: '0',
+          top: '0'
+        }}>
+        <AddTopicForm onAdd={addTopic} />
       </div>
     </div>
   )

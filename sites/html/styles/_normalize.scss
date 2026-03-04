@@ -121,7 +121,7 @@ html {
   Плавный скролл
  */
 html {
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
 }
 
 body {
@@ -156,12 +156,12 @@ label {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not(
-  [fill="none"],
-  [fill^="url"]
-)) {
-  fill: currentColor;
-}
+// :where([fill]:not(
+//   [fill="none"],
+//   [fill^="url"]
+// )) {
+//   fill: currentColor;
+// }
 
 /**
   Приводим к единому цвету svg-элементы

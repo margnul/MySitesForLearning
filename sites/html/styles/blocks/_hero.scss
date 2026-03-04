@@ -112,16 +112,69 @@
   }
 
   &__bottom {
-    position: relative;
-    height: 2rem;
     width: 100%;
+    height: var(--wave-height);
+    position: relative;
+    overflow: hidden;
+    //background: #f0f0f0;
     z-index: 7;
 
-    background: url("../../images/wave5.svg") repeat-x top;
-    background-size: auto 100%;
-    background-size: 80.2px 100%;
-    background-position-y: 1px;
-    animation: waves-animation 1s linear infinite;
+    &-wave {
+      /* Делаем блок шире экрана на одну волну */
+      width: calc(100% + var(--wave-width));
+      height: 100%;
+
+      /* SVG Волна: пропорции 80 к 33 */
+      background-image: url("../../images/wave5.svg");
+
+      background-repeat: repeat-x;
+      background-size: var(--wave-width) var(--wave-height);
+
+      /* Анимация через трансформацию */
+      animation: move-wave 2s linear infinite;
+
+      /* Убираем артефакты iOS */
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+    }
+
+
+    // position: relative;
+    // height: 2rem;
+    // width: 100%;
+    // z-index: 7;
+
+    // background: url("../../images/wave5.svg") repeat-x top;
+    // background-size: auto 100%;
+    // background-size: 80.2px 100%;
+    // background-position-y: 1px;
+    // animation: waves-animation 1s linear infinite;
+
+    // &-wave {
+    //   display: none;
+    // }
+
+    // width: 110%;
+    // height: auto;
+    // display: flex;
+    // flex-direction: row;
+    // right: 0;
+
+    // &-wave {
+    //   width: 10%;
+    //   aspect-ratio: 80 / 33;
+    //   margin-left: -2px;
+    //   position: relative;
+    //   overflow: hidden;
+
+    //   & svg{
+    //     width: 110%;
+    //     height: 110%;
+    //     position: absolute;
+    //     top: -5%;
+    //     left: -5%;
+    //   }
+    // }
   }
 
 
@@ -257,5 +310,27 @@
     background-position-x: 4.84848rem;
     background-position-x: 80px;
     //background-position-x: 4.8907rem;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(99.8%);
+  }
+}
+
+
+@keyframes move-wave {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    /* Сдвигаем строго на ширину одной волны влево */
+    transform: translate3d(calc(var(--wave-width) * -1), 0, 0);
   }
 }

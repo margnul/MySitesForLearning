@@ -1,10 +1,9 @@
 //import Lenis from "@studio-freight/lenis";
 
 const lenis = new Lenis({
-  lerp: 0.1,
+  lerp: 0.05,
   wheelMultiplier: 1,
   smooth: true,
-  easing: (t) => 1 - Math.pow(1 - t, 3)
 });
 
 window.lenis = lenis
