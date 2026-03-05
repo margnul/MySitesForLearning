@@ -24,8 +24,9 @@
 
   &__container {
     height: 92vh;
-    height: 92dvh;
-    height: calc(100dvh - 2rem - 2vh);
+    //height: 92dvh;
+    height: calc(100vh - 2rem - 2vh);
+    //height: calc(100dvh - 2rem - 2vh);
     //padding-top: 30%;
     padding-bottom: 0;
     position: relative;
@@ -236,9 +237,9 @@
       height: 300px;
 
       .hero__bubble-film-button {
-        bottom: -15px;
-        height: 15px;
-        width: 35px;
+        bottom: -25px;
+        height: 25px;
+        width: 25px;
 
         & svg {
           scale: .7;
@@ -261,15 +262,21 @@
       cursor: pointer;
       position: absolute;
       right: 0;
-      bottom: -20px;
-      height: 20px;
-      width: 50px;
-      background-color: #777777;
+      bottom: -35px;
+      height: 35px;
+      width: 35px;
+      background-color: #00000011;
       border-radius: 0 0 5px 5px;
+      border-radius: 1000px;
+      box-shadow:
+        3px 3px 4px #00000044,
+        1px 1px 2px #ffffff55 inset;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      display: none;
 
       & svg {
         transition: transform .2s ease-in-out;

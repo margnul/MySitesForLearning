@@ -7,8 +7,8 @@
   //background: linear-gradient(to bottom, var(--cases-color) calc(100% - 10vh - var(--bottom-hiddener-height)), var(--about-color) calc(100% - var(--bottom-hiddener-height)));
   background-color: var(--cases-color);
 
-  margin-top: calc(-2rem + 3px);
-  padding-top: calc(5vmin + 3rem);
+  //margin-top: calc(-2rem + 3px);
+
   position: relative;
 
   overflow: hidden;
@@ -186,7 +186,7 @@
 
       transition: padding-right .2s ease-in-out;
 
-      path{
+      path {
         fill: #ffffff;
       }
 
@@ -298,6 +298,7 @@
 
   &__preview-card {
     --preview-card-height: 0;
+    z-index: 8;
 
     pointer-events: none;
     width: 16vw;
@@ -354,6 +355,7 @@
     height: var(--bottom-hiddener-height);
     bottom: 0;
     left: 0;
+    z-index: 9;
 
     background: linear-gradient(to bottom, #72df7200 0%, #72df72ff 100%);
   }
@@ -363,10 +365,12 @@
   view-timeline-axis: block;
 
   &__divider {
-    --divider-height: 5vh;
+    z-index: 1;
+    margin-bottom: calc(5vmin + 3rem);
+    --divider-height: 3vh;
 
     position: relative;
-    height: var(--divider-height); // небольшой переход
+    height: var(--divider-height);
     overflow: hidden;
 
     &::before {
@@ -377,41 +381,17 @@
       top: 0;
 
 
-      --s-size: 3px;
-      /* Мелкие звезды */
-      --l-size: 6px;
-      /* Крупные звезды */
+      --s-size: .3vmin;
+      --l-size: .6vmin;
 
       background-color: #000000;
       background-attachment: fixed;
 
-      background-image:
-        /* Слой 1: Мелкие звезды (самая большая плитка для хаоса) */
-        radial-gradient(var(--s-size) var(--s-size) at 10% 15%, #fff, transparent),
-        radial-gradient(var(--s-size) var(--s-size) at 45% 85%, #ddd, transparent),
-        radial-gradient(var(--s-size) var(--s-size) at 80% 40%, #fff, transparent),
+      $star-count: 200;
+      background-image: #{generate-stars(150, 40, var(--s-size), var(--l-size))};
 
-        /* Слой 2: Средние звезды (размер плитки поменьше) */
-        radial-gradient(var(--l-size) var(--l-size) at 20% 50%, #fff, transparent),
-        radial-gradient(var(--l-size) var(--l-size) at 70% 20%, #eee, transparent),
-
-        /* Слой 3: Акцентные яркие звезды (редкие) */
-        radial-gradient(2.5px 2.5px at 90% 90%, #fff, transparent),
-        radial-gradient(1.5px 1.5px at 5% 5%, #fff, transparent);
-
-      /* ГЛАВНЫЙ СЕКРЕТ: Огромные и "неровные" размеры плиток */
-      background-size:
-        997px 997px,
-        /* Слой мелких */
-        713px 713px,
-        /* Слой средних */
-        1153px 1153px;
-      /* Слой акцентных */
-
-      /* Сдвигаем каждый слой чуть-чуть в сторону, чтобы центры не совпадали */
-      background-position: 0 0, 150px 250px, -300px 100px;
-
-      background-repeat: repeat;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
 
       content: '';
 
@@ -420,6 +400,21 @@
       animation-range:
         entry 0% entry 120%;
 
+    }
+
+    &::after {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      $shadow-length: 10%;
+      background: linear-gradient(180deg,
+          var(--me-color) 0%,
+          #00000000 $shadow-length,
+          #00000000 100% - $shadow-length,
+          var(--cases-color) 100%);
     }
   }
 }

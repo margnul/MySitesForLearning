@@ -5,12 +5,12 @@
   font-size: fluid($max, $min);
 }
 
-@mixin hide{
+@mixin hide {
   opacity: 0;
   visibility: hidden;
 }
 
-@mixin show{
+@mixin show {
   opacity: 1;
   visibility: visible;
 }
@@ -18,7 +18,9 @@
 @mixin flex-center($isInline: false) {
   @if $isInline {
     display: inline-flex;
-  } @else  {
+  }
+
+  @else {
     display: flex;
   }
 
@@ -63,15 +65,13 @@
   overflow: hidden !important;
 }
 
-@mixin full-vw-centered-line(
-  $property: top,
+@mixin full-vw-centered-line($property: top,
   $left: 50%,
   $rigth: auto,
-  $translate: -50%
-  ){
+  $translate: -50%) {
   position: relative;
 
-  &::before{
+  &::before {
     content: '';
     position: absolute;
     left: $left;
@@ -82,4 +82,25 @@
     height: rem(1);
     background-color: var(--color-dark-15);
   }
+}
+
+@function generate-stars($small-count, $large-count, $small-size: 1px, $large-size: 2px) {
+  $stars: (
+  );
+
+  // Генерируем маленькие звезды (1px)
+  @for $i from 1 through $small-count {
+    $x: random(100) * 1%;
+    $y: random(100) * 1%;
+    $stars: append($stars, radial-gradient($small-size $small-size at $x $y, rgba(255, 255, 255, 0.8), transparent), comma);
+  }
+
+  // Генерируем крупные звезды (2px)
+  @for $i from 1 through $large-count {
+    $x: random(100) * 1%;
+    $y: random(100) * 1%;
+    $stars: append($stars, radial-gradient($large-size $large-size at $x $y, #fff, transparent), comma);
+  }
+
+  @return $stars;
 }
