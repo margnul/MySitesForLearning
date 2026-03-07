@@ -42,12 +42,15 @@ class BubbleWrap {
 
     this.imgIntact = new Image();
     this.imgPopped = new Image();
-    this.imgIntact.src = '../images/bubble-film/bubbleFilm1-2.png';
-    this.imgPopped.src = '../images/bubble-film/bubbleFilm2-2.png';
+    //this.imgIntact.src = '../images/bubble-film/bubbleFilm1-2.png';
+    //this.imgPopped.src = '../images/bubble-film/bubbleFilm2-2.png';
+    this.imgIntact.src = '../images/bubble-film/bubbleFilm1-2.webp';
+    this.imgPopped.src = '../images/bubble-film/bubbleFilm2-2.webp';
 
     this.popSoundElements = [...Array(4)].map(() => document.createElement('audio'))
     this.popSoundElements.forEach((el, index) => {
       el.setAttribute('src', `../sounds/pop-alt_2-${index + 1}.mp3`)
+      el.preload = 'none';
     })
     this.indexToPlay = 0
 

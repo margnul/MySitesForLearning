@@ -1,0 +1,12 @@
+{
+  "name": "Margnul-portfolio",
+  "version": "1.0.0",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "onchange": "^7.1.0"
+  },
+  "scripts": {
+    "build:css": "cleancss -o styles/main-min.css styles/main.css",
+    "watch:css": "onchange 'styles/main.css' -- npm run build:css"
+  }
+}

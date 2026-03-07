@@ -53,14 +53,20 @@
       height: 100%;
     }
 
+    & picture {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
     &::after {
       width: 200%;
       height: 200%;
       position: absolute;
-      background: url(../../images/about/grain.jpg);
+      background: url(../../images/about/grain-2.webp) repeat;
       left: -50%;
       top: -50%;
-      content: 'sss';
+      content: '';
       mix-blend-mode: color-burn;
       //animation: grain .3s infinite steps(1), blendModeShift 50s linear;
       //animation: ;
