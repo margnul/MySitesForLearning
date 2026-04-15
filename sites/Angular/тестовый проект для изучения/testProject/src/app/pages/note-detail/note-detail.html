@@ -1,0 +1,12 @@
+<h2>Заметка</h2>
+
+<p *ngIf="note">
+  <strong>{{ note.title }}</strong>
+  {{ note.content }}
+  <em> {{ note.createdAt | date: 'medium' }} </em>
+</p>
+
+<p *ngIf="!note">
+  Заметка не найдена
+</p>
+

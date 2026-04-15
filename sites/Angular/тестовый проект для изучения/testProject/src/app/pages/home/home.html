@@ -1,0 +1,9 @@
+<h1 (dblclick)="showAlert()">Мои заметки, {{userName}}</h1>
+
+<ul>
+  <li *ngFor="let note of notes()">
+    <a [routerLink]="['/note', note.id]">{{note.title}}</a>
+  </li>
+</ul>
+
+<app-note-add></app-note-add>

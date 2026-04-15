@@ -1,0 +1,13 @@
+<footer [ngClass]="{footer: username != '', footer2: username == '000'}">
+  <p *ngIf="username != ''" [ngStyle]="{'color': username != 'lol' ? 'red' : 'black'}">Copyrights Hello, {{username}}</p>
+  <input
+    type="text"
+    [(ngModel)]="username"
+    (ngModelChange)="userNameChanged.emit($event)"
+    placeholder="Введите имя"
+  >
+  <button (click)="onSubscribe()">Subscribe</button>
+</footer>
+
+
+<!-- (userNameChanged)="userName=$event" -->

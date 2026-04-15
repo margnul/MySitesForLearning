@@ -1,0 +1,27 @@
+<h2>Добавить заметку:</h2>
+
+<form #noteForm="ngForm" (ngSubmit)="addNote(noteForm)">
+  <div>
+    <label>Заголовок</label>
+    <input type="text" name="title" [(ngModel)]="newNote().title" required minlength="3" maxlength="50"
+      #titleRef="ngModel" placeholder="Заголовок">
+    <div *ngIf="submitted && titleRef.invalid" style="color: red;">
+      <small *ngIf="titleRef.errors?.['required']">Заголовок обязателен</small>
+      <small *ngIf="titleRef.errors?.['minlength']">Заголовок минимум 3 символа</small>
+      <small *ngIf="titleRef.errors?.['maxlength']">Заголовок мксимум 50 символа</small>
+    </div>
+  </div>
+
+  <div>
+    <label>Текст заметки</label>
+    <textarea name="content" [(ngModel)]="newNote().content" placeholder="Текст" required minlength="5"
+      #contentRef="ngModel"></textarea><br>
+
+    <div *ngIf="submitted && contentRef.invalid" style="color: red;">
+      <small *ngIf="contentRef.errors?.['required']">Текст заметки обязателен</small>
+      <small *ngIf="contentRef.errors?.['minlength']">Текст заметки минимум 5 символов</small>
+    </div>
+  </div>
+
+  <button type="submit">Добавить</button>
+</form>
