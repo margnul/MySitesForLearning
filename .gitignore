@@ -1,0 +1,35 @@
+# Зависимости
+node_modules/
+
+# Локальные папки
+tests/
+
+# Логи npm / yarn / pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Кэши сборщиков
+.cache/
+.parcel-cache/
+.sass-cache/
+.turbo/
+*.tsbuildinfo
+
+# Секреты
+.env
+.env.*
+!.env.example
+
+# ОС
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Редакторы
+.idea/
+*.swp
+*.swo
+*~
