@@ -1,12 +1,20 @@
 {
-  "name": "Margnul-portfolio",
+  "name": "margnul-portfolio",
   "version": "1.0.0",
+  "private": true,
+  "description": "Личный сайт-портфолио Ивана Мейнарта",
+  "scripts": {
+    "compile": "sass styles/main.scss:styles/main.css --style=expanded --source-map",
+    "minify": "cleancss -o styles/main.min.css styles/main.css",
+    "watch:sass": "sass --watch styles/main.scss:styles/main.css --style=expanded --source-map",
+    "watch:min": "onchange styles/main.css -- npm run minify",
+    "watch": "npm run compile && npm run minify && npm-run-all --parallel watch:sass watch:min",
+    "build": "npm run compile && npm run minify"
+  },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
-    "onchange": "^7.1.0"
-  },
-  "scripts": {
-    "build:css": "cleancss -o styles/main-min.css styles/main.css",
-    "watch:css": "onchange 'styles/main.css' -- npm run build:css"
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "sass": "^1.90.0"
   }
 }

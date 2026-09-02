@@ -1,12 +1,13 @@
-// Загружаем канвас-эффект только после полной загрузки страницы
+function loadScript(src) {
+  const script = document.createElement('script');
+  script.src = src;
+  document.head.appendChild(script);
+}
+
 window.addEventListener('load', () => {
-  import('./BubbleFilm3.js?v=1.1.10')
-    .then(module => {
-      // Скрипт загружен и выполнен
-    });
+  loadScript('./scripts/BubbleFilm3.js?v=1.1.11');
 });
 
-// Загружаем скрипт кейсов только при скролле (или тоже по событию load)
 window.addEventListener('scroll', () => {
-  import('./CasesPreview.js?v=1.1.10');
-}, { once: true }); // Сработает только один раз при первом скролле
+  loadScript('./scripts/CasesPreview.js?v=1.1.11');
+}, { once: true });

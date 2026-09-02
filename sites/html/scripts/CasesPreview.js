@@ -184,4 +184,3 @@ class CasesPreview {
 }
 
 new CasesPreview()
-export default CasesPreview

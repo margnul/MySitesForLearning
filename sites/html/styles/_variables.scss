@@ -60,4 +60,32 @@
 
   --wave-width: 80px;
   --wave-height: 33px;
+
+  /* ===== UI kit: tooltips, checkboxes, shared surfaces ===== */
+  --ui-color-surface: var(--color-dark);
+  --ui-color-surface-checked: var(--color-dark-10);
+  --ui-color-text: var(--color-light);
+  --ui-color-accent: var(--color-accent);
+  --ui-color-border: var(--color-dark-15);
+  --ui-color-focus: var(--color-light);
+
+  --ui-radius-s: #{rem(4)};
+  --ui-radius-m: #{rem(12)};
+  --ui-radius-l: #{rem(16)};
+
+  --ui-border-width: #{rem(1)};
+  --ui-border: var(--ui-border-width) solid var(--ui-color-border);
+
+  --ui-space-xs: #{rem(4)};
+  --ui-space-s: #{rem(8)};
+  --ui-space-m: #{rem(16)};
+  --ui-space-l: #{rem(24)};
+
+  --ui-z-tooltip: 1100;
+
+  --ui-duration: 0.35s;
+  --ui-duration-fast: 0.2s;
+  --ui-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --ui-checkbox-size: #{rem(20)};
 }

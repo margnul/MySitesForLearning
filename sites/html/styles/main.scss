@@ -3,6 +3,7 @@
 @use 'variables';
 @use 'utils';
 @use 'globals';
+@use 'ui';
 
 //@use './blocks/header';
 @use './blocks/hero';
@@ -11,3 +12,4 @@
 @use './blocks/cases';
 @use './blocks/case';
 @use './blocks/footer';
+@use './blocks/privacy';

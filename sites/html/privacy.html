@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Политика конфиденциальности сайта-портфолио Ивана Мейнарта.">
+  <title>Политика конфиденциальности — Margnul</title>
+  <link rel="stylesheet" href="./styles/main.min.css?v=1.1.15">
+</head>
+
+<body>
+  <main class="privacy">
+    <div class="privacy__container container">
+      <a class="privacy__back" href="./index.html">На главную</a>
+      <h1 class="privacy__title">Политика конфиденциальности</h1>
+      <p class="privacy__updated">Дата публикации: 2 сентября 2026 г.</p>
+
+      <div class="privacy__content">
+        <p>
+          Эта страница описывает, какие данные обрабатываются на сайте-портфолио Ивана Мейнарта (далее — «сайт»)
+          и зачем они нужны. Продолжая пользоваться сайтом, вы соглашаетесь с этой политикой.
+        </p>
+
+        <h2>Какие данные собираются</h2>
+        <ul>
+          <li>Технические данные визита: IP-адрес, тип браузера, устройство, страницы просмотра, источник перехода.</li>
+          <li>Файлы cookie и похожие технологии, которые помогают запомнить согласие и собрать статистику.</li>
+        </ul>
+
+        <h2>Зачем это нужно</h2>
+        <p>
+          Данные используются только для работы сайта и анализа посещаемости: понять, какие страницы смотрят,
+          откуда приходят посетители и как можно улучшить портфолио. Рекламные профили не строятся,
+          данные не продаются.
+        </p>
+
+        <h2 id="cookies">Cookie и аналитика</h2>
+        <p>
+          На сайте используются файлы cookie и счётчик Яндекс.Метрики. Они загружаются вместе со страницей
+          и помогают оценить посещаемость. Факт согласия сохраняется в localStorage браузера
+          (ключ <code>cookieConsent</code>), чтобы баннер не показывался повторно.
+        </p>
+        <p>
+          Отключить cookie можно в настройках браузера. Если это сделать, часть функций сайта может работать
+          менее удобно, а уведомление о cookie может появиться снова.
+        </p>
+
+        <h2>Контакты</h2>
+        <p>
+          По вопросам обработки данных можно написать в
+          <a href="https://t.me/margnul">Telegram</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <div class="ui-tooltip ui-tooltip--cookie ui-tooltip--slide-up" id="cookie-consent" data-js-cookie-consent
+    role="dialog" aria-describedby="cookie-consent-text">
+    <p class="ui-tooltip__text" id="cookie-consent-text">
+      Мы используем файлы cookie и Яндекс.Метрику для анализа посещаемости. Продолжая пользоваться сайтом, вы
+      соглашаетесь с их использованием и нашей
+      <a class="ui-tooltip__link" href="#cookies">Политикой конфиденциальности</a>.
+    </p>
+    <button class="ui-tooltip__action" type="button" data-js-cookie-accept>Понятно</button>
+  </div>
+
+  <script>
+    (function initCookieConsent() {
+      const STORAGE_KEY = 'cookieConsent';
+      const tooltip = document.querySelector('[data-js-cookie-consent]');
+      const acceptButton = document.querySelector('[data-js-cookie-accept]');
+
+      if (!tooltip || !acceptButton) return;
+
+      const readConsent = () => {
+        try {
+          return window.localStorage.getItem(STORAGE_KEY) === '1';
+        } catch (error) {
+          return false;
+        }
+      };
+
+      const writeConsent = () => {
+        try {
+          window.localStorage.setItem(STORAGE_KEY, '1');
+        } catch (error) {
+          // private mode: banner will appear again next visit
+        }
+      };
+
+      if (readConsent()) {
+        tooltip.remove();
+        return;
+      }
+
+      const getHideDuration = () => {
+        const raw = window.getComputedStyle(tooltip).transitionDuration;
+        const first = raw.split(',')[0].trim();
+        const value = Number.parseFloat(first);
+
+        if (Number.isNaN(value)) return 400;
+
+        return first.endsWith('ms') ? value : value * 1000;
+      };
+
+      const hide = () => {
+        if (tooltip.dataset.closing === 'true') return;
+
+        tooltip.dataset.closing = 'true';
+        writeConsent();
+
+        const finish = () => {
+          if (!tooltip.isConnected) return;
+          tooltip.remove();
+        };
+
+        tooltip.classList.remove('is-visible');
+
+        tooltip.addEventListener('transitionend', (event) => {
+          if (event.target !== tooltip || event.propertyName !== 'opacity') return;
+          finish();
+        });
+
+        window.setTimeout(finish, getHideDuration() + 50);
+      };
+
+      let revealed = false;
+
+      const show = () => {
+        if (revealed) return;
+        revealed = true;
+        tooltip.classList.add('is-visible');
+      };
+
+      const reveal = () => {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(show);
+        });
+      };
+
+      acceptButton.addEventListener('click', hide);
+      reveal();
+    })();
+  </script>
+</body>
+
+</html>

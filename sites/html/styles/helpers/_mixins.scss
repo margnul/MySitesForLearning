@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:list';
 @use 'functions' as *;
 
 @mixin fluid-text($max: 48, $min: 16) {
@@ -85,21 +86,18 @@
 }
 
 @function generate-stars($small-count, $large-count, $small-size: 1px, $large-size: 2px) {
-  $stars: (
-  );
+  $stars: ();
 
-  // Генерируем маленькие звезды (1px)
   @for $i from 1 through $small-count {
-    $x: random(100) * 1%;
-    $y: random(100) * 1%;
-    $stars: append($stars, radial-gradient($small-size $small-size at $x $y, rgba(255, 255, 255, 0.8), transparent), comma);
+    $x: math.random(100) * 1%;
+    $y: math.random(100) * 1%;
+    $stars: list.append($stars, radial-gradient($small-size $small-size at $x $y, rgba(255, 255, 255, 0.8), transparent), comma);
   }
 
-  // Генерируем крупные звезды (2px)
   @for $i from 1 through $large-count {
-    $x: random(100) * 1%;
-    $y: random(100) * 1%;
-    $stars: append($stars, radial-gradient($large-size $large-size at $x $y, #fff, transparent), comma);
+    $x: math.random(100) * 1%;
+    $y: math.random(100) * 1%;
+    $stars: list.append($stars, radial-gradient($large-size $large-size at $x $y, #fff, transparent), comma);
   }
 
   @return $stars;

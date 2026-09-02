@@ -101,4 +101,23 @@
     align-self: flex-end;
   }
 
+  &__legal {
+    position: absolute;
+    bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    translate: -50% 0;
+    color: #000000;
+    font-size: rem(14);
+    font-weight: 500;
+    letter-spacing: 0;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    white-space: nowrap;
+
+    @include hover {
+      color: #000000;
+      opacity: 0.65;
+    }
+  }
+
 }

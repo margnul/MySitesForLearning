@@ -1,0 +1,108 @@
+@use '../helpers/' as *;
+
+.ui-tooltip {
+  width: max-content;
+  max-width: min(100%, #{rem(560)});
+  padding: var(--ui-space-m) var(--ui-space-l);
+  color: var(--ui-color-text);
+  background-color: var(--ui-color-surface);
+  border: var(--ui-border);
+  border-radius: var(--ui-radius-m);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity var(--ui-duration) var(--ui-ease),
+    transform var(--ui-duration) var(--ui-ease),
+    visibility var(--ui-duration) var(--ui-ease);
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  &__text {
+    margin: 0;
+    flex: 1 1 12rem;
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+
+    @include hover {
+      color: var(--ui-color-accent);
+    }
+  }
+
+  &__action {
+    appearance: none;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: var(--ui-space-s) var(--ui-space-m);
+    border: var(--ui-border);
+    border-radius: var(--ui-radius-s);
+    background-color: var(--ui-color-accent);
+    color: var(--color-dark);
+    font: inherit;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+
+    @include hover {
+      filter: brightness(1.08);
+    }
+
+    &:focus-visible {
+      outline: rem(2) dashed var(--ui-color-focus);
+      outline-offset: rem(3);
+    }
+  }
+
+  &--slide-up {
+    transform: translate3d(0, calc(100% + var(--ui-space-m)), 0);
+
+    &.is-visible {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &--slide-side {
+    --ui-tooltip-offset-x: #{rem(24)};
+
+    transform: translate3d(var(--ui-tooltip-offset-x), 0, 0);
+
+    &.is-visible {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &--cookie {
+    position: fixed;
+    z-index: var(--ui-z-tooltip);
+    left: var(--ui-space-m);
+    right: var(--ui-space-m);
+    bottom: calc(var(--ui-space-m) + env(safe-area-inset-bottom, 0px));
+    margin-inline: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--ui-space-m);
+    width: auto;
+    max-width: #{rem(560)};
+  }
+
+  &--info {
+    position: absolute;
+    z-index: var(--ui-z-tooltip);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ui-tooltip {
+    --ui-duration: 0.01ms;
+  }
+}

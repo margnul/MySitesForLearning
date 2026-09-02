@@ -4,7 +4,7 @@
   height: 97vh;
   height: auto;
   background-color: var(--hero-color);
-  //position: relative;
+  position: relative;
   z-index: 4;
   overflow: hidden;
 
@@ -127,7 +127,8 @@
       height: 100%;
 
       /* SVG Волна: пропорции 80 к 33 */
-      background-image: url("../../images/wave5.svg");
+      background-image: url("../images/wave5.svg");
+      background-color: var(--me-color);
 
       background-repeat: repeat-x;
       background-size: var(--wave-width) var(--wave-height);
@@ -285,6 +286,23 @@
       }
     }
   }
+
+  &__loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 8;
+    opacity: 0;
+    transition: opacity 2.5s linear;
+    animation: hero-loading-appear 1s 2s forwards;
+
+    &.font-loaded {
+      opacity: 0;
+      animation: hero-loading-disappear 0.5s forwards;
+    }
+  }
 }
 
 @keyframes title-letter-animation {
@@ -341,5 +359,69 @@
   100% {
     /* Сдвигаем строго на ширину одной волны влево */
     transform: translate3d(calc(var(--wave-width) * -1), 0, 0);
+  }
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 8;
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  animation: rotate 2s linear infinite;
+
+  .path {
+    stroke: #a33c16;
+    stroke-linecap: round;
+    animation: dash 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-loading-appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hero-loading-disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
   }
 }

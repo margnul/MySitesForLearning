@@ -19,246 +19,12 @@
     content="Портфолио Мейнарт Ивана, веб-разработчика из Санкт-Петербурга. Разработка сайтов и креативные решения.">
   <title>Margnul</title>
 
+  <link rel="stylesheet" href="./styles/main-fast.css?v=1.1.15">
 
-  <style>
-    /* ===== BASE ===== */
-
-    @font-face {
-      font-family: 'Bounded';
-      src: url('./fonts/Bounded-Variable.woff2') format('woff2');
-      /* Используй WOFF2! */
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100%;
-      line-height: 1.3;
-      font-family: sans-serif;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    html {
-      height: 100%;
-      scrollbar-gutter: stable;
-    }
-
-    /* ===== VARIABLES ===== */
-
-    :root {
-      --hero-color: #ff5e24;
-      --cases-color: #a0bedd;
-      --about-color: #72df72;
-      --me-color: #dda0dd;
-      --footer-color: #FFFF97;
-
-      --container-small-offset: 1rem;
-      --container-width: calc(100vw - 2 * var(--container-small-offset));
-
-      --wave-width: 80px;
-      --wave-height: 33px;
-    }
-
-    /* ===== LAYOUT ===== */
-
-    .container {
-      width: var(--container-width);
-      max-width: 1400px;
-      margin-inline: auto;
-    }
-
-    .me,
-    .about,
-    .cases {
-      padding-top: 1px;
-    }
-
-    /* ===== SECTIONS ===== */
-
-    .hero {
-      height: auto;
-      background-color: var(--hero-color);
-      overflow: hidden;
-    }
-
-    .hero__container {
-      height: calc(100vh - 2rem - 2vh);
-    }
-
-    .hero__bubble-film,
-    .hero__wrapper {
-      display: none;
-    }
-
-    .me {
-      margin-top: calc(-2rem + 3px);
-      background-color: var(--me-color);
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    .me__container {
-      padding-block: 80px;
-      font-size: 1.5rem;
-    }
-
-    .about {
-      background-color: var(--about-color);
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    .cases {
-      background-color: var(--cases-color);
-      min-height: 100vh;
-      width: 100%;
-    }
-
-    footer {
-      background-color: var(--footer-color);
-      min-height: 100vh;
-    }
-
-    /* ===== HERO BOTTOM WAVE ===== */
-
-    .hero__bottom {
-      width: 100%;
-      height: var(--wave-height);
-      position: relative;
-      overflow: hidden;
-      z-index: 7;
-    }
-
-    .hero__bottom-wave {
-      width: calc(100% + var(--wave-width));
-      height: 100%;
-
-      background-image: url("../../images/wave5.svg");
-      background-repeat: repeat-x;
-      background-size: var(--wave-width) var(--wave-height);
-
-      animation: move-wave 2s linear infinite;
-
-      will-change: transform;
-      transform: translate3d(0, 0, 0);
-    }
-
-    .hero__loading {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      left: 0;
-      top: 0;
-      z-index: 8;
-      opacity: 0;
-      transition: opacity 2.5s linear;
-
-      animation: hero-loading-appear 1s 2s forwards;
-    }
-
-    .hero__loading.font-loaded {
-      opacity: 0;
-      animation: hero-loading-disappear .5s forwards;
-    }
-
-    @keyframes hero-loading-appear {
-      0% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes hero-loading-disappear {
-      0% {
-        opacity: 1;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-    .spinner {
-      animation: rotate 2s linear infinite;
-      z-index: 2;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: -25px 0 0 -25px;
-      width: 50px;
-      height: 50px;
-      z-index: 8;
-
-      & .path {
-        stroke: #a33c16;
-        stroke-linecap: round;
-        animation: dash 1.5s ease-in-out infinite;
-      }
-
-    }
-
-    /* ===== WAVE ANIMATION ===== */
-
-    @keyframes move-wave {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-
-      100% {
-        transform: translate3d(calc(var(--wave-width) * -1), 0, 0);
-      }
-    }
-
-    @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    @keyframes dash {
-      0% {
-        stroke-dasharray: 1, 150;
-        stroke-dashoffset: 0;
-      }
-
-      50% {
-        stroke-dasharray: 90, 150;
-        stroke-dashoffset: -35;
-      }
-
-      100% {
-        stroke-dasharray: 90, 150;
-        stroke-dashoffset: -124;
-      }
-    }
-  </style>
-
-  <link rel="preload" href="./fonts/Bounded-Variable.woff2" as="font" type="font/woff2" crossorigin>
-
-  <link rel="preload" id="main-styles" href="./styles/main-min.css?v=1.1.10" as="style"
+  <link rel="preload" id="main-styles" href="./styles/main.min.css?v=1.1.15" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="./styles/main-min.css?v=1.1.10">
+    <link rel="stylesheet" href="./styles/main.min.css?v=1.1.15">
   </noscript>
 
   <link rel="preload" as="image" href="./images/about/img3-2-small.webp">
@@ -268,7 +34,7 @@
 
   <!-- <script src="./scripts/BubbleFilm3.js?v=1.1.10" loading="lazy" type="module"></script>
   <script src="./scripts/CasesPreview.js?v=1.1.10" loading="lazy" type="module"></script> -->
-  <script src="./scripts/main.js?v=1.1.10" type="module"></script>
+  <script src="./scripts/main.js?v=1.1.11"></script>
 </head>
 
 <body>
@@ -710,6 +476,7 @@
             </div> -->
           </div>
 
+          <a class="footer__legal" href="./privacy.html">Политика конфиденциальности</a>
         </div>
       </footer>
 
@@ -786,6 +553,103 @@
 
       loadFonts();
     });
+  </script>
+
+  <div class="ui-tooltip ui-tooltip--cookie ui-tooltip--slide-up" id="cookie-consent" data-js-cookie-consent
+    role="dialog" aria-describedby="cookie-consent-text">
+    <p class="ui-tooltip__text" id="cookie-consent-text">
+      Мы используем файлы cookie и Яндекс.Метрику для анализа посещаемости. Продолжая пользоваться сайтом, вы
+      соглашаетесь с их использованием и нашей
+      <a class="ui-tooltip__link" href="./privacy.html">Политикой конфиденциальности</a>
+    </p>
+    <button class="ui-tooltip__action" type="button" data-js-cookie-accept>Понятно</button>
+  </div>
+
+  <script>
+    (function initCookieConsent() {
+      const STORAGE_KEY = 'cookieConsent';
+      const tooltip = document.querySelector('[data-js-cookie-consent]');
+      const acceptButton = document.querySelector('[data-js-cookie-accept]');
+
+      if (!tooltip || !acceptButton) return;
+
+      const readConsent = () => {
+        try {
+          return window.localStorage.getItem(STORAGE_KEY) === '1';
+        } catch (error) {
+          return false;
+        }
+      };
+
+      const writeConsent = () => {
+        try {
+          window.localStorage.setItem(STORAGE_KEY, '1');
+        } catch (error) {
+          // private mode: banner will appear again next visit
+        }
+      };
+
+      if (readConsent()) {
+        tooltip.remove();
+        return;
+      }
+
+      const getHideDuration = () => {
+        const raw = window.getComputedStyle(tooltip).transitionDuration;
+        const first = raw.split(',')[0].trim();
+        const value = Number.parseFloat(first);
+
+        if (Number.isNaN(value)) return 400;
+
+        return first.endsWith('ms') ? value : value * 1000;
+      };
+
+      const hide = () => {
+        if (tooltip.dataset.closing === 'true') return;
+
+        tooltip.dataset.closing = 'true';
+        writeConsent();
+
+        const finish = () => {
+          if (!tooltip.isConnected) return;
+          tooltip.remove();
+        };
+
+        tooltip.classList.remove('is-visible');
+
+        tooltip.addEventListener('transitionend', (event) => {
+          if (event.target !== tooltip || event.propertyName !== 'opacity') return;
+          finish();
+        });
+
+        window.setTimeout(finish, getHideDuration() + 50);
+      };
+
+      let revealed = false;
+
+      const show = () => {
+        if (revealed) return;
+        revealed = true;
+        tooltip.classList.add('is-visible');
+      };
+
+      const reveal = () => {
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(show);
+        });
+      };
+
+      acceptButton.addEventListener('click', hide);
+
+      const styles = document.getElementById('main-styles');
+
+      if (styles && styles.rel !== 'stylesheet') {
+        styles.addEventListener('load', reveal, { once: true });
+        window.setTimeout(reveal, 1500);
+      } else {
+        reveal();
+      }
+    })();
   </script>
 
 </body>

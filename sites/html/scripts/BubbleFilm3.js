@@ -292,4 +292,3 @@ class BubbleWrap {
 }
 
 new BubbleWrap();
-export default BubbleWrap;

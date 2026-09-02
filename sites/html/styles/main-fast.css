@@ -1,9 +1,8 @@
-/* ===== BASE ===== */
+/* Critical CSS: первый кадр, пока качается main.min.css */
 
 @font-face {
   font-family: 'Bounded';
-  src: url('./fonts/Bounded-Variable.woff2') format('woff2');
-  /* Используй WOFF2! */
+  src: url('../fonts/Bounded-Variable.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -33,8 +32,6 @@ html {
   scrollbar-gutter: stable;
 }
 
-/* ===== VARIABLES ===== */
-
 :root {
   --hero-color: #ff5e24;
   --cases-color: #a0bedd;
@@ -49,8 +46,6 @@ html {
   --wave-height: 33px;
 }
 
-/* ===== LAYOUT ===== */
-
 .container {
   width: var(--container-width);
   max-width: 1400px;
@@ -62,8 +57,6 @@ html {
 .cases {
   padding-top: 1px;
 }
-
-/* ===== SECTIONS ===== */
 
 .hero {
   height: auto;
@@ -109,8 +102,6 @@ footer {
   min-height: 100vh;
 }
 
-/* ===== HERO BOTTOM WAVE ===== */
-
 .hero__bottom {
   width: 100%;
   height: var(--wave-height);
@@ -122,13 +113,10 @@ footer {
 .hero__bottom-wave {
   width: calc(100% + var(--wave-width));
   height: 100%;
-
-  background-image: url("../../images/wave5.svg");
+  background-image: url("../images/wave5.svg");
   background-repeat: repeat-x;
   background-size: var(--wave-width) var(--wave-height);
-
   animation: move-wave 2s linear infinite;
-
   will-change: transform;
   transform: translate3d(0, 0, 0);
 }
@@ -142,38 +130,26 @@ footer {
   z-index: 8;
   opacity: 0;
   transition: opacity 2.5s linear;
-
   animation: hero-loading-appear 1s 2s forwards;
 }
 
 .hero__loading.font-loaded {
   opacity: 0;
-  animation: hero-loading-disappear 1s forwards;
+  animation: hero-loading-disappear .5s forwards;
 }
 
 @keyframes hero-loading-appear {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes hero-loading-disappear {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .spinner {
   animation: rotate 2s linear infinite;
-  z-index: 2;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -181,31 +157,22 @@ footer {
   width: 50px;
   height: 50px;
   z-index: 8;
-
-  & .path {
-    stroke: #a33c16;
-    stroke-linecap: round;
-    animation: dash 1.5s ease-in-out infinite;
-  }
-
 }
 
-/* ===== WAVE ANIMATION ===== */
+.spinner .path {
+  stroke: #a33c16;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
 
 @keyframes move-wave {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(calc(var(--wave-width) * -1), 0, 0);
-  }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(calc(var(--wave-width) * -1), 0, 0); }
 }
 
 @keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes dash {
@@ -213,14 +180,30 @@ footer {
     stroke-dasharray: 1, 150;
     stroke-dashoffset: 0;
   }
-
   50% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -35;
   }
-
   100% {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
+}
+
+.ui-tooltip {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ui-tooltip.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ui-tooltip--cookie {
+  position: fixed;
+  z-index: 1100;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
 }
