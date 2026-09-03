@@ -33,3 +33,8 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Автособираемые файлы
+/sites/html/styles/main.css
+/sites/html/styles/main.css.map
+/sites/html/styles/main.min.css
